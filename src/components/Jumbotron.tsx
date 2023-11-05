@@ -17,13 +17,19 @@ export function Jumbotron() {
         "justify-center"
       )}
     >
-      <hgroup>
+      <hgroup className="overflow-hidden">
         <h1 className="sr-only">ユードットエフエム</h1>
         <AnimatedLogo />
       </hgroup>
 
-      <div>
-        <ScrollTo href="#main">
+      <div
+        className={clsx(
+          "opacity-0",
+          "animate-[fadein_1s_linear_2s]",
+          "[animation-fill-mode:forwards]"
+        )}
+      >
+        <ScrollTo className={clsx("block", "animate-bounce")} href="#main">
           <Icon name="24/ArrowDown" aria-label="下にスクロール" />
         </ScrollTo>
       </div>

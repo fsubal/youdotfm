@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import Vivus from "vivus";
 
-export function useAnimation() {
+export function useAnimation(onAnimationEnd?: () => void) {
   const [visible, setVisible] = useState(false);
   const [playingEnd, setPlayingEnd] = useState(false);
   const el = useRef<SVGSVGElement>(null);
@@ -26,10 +26,11 @@ export function useAnimation() {
 
     animation.play(1, () => {
       setPlayingEnd(true);
+      onAnimationEnd?.();
     });
 
     return () => animation.destroy();
-  }, []);
+  }, [onAnimationEnd]);
 
   return { el, visible, playingEnd };
 }

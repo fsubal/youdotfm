@@ -3,10 +3,15 @@
 import { useCallback } from "react";
 
 interface Props {
+  className?: string;
   href: `#${string}`;
 }
 
-export function ScrollTo({ href, children }: React.PropsWithChildren<Props>) {
+export function ScrollTo({
+  className,
+  href,
+  children,
+}: React.PropsWithChildren<Props>) {
   const onClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
       if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) {
@@ -20,7 +25,12 @@ export function ScrollTo({ href, children }: React.PropsWithChildren<Props>) {
   );
 
   return (
-    <a data-role="scroll-to" href={href} onClick={onClick}>
+    <a
+      data-role="scroll-to"
+      className={className}
+      href={href}
+      onClick={onClick}
+    >
       {children}
     </a>
   );
