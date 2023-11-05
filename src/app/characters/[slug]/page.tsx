@@ -7,7 +7,7 @@ export default function CharacterPage({
 }: {
   params: { slug: string };
 }) {
-  const normalizedSlug = decodeURIComponent(params.slug).replace(/^@/, "");
+  const normalizedSlug = decodeURIComponent(params.slug);
 
   const character = characters.find(({ slug }) => slug === normalizedSlug);
   if (!character) {

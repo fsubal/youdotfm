@@ -24,7 +24,11 @@ export function Main({ children }: React.PropsWithChildren) {
           {children}
         </div>
       </main>
-      <footer className={clsx("bg-slate-100", ["py-6", "px-6"])}>footer</footer>
+      <footer className={clsx("bg-slate-100", ["py-6", "px-6"])}>
+        footer
+        <br />
+        &copy; Subal FUJIAKI
+      </footer>
     </div>
   );
 }

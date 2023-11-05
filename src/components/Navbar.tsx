@@ -1,16 +1,15 @@
 import clsx from "clsx";
 import { NavbarItem } from "./NavbarItem";
 import { Icon } from "./Icon";
+import { NewBadge } from "./NewBadge";
 
 export function Navbar() {
   return (
     <ul
       data-role="navbar"
       className={clsx(
-        "flex",
-        "tablet:flex-col",
-        ["overflow-x-auto", "overflow-y-hidden"],
-        ["snap-x", "snap-mandatory"],
+        ["grid", "grid-cols-2"],
+        ["tablet:flex", "tablet:flex-col"],
         "w-full",
         "tablet:h-full",
         ["tablet:border-r", "tablet:border-r-slate-100"],
@@ -23,20 +22,21 @@ export function Navbar() {
         Introduction
       </NavbarItem>
       <NavbarItem href="https://youdotfm.fanbox.cc/" external>
-        <Icon name="24/Announcement" unsafe-non-guideline-scale={16 / 24} />
-        News
+        <Icon name="24/Announcement" unsafeNonGuidelineScale={16 / 24} />
+        Blog (FANBOX)
       </NavbarItem>
       <NavbarItem href="/characters">
-        <Icon name="24/Person" unsafe-non-guideline-scale={16 / 24} />
+        <Icon name="24/Person" unsafeNonGuidelineScale={16 / 24} />
         Characters
       </NavbarItem>
       <NavbarItem href="/episodes">
-        <Icon name="24/Manga" unsafe-non-guideline-scale={16 / 24} />
+        <Icon name="24/Manga" unsafeNonGuidelineScale={16 / 24} />
         Episodes
       </NavbarItem>
-      <NavbarItem href="/books">
-        <Icon name="16/Book" />
-        Books
+      <NavbarItem href="/buy">
+        <Icon name="24/Shopping" unsafeNonGuidelineScale={16 / 24} />
+        Buy
+        <NewBadge />
       </NavbarItem>
     </ul>
   );

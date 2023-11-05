@@ -30,6 +30,7 @@ export function NavbarItem({
           "font-bold",
           "transition-colors",
           "snap-center",
+          "whitespace-nowrap",
           [
             "bg-transpatent",
             "hover:bg-slate-100",
@@ -46,7 +47,7 @@ export function NavbarItem({
         {external && (
           <Icon
             name="Inline/External"
-            unsafe-non-guideline-scale={10 / 16}
+            unsafeNonGuidelineScale={10 / 16}
             className="text-slate-400"
           />
         )}

@@ -7,12 +7,12 @@ interface Character {
 export default [
   {
     name: "竹内エリ",
-    slug: "kei2_0817",
+    slug: "eri_takeuchi",
     description: "主人公。シヲリのことが好き。",
   },
   {
     name: "千葉シヲリ",
-    slug: "ciwoli_c",
+    slug: "shiori_chiba",
     description: "エリをポッドキャストに誘った人。ライター。",
   },
 ] satisfies Character[];
