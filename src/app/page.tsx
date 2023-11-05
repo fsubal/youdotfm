@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Layout>
       <h2 className={clsx("font-serif", "font-normal")}>
-        『話す、流す、好きになる』
+        『語る、話す、好きになる』
       </h2>
       <div className={clsx("lead", "leading-loose")}>
         <p>

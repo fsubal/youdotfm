@@ -24,6 +24,7 @@ export function BuyableItem({
 }: Props) {
   return (
     <Link
+      data-role="buyable-item"
       href={shopUrl}
       target="_blank"
       className={clsx(

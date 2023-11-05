@@ -3,6 +3,7 @@ import clsx from "clsx";
 export function NewBadge() {
   return (
     <span
+      data-role="new-badge"
       className={clsx(
         "text-white",
         "bg-red-500",
