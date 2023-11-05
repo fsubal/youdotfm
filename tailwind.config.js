@@ -12,6 +12,10 @@ module.exports = {
     fontFamily: {
       sans: ['Trebuchet MS', ...defaultTheme.fontFamily.sans],
     },
+    fontWeight: {
+      normal: defaultTheme.fontWeight.normal,
+      bold: defaultTheme.fontWeight.bold,
+    },
     screens: {
       tablet: defaultTheme.screens.md,
       desktop: defaultTheme.screens.xl

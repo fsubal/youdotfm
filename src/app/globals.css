@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  html {
     color: theme("colors.slate.900");
-    scroll-behavior: smooth;
   }
 }

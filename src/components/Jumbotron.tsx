@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import { AnimatedLogo } from "./AnimatedLogo";
+import { AnimatedLogo } from "./AnimatedLogo/AnimatedLogo";
+import { ScrollTo } from "./ScrollTo";
 
 export function Jumbotron() {
   return (
@@ -18,6 +19,8 @@ export function Jumbotron() {
         <h1 className="sr-only">ユードットエフエム</h1>
         <AnimatedLogo />
       </hgroup>
+
+      <ScrollTo href="#main">↓</ScrollTo>
     </section>
   );
 }

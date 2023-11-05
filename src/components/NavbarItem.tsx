@@ -16,6 +16,7 @@ export function NavbarItem({ href, children }: React.PropsWithChildren<Props>) {
         href={`${href}#main`}
         className={clsx(
           "block",
+          "font-bold",
           "transition-colors",
           [
             "bg-transpatent",

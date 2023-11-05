@@ -1,8 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import { useEffect, useId, useRef, useState } from "react";
-import Vivus from "vivus";
+import { useId } from "react";
+import { useAnimation } from "./useAnimation";
 
 /**
  * @see https://coco-factory.jp/ugokuweb/move01/4-1-6/
@@ -25,8 +25,8 @@ const HEIGHT = 259;
  * @see https://coco-factory.jp/ugokuweb/move01/4-1-6/
  */
 export function AnimatedLogo() {
-  const { el, visible, done } = useAnimation();
-  const willChange = done
+  const { el, visible, playingEnd } = useAnimation();
+  const willChange = playingEnd
     ? undefined
     : { willChange: "stroke-dasharray, stroke-dashoffset" };
 
@@ -34,6 +34,7 @@ export function AnimatedLogo() {
 
   return (
     <div
+      suppressHydrationWarning
       data-role="animated-logo"
       role="img"
       aria-label="ユードットエフエムのロゴ"
@@ -58,7 +59,11 @@ export function AnimatedLogo() {
           height={HEIGHT}
           mask={`url(#${clipmask})`}
         />
-        <mask id={clipmask} maskUnits="objectBoundingBox">
+        <mask
+          suppressHydrationWarning
+          id={clipmask}
+          maskUnits="objectBoundingBox"
+        >
           <path
             className={maskChildStyle}
             d="M124.9,73.4c0,0,57.3-46.5,22.9-66.6c-35.2-20.7-87,8.9-90.1,55.4c-3.1,46.6,48.4,84.2,34.7,130.7
@@ -83,35 +88,4 @@ export function AnimatedLogo() {
       </svg>
     </div>
   );
-}
-
-function useAnimation() {
-  const [visible, setVisible] = useState(false);
-  const [done, setDone] = useState(false);
-  const el = useRef<SVGSVGElement>(null);
-
-  useEffect(() => {
-    const animation = new Vivus(
-      // @ts-expect-error @types/vivusの型定義はHTMLElementしか受け付けないが、間違い
-      el.current!,
-      {
-        start: "manual",
-        type: "scenario-sync",
-        duration: 50,
-        forceRender: false,
-        animTimingFunction: Vivus.EASE,
-        onReady() {
-          setVisible(true);
-        },
-      }
-    );
-
-    animation.play(1, () => {
-      setDone(true);
-    });
-
-    return () => animation.destroy();
-  }, []);
-
-  return { el, visible, done };
 }
