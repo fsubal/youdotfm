@@ -29,7 +29,6 @@ export function NavbarItem({
           "gap-2",
           "font-bold",
           "transition-colors",
-          "snap-center",
           "whitespace-nowrap",
           [
             "bg-transpatent",
