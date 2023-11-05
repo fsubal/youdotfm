@@ -1,7 +1,6 @@
 import characters from "./data";
 import { Layout } from "@/components/Layout";
-import clsx from "clsx";
-import { Chip } from "@/components/Chip";
+import { CharacterChips } from "@/components/CharacterChips";
 
 export default function CharactersPage() {
   return (
@@ -10,18 +9,7 @@ export default function CharactersPage() {
       <div className="lead">
         『ユードットエフエム』の登場キャラクターを紹介します。
       </div>
-      <div className={clsx("space-x-4", "not-prose")}>
-        {characters.map((character) => (
-          <Chip
-            key={character.slug}
-            href={`/characters/${character.slug}#main`}
-            imageUrl={character.iconUrl}
-            alt={`${character.name}のアイコン`}
-          >
-            {character.name}
-          </Chip>
-        ))}
-      </div>
+      <CharacterChips characters={characters} />
     </Layout>
   );
 }

@@ -39,7 +39,7 @@ const DATA = [
       "シヲリのイラストのTシャツです（※価格はサイズによって異なります）",
     shopUrl: "https://umbrellahead.booth.pm",
     price: [2000],
-    imageUrl: "/example.jpeg",
+    imageUrl: "/tshirt.jpeg",
   },
 ] satisfies Omit<BuyableItem, "id">[];
 

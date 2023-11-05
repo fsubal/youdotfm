@@ -11,7 +11,6 @@ export function Navbar() {
         ["grid", "grid-cols-2"],
         ["tablet:flex", "tablet:flex-col"],
         "w-full",
-        "tablet:h-full",
         ["gap-3", "tablet:gap-6"],
         ["py-3", "tablet:py-6", "px-3", "tablet:px-6"]
       )}

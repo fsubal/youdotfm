@@ -34,7 +34,7 @@ export function NavbarItem({
             "bg-transpatent",
             "hover:bg-white-hover",
             "active:bg-white-active",
-            isActive && "bg-white-hove",
+            isActive && "bg-white-hover",
           ],
           "rounded-full",
           "py-2",

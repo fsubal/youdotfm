@@ -27,7 +27,14 @@ function Main({ children }: React.PropsWithChildren) {
           "divide-slate-100",
         ])}
       >
-        <nav>
+        <nav
+          className={clsx(
+            "tablet:h-full",
+            "tablet:top-0",
+            "tablet:left-0",
+            "tablet:sticky"
+          )}
+        >
           <Navbar />
         </nav>
         <div
