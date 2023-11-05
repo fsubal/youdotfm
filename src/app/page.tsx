@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Layout } from "@/components/Layout";
 import { eri, shiori } from "./characters/data";
+import clsx from "clsx";
 
 export default function Home() {
   return (
     <Layout>
-      <div className="lead">
+      <div className={clsx("lead", "leading-loose")}>
         <p>『話す、流す、好きになる』</p>
         うだつの上がらない音楽系ライター
         <Link href={`/characters/${eri.slug}#main`}>竹内エリ</Link>は、
@@ -17,6 +18,10 @@ export default function Home() {
         ある日エリはライブ会場でシヲリと対面し、互いに打ち解ける。
         <br />
         数日後、突然シヲリからインターネットでラジオを一緒に始めないかと誘われてしまい――！？
+        <br />
+        書いて、語って、ふざけて、そして好きになる。
+        <br />
+        ポッドキャスター女子2人が織りなす、大人の青春ストーリー！
       </div>
     </Layout>
   );

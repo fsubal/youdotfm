@@ -9,9 +9,6 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    fontFamily: {
-      sans: ['Trebuchet MS', ...defaultTheme.fontFamily.sans],
-    },
     fontWeight: {
       normal: defaultTheme.fontWeight.normal,
       bold: defaultTheme.fontWeight.bold,
@@ -20,7 +17,11 @@ module.exports = {
       tablet: defaultTheme.screens.md,
       desktop: defaultTheme.screens.xl
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Trebuchet MS', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography')
