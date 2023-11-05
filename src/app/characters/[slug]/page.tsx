@@ -16,7 +16,8 @@ export default function CharacterPage({
 
   return (
     <Layout>
-      <h1>{character.name}</h1>
+      <h1>キャラクター</h1>
+      <h2>{character.name}</h2>
     </Layout>
   );
 }
