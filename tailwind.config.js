@@ -1,4 +1,5 @@
 // @ts-check
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,6 +9,13 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ['Trebuchet MS', ...defaultTheme.fontFamily.sans],
+    },
+    screens: {
+      tablet: defaultTheme.screens.md,
+      desktop: defaultTheme.screens.xl
+    },
     extend: {},
   },
   plugins: [],
