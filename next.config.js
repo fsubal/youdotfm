@@ -1,4 +1,9 @@
 // @ts-check
 
 /** @type {import('next').NextConfig} */
-module.exports = {}
+module.exports = {
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+};

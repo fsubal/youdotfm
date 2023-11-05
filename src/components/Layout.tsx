@@ -20,20 +20,28 @@ function Main({ children }: React.PropsWithChildren) {
       data-role="main"
       className={clsx("flex", "flex-col", "min-h-screen")}
     >
-      <main className={clsx("flex-1", "flex", "flex-col", "tablet:flex-row")}>
+      <main
+        className={clsx("flex-1", "flex", "flex-col", "tablet:flex-row", [
+          "divide-y",
+          "tablet:divide-x",
+          "divide-slate-100",
+        ])}
+      >
         <nav>
           <Navbar />
         </nav>
         <div
           className={clsx(
             "flex-1",
-            "py-4",
+            "py-10",
             "px-6",
             "tablet:py-10",
             "tablet:px-8"
           )}
         >
-          <div className={proseClass}>{children}</div>
+          <div className={clsx(proseClass, "prose-h1:tracking-wider")}>
+            {children}
+          </div>
         </div>
       </main>
       <Footer />

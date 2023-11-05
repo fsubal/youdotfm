@@ -1,4 +1,7 @@
+import { BuyableItem } from "@/components/BuyableItem";
+import items from "./data";
 import { Layout } from "@/components/Layout";
+import clsx from "clsx";
 
 export default function BuyPage() {
   return (
@@ -7,6 +10,28 @@ export default function BuyPage() {
       <p className="lead">
         『ユードットエフエム』に関連する商品を紹介します。各種通販サイトで購入できます。
       </p>
+
+      <div className="not-prose">
+        <div
+          className={clsx(
+            "grid",
+            "tablet:grid-cols-2",
+            "desktop:grid-cols-3",
+            "gap-4"
+          )}
+        >
+          {items.map((item) => (
+            <BuyableItem
+              key={item.id}
+              name={item.name}
+              shopUrl={item.shopUrl}
+              description={item.description}
+              price={item.price}
+              imageUrl={item.imageUrl}
+            />
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 }

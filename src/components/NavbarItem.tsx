@@ -32,9 +32,9 @@ export function NavbarItem({
           "whitespace-nowrap",
           [
             "bg-transpatent",
-            "hover:bg-slate-100",
-            "active:bg-slate-200",
-            isActive && "bg-slate-100",
+            "hover:bg-white-hover",
+            "active:bg-white-active",
+            isActive && "bg-white-hove",
           ],
           "rounded-full",
           "py-2",

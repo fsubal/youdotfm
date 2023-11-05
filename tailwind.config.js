@@ -1,6 +1,7 @@
 // @ts-check
 const plugin = require("tailwindcss/plugin");
 const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultColors = require("tailwindcss/colors");
 
 const fadeInPlugin = plugin(({ matchUtilities }) => {
   matchUtilities(
@@ -41,6 +42,18 @@ module.exports = {
       desktop: defaultTheme.screens.xl,
     },
     extend: {
+      colors: {
+        white: {
+          DEFAULT: defaultColors.white,
+          hover: defaultColors.slate[100],
+          active: defaultColors.slate[200],
+        },
+        primary: defaultColors.green[500],
+        link: defaultColors.green[600],
+      },
+      borderColor: {
+        DEFAULT: defaultColors.slate[200],
+      },
       fontFamily: {
         sans: ["Trebuchet MS", ...defaultTheme.fontFamily.sans],
       },

@@ -2,6 +2,10 @@ import { notFound } from "next/navigation";
 import characters from "../data";
 import { Layout } from "@/components/Layout";
 
+export function generateStaticParams() {
+  return characters.map(({ slug }) => ({ slug }));
+}
+
 export default function CharacterPage({
   params,
 }: {
