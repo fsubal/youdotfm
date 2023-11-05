@@ -1,3 +1,9 @@
+import { Layout } from "@/components/Layout";
+
 export default function Home() {
-  return <div className="flex">hello</div>;
+  return (
+    <Layout>
+      <div className="flex">hello</div>
+    </Layout>
+  );
 }

@@ -1,7 +1,5 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { Jumbotron } from "@/components/Jumbotron";
-import { Main } from "@/components/Main";
 
 export const metadata = {
   title: "ユードットエフエム",
@@ -15,10 +13,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="ja">
-      <body>
-        <Jumbotron />
-        <Main>{children}</Main>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

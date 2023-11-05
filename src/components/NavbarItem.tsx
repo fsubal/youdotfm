@@ -1,37 +1,56 @@
 "use client";
 
 import clsx from "clsx";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Icon } from "./Icon";
 
 interface Props {
   href: string;
+  external?: boolean;
 }
 
-export function NavbarItem({ href, children }: React.PropsWithChildren<Props>) {
+export function NavbarItem({
+  href,
+  external,
+  children,
+}: React.PropsWithChildren<Props>) {
   const pathname = usePathname();
+  const isActive = pathname === href;
 
   return (
     <li data-role="navbar-item">
-      <a
-        href={`${href}#main`}
+      <Link
+        href={external ? href : `${href}#main`}
+        target={external ? "_blank" : undefined}
         className={clsx(
-          "block",
+          "flex",
+          "items-center",
+          "gap-2",
           "font-bold",
           "transition-colors",
+          "snap-center",
           [
             "bg-transpatent",
             "hover:bg-slate-100",
             "active:bg-slate-200",
-            pathname === href && "bg-slate-100",
+            isActive && "bg-slate-100",
           ],
           "rounded-full",
           "py-2",
           "px-4",
-          "focus-visible:ring-2"
+          ["focus-visible:outline-4", "focus-visible:outline-blue-400/50"]
         )}
       >
         {children}
-      </a>
+        {external && (
+          <Icon
+            name="Inline/External"
+            unsafe-non-guideline-scale={10 / 16}
+            className="text-slate-400"
+          />
+        )}
+      </Link>
     </li>
   );
 }
