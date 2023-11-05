@@ -49,6 +49,7 @@ export function AnimatedLogo() {
         y="0px"
         width={WIDTH}
         height={HEIGHT}
+        className="max-w-full"
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
         xmlSpace="preserve"
       >

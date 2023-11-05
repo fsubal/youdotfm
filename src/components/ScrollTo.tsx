@@ -20,7 +20,7 @@ export function ScrollTo({ href, children }: React.PropsWithChildren<Props>) {
   );
 
   return (
-    <a href={href} onClick={onClick}>
+    <a data-role="scroll-to" href={href} onClick={onClick}>
       {children}
     </a>
   );

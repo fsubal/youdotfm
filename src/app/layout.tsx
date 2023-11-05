@@ -1,12 +1,16 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Jumbotron } from "@/components/Jumbotron";
 import { Main } from "@/components/Main";
 
 export const metadata = {
   title: "ユードットエフエム",
-  description: "ポッドキャスト百合",
+  description: "「話す、流す、好きになる。」ポッドキャスト百合",
 } satisfies Metadata;
+
+export const viewport: Viewport = {
+  themeColor: "#86efac",
+};
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (

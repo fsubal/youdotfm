@@ -11,6 +11,7 @@ export function Jumbotron() {
         "h-screen",
         "w-full",
         "flex",
+        "flex-col",
         "items-center",
         "justify-center"
       )}
@@ -20,7 +21,9 @@ export function Jumbotron() {
         <AnimatedLogo />
       </hgroup>
 
-      <ScrollTo href="#main">↓</ScrollTo>
+      <div>
+        <ScrollTo href="#main">↓</ScrollTo>
+      </div>
     </section>
   );
 }
