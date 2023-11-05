@@ -22,13 +22,7 @@ export function Jumbotron() {
         <AnimatedLogo />
       </hgroup>
 
-      <div
-        className={clsx(
-          "opacity-0",
-          "animate-[fadein_1s_linear_2s]",
-          "[animation-fill-mode:forwards]"
-        )}
-      >
+      <div className={clsx("fadein-1", "fadein-delay-2")}>
         <ScrollTo className={clsx("block", "animate-bounce")} href="#main">
           <Icon name="24/ArrowDown" aria-label="下にスクロール" />
         </ScrollTo>
