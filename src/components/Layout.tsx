@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { Jumbotron } from "./Jumbotron";
 import { Navbar } from "./Navbar";
+import Image from "next/image";
+import Link from "next/link";
 
 export function Layout({ children }: React.PropsWithChildren) {
   return (
@@ -35,6 +37,7 @@ function Main({ children }: React.PropsWithChildren) {
             "tablet:sticky"
           )}
         >
+          <Logo />
           <Navbar />
         </nav>
         <div
@@ -52,6 +55,16 @@ function Main({ children }: React.PropsWithChildren) {
         </div>
       </main>
       <Footer />
+    </div>
+  );
+}
+
+function Logo() {
+  return (
+    <div className={clsx("pt-6", "px-6", "mb-3", "flex", "justify-center")}>
+      <Link href="/">
+        <Image src="/text.svg" alt="トップに戻る" width={160} height={30} />
+      </Link>
     </div>
   );
 }

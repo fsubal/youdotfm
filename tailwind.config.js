@@ -3,28 +3,6 @@ const plugin = require("tailwindcss/plugin");
 const defaultTheme = require("tailwindcss/defaultTheme");
 const defaultColors = require("tailwindcss/colors");
 
-const fadeInPlugin = plugin(({ matchUtilities }) => {
-  matchUtilities(
-    {
-      fadein: (value) => ({
-        opacity: "0",
-        animation: `fadein ${value} linear var(--fadein-delay, 0)`,
-        "animation-fill-mode": "forwards",
-      }),
-      "fadein-delay": (value) => ({
-        "--fadein-delay": value,
-      }),
-    },
-    {
-      values: {
-        0.5: "0.5s",
-        1: "1s",
-        2: "2s",
-      },
-    }
-  );
-});
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -59,5 +37,32 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), fadeInPlugin],
+  plugins: [
+    require("@tailwindcss/typography"),
+
+    /**
+     * `fadein-[...]`みたいなクラスを書けるようにする（ページ開いたときにフェードインしてくる用）
+     */
+    plugin(function fadeInPlugin({ matchUtilities }) {
+      matchUtilities(
+        {
+          fadein: (value) => ({
+            opacity: "0",
+            animation: `fadein ${value} linear var(--fadein-delay, 0)`,
+            "animation-fill-mode": "forwards",
+          }),
+          "fadein-delay": (value) => ({
+            "--fadein-delay": value,
+          }),
+        },
+        {
+          values: {
+            0.5: "0.5s",
+            1: "1s",
+            2: "2s",
+          },
+        }
+      );
+    }),
+  ],
 };
