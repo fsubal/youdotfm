@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 
 export const metadata = {
   title: "ユードットエフエム",
-  description: "「語る、話す、好きになる。」ポッドキャスト百合",
+  description: "「語って、話して、好きになる。」ポッドキャスト百合",
 } satisfies Metadata;
 
 export const viewport: Viewport = {
