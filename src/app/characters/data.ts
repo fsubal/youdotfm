@@ -1,3 +1,5 @@
+import "server-only";
+
 export interface Character {
   name: string;
   roman: string;

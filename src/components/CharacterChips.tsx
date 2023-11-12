@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { Chip } from "./Chip";
 import { Character } from "@/app/characters/data";
 
@@ -8,7 +7,7 @@ interface Props {
 
 export function CharacterChips({ characters }: Props) {
   return (
-    <div data-role="character-chips" className={clsx("space-x-4", "not-prose")}>
+    <div data-role="character-chips" className="space-x-4">
       {characters.map((character) => (
         <Chip
           key={character.slug}

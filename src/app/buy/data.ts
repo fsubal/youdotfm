@@ -1,3 +1,5 @@
+import "server-only";
+
 interface BuyableItem {
   id: number;
   name: string;

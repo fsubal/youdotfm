@@ -1,3 +1,5 @@
+import "server-only";
+
 export interface Episode {
   id: number;
   title: string;

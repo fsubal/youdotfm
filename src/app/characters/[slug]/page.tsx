@@ -86,7 +86,9 @@ export default function CharacterPage({
       <hr />
 
       <h2>ほかのキャラクター</h2>
-      <CharacterChips characters={characters} />
+      <div className="not-prose">
+        <CharacterChips characters={characters} />
+      </div>
     </Layout>
   );
 }

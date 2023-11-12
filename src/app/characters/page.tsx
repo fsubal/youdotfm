@@ -9,7 +9,9 @@ export default function CharactersPage() {
       <div className="lead">
         『ユードットエフエム』の登場キャラクターを紹介します。
       </div>
-      <CharacterChips characters={characters} />
+      <div className="not-prose">
+        <CharacterChips characters={characters} />
+      </div>
     </Layout>
   );
 }
