@@ -1,3 +1,4 @@
+import { JPY } from "@/utils/intl";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,11 +10,6 @@ interface Props {
   imageUrl: string;
   price: number | RangeOf<number>;
 }
-
-const JPY = new Intl.NumberFormat("ja-JP", {
-  style: "currency",
-  currency: "JPY",
-});
 
 export function BuyableItem({
   name,
