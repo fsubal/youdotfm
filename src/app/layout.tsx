@@ -10,10 +10,13 @@ export const viewport: Viewport = {
   themeColor: "#86efac",
 };
 
-export default function RootLayout({ children }: React.PropsWithChildren) {
+// TODO: children を受け取ると公開できる
+export default function RootLayout(
+  // { children }: React.PropsWithChildren
+) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>It works!</body>
     </html>
   );
 }
