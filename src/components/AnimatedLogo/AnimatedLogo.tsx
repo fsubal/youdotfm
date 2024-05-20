@@ -18,8 +18,8 @@ const maskChildStyle = clsx(
   "[stroke-dashoffset:1500]"
 );
 
-const WIDTH = 739;
-const HEIGHT = 259;
+const WIDTH = 684;
+const HEIGHT = 311;
 
 /**
  * @see https://coco-factory.jp/ugokuweb/move01/4-1-6/
