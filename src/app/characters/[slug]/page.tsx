@@ -56,29 +56,6 @@ export default async function CharacterPage({
             <th>誕生日</th>
             <td>{nl2br(character.birthday)}</td>
           </tr>
-          <tr>
-            <th>仕事</th>
-            <td>{nl2br(character.works)}</td>
-          </tr>
-          <tr>
-            <th>好きな音楽</th>
-            <td>
-              {nl2br(character.favoriteMusic)}
-              <div className={clsx("not-prose", "mt-2")}>
-                <Chip href={character.spotifyPlaylistUrl} target="_blank">
-                  <Icon name="24/Play" />
-                  Spotifyのプレイリスト
-                </Chip>
-                <p className={clsx("text-sm", "text-slate-500", "mt-1")}>
-                  ※登場するアーティストおよび楽曲はすべて本作品とは無関係です。
-                </p>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th>トークスタイル</th>
-            <td>{nl2br(character.talkingStyle)}</td>
-          </tr>
         </tbody>
       </table>
 

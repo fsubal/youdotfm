@@ -6,8 +6,4 @@ export interface Character {
   iconUrl: string;
   portraitUrl: string;
   birthday: string;
-  works: string;
-  favoriteMusic: string;
-  talkingStyle: string;
-  spotifyPlaylistUrl: string;
 }
