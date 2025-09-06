@@ -1,10 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
   html {
-    color: theme("colors.slate.900");
+    color: var(--color-slate-900);
   }
 
   /**
@@ -46,6 +44,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

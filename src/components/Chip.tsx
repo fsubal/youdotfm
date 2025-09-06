@@ -25,6 +25,7 @@ export function Chip({
       className={clsx(
         "rounded-full",
         "border",
+        "border-gray-200",
         "bg-white",
         "py-3",
         "px-4",

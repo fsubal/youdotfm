@@ -31,6 +31,7 @@ export function BuyableItem({
         "transition-colors",
         ["bg-white", "hover:bg-white-hover"],
         "border",
+        "border-gray-200",
         "rounded-xl",
         "overflow-hidden"
       )}
