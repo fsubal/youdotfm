@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import characters from "../data";
-import { Layout } from "@/components/Layout";
 import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "@/components/Icon";
 import clsx from "clsx";
-import { CharacterChips } from "@/components/CharacterChips";
-import { nl2br } from "@/utils/nl2br";
-import { Chip } from "@/components/Chip";
+import { CharacterChips } from "../../../components/CharacterChips";
+import { Chip } from "../../../components/Chip";
+import { Icon } from "../../../components/Icon";
+import { nl2br } from "../../../utils/nl2br";
+import { Layout } from "../../../components/Layout";
 
 export function generateStaticParams() {
   return characters.map(({ slug }) => ({ slug }));

@@ -1,18 +1,5 @@
 import "server-only";
-
-export interface Character {
-  name: string;
-  roman: string;
-  slug: string;
-  description: string;
-  iconUrl: string;
-  portraitUrl: string;
-  birthday: string;
-  works: string;
-  favoriteMusic: string;
-  talkingStyle: string;
-  spotifyPlaylistUrl: string;
-}
+import { Character } from "../../domains/Character/model";
 
 export const eri: Character = {
   name: "竹内エリ",

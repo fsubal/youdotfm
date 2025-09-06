@@ -1,6 +1,6 @@
+import { CharacterChips } from "../../components/CharacterChips";
+import { Layout } from "../../components/Layout";
 import characters from "./data";
-import { Layout } from "@/components/Layout";
-import { CharacterChips } from "@/components/CharacterChips";
 
 export default function CharactersPage() {
   return (

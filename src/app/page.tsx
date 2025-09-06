@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Layout } from "@/components/Layout";
 import { eri, shiori } from "./characters/data";
 import clsx from "clsx";
+import { Layout } from "../components/Layout";
 
 export default function Home() {
   return (

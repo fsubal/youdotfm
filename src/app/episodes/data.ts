@@ -1,12 +1,5 @@
 import "server-only";
-
-export interface Episode {
-  id: number;
-  title: string;
-  description: string;
-  url: string;
-  thumbnailUrl: string;
-}
+import { Episode } from "../../domains/Episode/model";
 
 const DATA = [
   {

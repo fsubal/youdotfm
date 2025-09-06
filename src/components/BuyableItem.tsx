@@ -1,7 +1,8 @@
-import { JPY } from "@/utils/intl";
+
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import { JPY } from "../utils/intl";
 
 interface Props {
   name: string;

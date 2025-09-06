@@ -1,5 +1,5 @@
+import { Character } from "../domains/Character/model";
 import { Chip } from "./Chip";
-import { Character } from "@/app/characters/data";
 
 interface Props {
   characters: Character[];

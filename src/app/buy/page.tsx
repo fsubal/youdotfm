@@ -1,7 +1,7 @@
-import { BuyableItem } from "@/components/BuyableItem";
 import items from "./data";
-import { Layout } from "@/components/Layout";
 import clsx from "clsx";
+import { BuyableItem } from "../../components/BuyableItem";
+import { Layout } from "../../components/Layout";
 
 export default function BuyPage() {
   return (
