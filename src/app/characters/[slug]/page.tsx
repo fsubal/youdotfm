@@ -13,12 +13,13 @@ export function generateStaticParams() {
   return characters.map(({ slug }) => ({ slug }));
 }
 
-export default function CharacterPage({
+export default async function CharacterPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const normalizedSlug = decodeURIComponent(params.slug);
+  const { slug } = await params;
+  const normalizedSlug = decodeURIComponent(slug);
 
   const character = characters.find(({ slug }) => slug === normalizedSlug);
   if (!character) {
