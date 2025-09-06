@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-screen2: 744px;
+  --breakpoint-screen3: 952px;
+  --breakpoint-screen4: 1160px;
+  --breakpoint-screen5: 1368px;
+
   --color-primary: var(--color-green-500);
   --color-link: var(--color-green-600);
   --color-white-hover: var(--color-slate-100);
   --color-white-active: var(--color-slate-200);
 
   @keyframes fadein {
-    from {
+    0% {
       opacity: 0;
     }
-
-    to {
+    100% {
       opacity: 1;
     }
   }
@@ -59,14 +63,4 @@
       --scale: 3;
     }
   }
-}
-
-@utility fadein-* {
-  opacity: 0;
-  animation: fadein --value([number]) linear var(--fadein-delay, 0);
-  animation-fill-mode: forwards;
-}
-
-@utility fadein-delay-* {
-  --fadein-delay: --value([number]);
 }

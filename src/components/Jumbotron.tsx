@@ -18,11 +18,16 @@ export function Jumbotron() {
       )}
     >
       <hgroup className="overflow-hidden">
-        <h1 className="sr-only">ユードットエフエム</h1>
+        <h1 className="sr-only">ポッドキャスト百合『ユードットエフエム』</h1>
         <AnimatedLogo />
       </hgroup>
 
-      <div className={clsx("fadein-[1]", "fadein-delay-[2]")}>
+      <div
+        className={clsx(
+          "animate-[1s_linear_1.2s_1_normal_running_forwards_fadein]",
+          "opacity-0",
+        )}
+      >
         <ScrollTo className={clsx("block", "animate-bounce")} href="#main">
           <Icon name="24/ArrowDown" aria-label="下にスクロール" />
         </ScrollTo>

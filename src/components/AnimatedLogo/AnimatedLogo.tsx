@@ -10,16 +10,14 @@ import { useAnimation } from "./useAnimation";
 const maskChildStyle = clsx(
   "fill-none",
   "stroke-white",
-  "stroke-[200]", // NOTICE: ここが小さいと文字が欠ける
+  // NOTICE: ここが小さいと文字が欠ける
+  ["stroke-[180]", "screen2:stroke-[320]"],
   "[stroke-linecap:round]",
   "[stroke-linejoin:round]",
   "[stroke-miterlimit:10]",
   "[stroke-dasharray:1500]",
-  "[stroke-dashoffset:1500]"
+  "[stroke-dashoffset:1500]",
 );
-
-const WIDTH = 684;
-const HEIGHT = 311;
 
 /**
  * @see https://coco-factory.jp/ugokuweb/move01/4-1-6/
@@ -47,18 +45,28 @@ export function AnimatedLogo() {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         x="0px"
         y="0px"
-        width={WIDTH}
-        height={HEIGHT}
-        className="max-w-full"
-        viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+        width={684}
+        height={311 + 70}
+        className={clsx("max-w-full", "h-auto")}
+        viewBox={`0 0 ${684} ${311 + 70}`}
         xmlSpace="preserve"
+        mask={`url(#${clipmask})`}
       >
         <image
           xmlnsXlink="http://www.w3.org/1999/xlink"
+          xlinkHref="/subhead.svg"
+          x={0}
+          y={0}
+          width={212}
+          height={77}
+        />
+        <image
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           xlinkHref="/text.svg"
-          width={WIDTH}
-          height={HEIGHT}
-          mask={`url(#${clipmask})`}
+          x={0}
+          y={70}
+          width={684}
+          height={311}
         />
         <mask
           suppressHydrationWarning
