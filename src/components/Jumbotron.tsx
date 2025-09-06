@@ -10,7 +10,10 @@ export function Jumbotron() {
   const { el, visible, playingEnd } = useAnimation(110);
 
   return (
-    <section data-role="jumbotron" className="relative">
+    <section
+      data-role="jumbotron"
+      className={clsx("relative", "overflow-clip")}
+    >
       <div
         className={clsx(
           "w-full",
@@ -30,9 +33,9 @@ export function Jumbotron() {
           "inset-0",
           "transition-colors",
           "duration-400",
-          playingEnd ? "bg-transparent" : "bg-primary",
-          "h-screen",
+          playingEnd ? "bg-white/25" : "bg-primary",
           "w-full",
+          "h-full",
           "flex",
           "flex-col",
           "items-center",

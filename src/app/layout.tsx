@@ -1,3 +1,4 @@
+import { ThemeColor } from "../utils/theme";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
@@ -7,7 +8,7 @@ export const metadata = {
 } satisfies Metadata;
 
 export const viewport: Viewport = {
-  themeColor: "#226cff",
+  themeColor: ThemeColor.Primary,
 };
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
