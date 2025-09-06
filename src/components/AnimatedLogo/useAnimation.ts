@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Vivus from "vivus";
 
-export function useAnimation(onAnimationEnd?: () => void) {
+export function useAnimation(duration = 50, onAnimationEnd?: () => void) {
   const [visible, setVisible] = useState(false);
   const [playingEnd, setPlayingEnd] = useState(false);
   const el = useRef<SVGSVGElement>(null);
@@ -14,23 +14,23 @@ export function useAnimation(onAnimationEnd?: () => void) {
       el.current!,
       {
         start: "manual",
-        type: "scenario-sync",
-        duration: 50,
+        type: "delayed",
+        duration,
         forceRender: false,
         animTimingFunction: Vivus.EASE,
         onReady() {
           setVisible(true);
         },
-      }
+      },
     );
 
     animation.play(1, () => {
-      setPlayingEnd(true);
       onAnimationEnd?.();
+      setPlayingEnd(true);
     });
 
     return () => animation.destroy();
-  }, [onAnimationEnd]);
+  }, [onAnimationEnd, duration]);
 
   return { el, visible, playingEnd };
 }

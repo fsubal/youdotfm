@@ -53,7 +53,7 @@ export function BuyableItem({
         />
       </div>
 
-      <div className={clsx("py-4", "px-4", "tablet:px-6")}>
+      <div className={clsx("py-16", "px-16", "tablet:px-24")}>
         <h3 className={clsx("font-bold", "group-hover:underline")}>{name}</h3>
         <p
           className={clsx(

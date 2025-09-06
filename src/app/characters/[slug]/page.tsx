@@ -28,13 +28,13 @@ export default async function CharacterPage({
 
   return (
     <Layout>
-      <nav className={clsx("flex", "items-center", "space-x-2")}>
+      <nav className={clsx("flex", "items-center", "space-x-8")}>
         <Link href="/characters#main">キャラクター</Link>
         <Icon name="24/Next" unsafeNonGuidelineScale={16 / 24} />
         <span>{character.name}</span>
       </nav>
       <hgroup className="not-prose">
-        <div className="my-8">
+        <div className="my-32">
           <Image
             src={character.portraitUrl}
             alt={`${character.name}の立ち絵`}

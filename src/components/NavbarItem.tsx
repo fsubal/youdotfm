@@ -26,7 +26,7 @@ export function NavbarItem({
         className={clsx(
           "flex",
           "items-center",
-          "gap-2",
+          "gap-8",
           "font-bold",
           "transition-colors",
           "whitespace-nowrap",
@@ -37,9 +37,9 @@ export function NavbarItem({
             isActive && "bg-white-hover",
           ],
           "rounded-full",
-          "py-2",
-          "px-4",
-          ["focus-visible:outline-4", "focus-visible:outline-blue-400/50"]
+          "py-8",
+          "px-16",
+          ["focus-visible:outline-4", "focus-visible:outline-blue-400/50"],
         )}
       >
         {children}

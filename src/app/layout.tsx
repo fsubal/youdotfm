@@ -7,12 +7,10 @@ export const metadata = {
 } satisfies Metadata;
 
 export const viewport: Viewport = {
-  themeColor: "#86efac",
+  themeColor: "#226cff",
 };
 
-export default function RootLayout(
-  { children }: React.PropsWithChildren
-) {
+export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="ja">
       <body>{children}</body>

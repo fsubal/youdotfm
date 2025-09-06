@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 @theme {
+  --spacing: 1px;
+
   --breakpoint-screen2: 744px;
   --breakpoint-screen3: 952px;
   --breakpoint-screen4: 1160px;
   --breakpoint-screen5: 1368px;
 
-  --color-primary: var(--color-green-500);
+  --color-primary: #226cff;
   --color-link: var(--color-green-600);
   --color-white-hover: var(--color-slate-100);
   --color-white-active: var(--color-slate-200);

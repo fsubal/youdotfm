@@ -17,7 +17,7 @@ export default function BuyPage() {
             "grid",
             "tablet:grid-cols-2",
             "desktop:grid-cols-3",
-            "gap-4"
+            "gap-16",
           )}
         >
           {items.map((item) => (

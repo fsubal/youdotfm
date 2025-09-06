@@ -34,19 +34,19 @@ function Main({ children }: React.PropsWithChildren) {
             "tablet:h-full",
             "tablet:top-0",
             "tablet:left-0",
-            "tablet:sticky"
+            "tablet:sticky",
           )}
         >
-          <Logo />
+          <LogoOneline />
           <Navbar />
         </nav>
         <div
           className={clsx(
             "flex-1",
-            "py-10",
-            "px-6",
-            "tablet:py-10",
-            "tablet:px-8"
+            "py-40",
+            "px-24",
+            "tablet:py-40",
+            "tablet:px-32",
           )}
         >
           <div className={clsx(proseClass, "prose-h1:tracking-wider")}>
@@ -59,13 +59,31 @@ function Main({ children }: React.PropsWithChildren) {
   );
 }
 
-function Logo() {
+function LogoOneline() {
   return (
-    <div className={clsx("pt-6", "px-6", "mb-3", "flex", "justify-center")}>
-      <Link href="/">
-        <Image src="/text.svg" alt="トップに戻る" width={160} height={30} />
+    <hgroup className={clsx("pt-24", "px-24", "mb-3")}>
+      <Link
+        className={clsx(
+          "flex",
+          "flex-col",
+          "justify-start",
+          "items-start",
+          "gap-4",
+        )}
+        href="/"
+      >
+        <p className={clsx("text-xs", "text-slate-500")}>
+          ポッドキャスト百合漫画
+        </p>
+        <Image
+          src="/logo_oneline.svg"
+          alt="トップに戻る"
+          width={160}
+          height={18}
+          className={clsx("h-[18px]", "w-auto")}
+        />
       </Link>
-    </div>
+    </hgroup>
   );
 }
 
@@ -75,9 +93,9 @@ function Footer() {
       data-role="footer"
       className={clsx(
         "bg-slate-100",
-        ["py-6", "px-6"],
+        ["py-24", "px-24"],
         [proseClass, "prose-sm"],
-        "max-w-none"
+        "max-w-none",
       )}
     >
       footer

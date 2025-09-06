@@ -11,8 +11,8 @@ export function Navbar() {
         ["grid", "grid-cols-2"],
         ["tablet:flex", "tablet:flex-col"],
         "w-full",
-        ["gap-3", "tablet:gap-6"],
-        ["my-3", "tablet:my-6", "px-3", "tablet:px-6"]
+        ["gap-12", "tablet:gap-24"],
+        ["my-12", "tablet:my-24", "px-12", "tablet:px-6"],
       )}
     >
       <NavbarItem href="/">

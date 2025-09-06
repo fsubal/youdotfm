@@ -7,7 +7,7 @@ interface Props {
 
 export function CharacterChips({ characters }: Props) {
   return (
-    <div data-role="character-chips" className="space-x-4">
+    <div data-role="character-chips" className="space-x-16">
       {characters.map((character) => (
         <Chip
           key={character.slug}
