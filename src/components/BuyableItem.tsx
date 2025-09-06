@@ -1,4 +1,3 @@
-
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,9 +31,8 @@ export function BuyableItem({
         "transition-colors",
         ["bg-white", "hover:bg-white-hover"],
         "border",
-        "border-gray-200",
         "rounded-xl",
-        "overflow-hidden"
+        "overflow-hidden",
       )}
     >
       <div className={clsx("overflow-hidden", "w-full", "h-48", "tablet:h-64")}>
@@ -50,7 +48,7 @@ export function BuyableItem({
             "h-full",
             "object-cover",
             "transition-transform",
-            "group-hover:scale-110"
+            "group-hover:scale-110",
           )}
         />
       </div>
@@ -62,7 +60,7 @@ export function BuyableItem({
             "line-clamp-2",
             "text-slate-500",
             "text-sm",
-            "h-[2lh]"
+            "h-[2lh]",
           )}
         >
           {description}

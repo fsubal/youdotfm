@@ -25,7 +25,6 @@ export function Chip({
       className={clsx(
         "rounded-full",
         "border",
-        "border-gray-200",
         "bg-white",
         "py-3",
         "px-4",
@@ -33,7 +32,7 @@ export function Chip({
         "items-center",
         "gap-2",
         "transition-colors",
-        ["hover:underline", "hover:bg-white-hover", "active:bg-white-active"]
+        ["hover:underline", "hover:bg-white-hover", "active:bg-white-active"],
       )}
     >
       {imageUrl && alt && (

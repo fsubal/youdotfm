@@ -14,7 +14,7 @@ export function Jumbotron() {
         "flex",
         "flex-col",
         "items-center",
-        "justify-center"
+        "justify-center",
       )}
     >
       <hgroup className="overflow-hidden">
@@ -22,7 +22,7 @@ export function Jumbotron() {
         <AnimatedLogo />
       </hgroup>
 
-      <div className={clsx("fadein-1", "fadein-delay-2")}>
+      <div className={clsx("fadein-[1]", "fadein-delay-[2]")}>
         <ScrollTo className={clsx("block", "animate-bounce")} href="#main">
           <Icon name="24/ArrowDown" aria-label="下にスクロール" />
         </ScrollTo>
