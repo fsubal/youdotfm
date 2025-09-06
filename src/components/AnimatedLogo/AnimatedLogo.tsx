@@ -10,20 +10,26 @@ import { ThemeColor } from "../../utils/theme";
 const maskChildStyle = clsx(
   "fill-none",
   "stroke-white",
-  // NOTICE: ここが小さいと文字が欠ける
-  ["stroke-[200]", "screen2:stroke-[360]"],
+  [
+    // NOTICE: ここが小さいと文字が欠ける
+    "stroke-[200]",
+    "screen2:stroke-[360]",
+  ],
   "[stroke-linecap:round]",
   "[stroke-linejoin:round]",
   "[stroke-miterlimit:10]",
-  "[stroke-dasharray:1500]",
-  "[stroke-dashoffset:1500]",
+  [
+    // ここの値を変えると見えなくなる領域の大きさ（粗さ）が変わる？
+    "[stroke-dasharray:200]",
+    "[stroke-dashoffset:200]",
+    "screen2:[stroke-width:1000]",
+    "screen2:[stroke-dashoffset:1000]",
+  ],
 );
 
 interface Props {
   ref?: React.Ref<SVGSVGElement>;
-  // eslint-disable-next-line react/no-unused-prop-types -- used in willChange
   visible: boolean;
-  // eslint-disable-next-line react/no-unused-prop-types -- used in willChange
   ended: boolean;
 }
 

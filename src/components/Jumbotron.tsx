@@ -50,6 +50,7 @@ export function Jumbotron() {
 
         <div
           className={clsx(
+            "mt-16",
             "animate-[1s_linear_1.2s_1_normal_running_forwards_fadein]",
             "opacity-0",
           )}
@@ -57,6 +58,7 @@ export function Jumbotron() {
           <ScrollTo className={clsx("block", "animate-bounce")} href="#main">
             <Icon
               name="24/ArrowDown"
+              unsafeNonGuidelineScale={32 / 24}
               className={playingEnd ? "text-black" : "text-white"}
               aria-label="下にスクロール"
             />
