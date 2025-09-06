@@ -1,4 +1,4 @@
-interface BuyableItem {
+interface Product {
   id: number;
   name: string;
   description: string;

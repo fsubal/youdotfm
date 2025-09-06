@@ -23,9 +23,9 @@ const DATA = [
     price: [2000],
     imageUrl: "/tshirt.jpeg",
   },
-] satisfies Omit<BuyableItem, "id">[];
+] satisfies Omit<Product, "id">[];
 
 export default DATA.map((item, index) => ({
   ...item,
   id: index + 1,
-})).reverse() satisfies BuyableItem[];
+})).reverse() satisfies Product[];
