@@ -10,7 +10,7 @@ import { useAnimation } from "./useAnimation";
 const maskChildStyle = clsx(
   "fill-none",
   "stroke-white",
-  "stroke-[90]",
+  "stroke-[200]", // NOTICE: ここが小さいと文字が欠ける
   "[stroke-linecap:round]",
   "[stroke-linejoin:round]",
   "[stroke-miterlimit:10]",
