@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Jumbotron } from "./Jumbotron";
+import { Jumbotron } from "./Jumbotron/Jumbotron";
 import { Navbar } from "./Navbar";
 import Image from "next/image";
 import Link from "next/link";

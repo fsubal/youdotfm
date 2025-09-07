@@ -1,10 +1,10 @@
 "use client";
 
 import clsx from "clsx";
-import { AnimatedLogo } from "./AnimatedLogo/AnimatedLogo";
-import { ScrollTo } from "./ScrollTo";
-import { Icon } from "./Icon";
-import { useAnimation } from "./AnimatedLogo/useAnimation";
+import { AnimatedLogo } from "./AnimatedLogo";
+import { ScrollTo } from "../ScrollTo";
+import { Icon } from "../Icon";
+import { useAnimation } from "./useAnimation";
 
 const fadeInLater = clsx(
   "animate-[1s_linear_1.2s_1_normal_running_forwards_fadein]",
