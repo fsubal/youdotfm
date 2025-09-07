@@ -19,6 +19,8 @@ const maskChildStyle = clsx(
   "[stroke-linejoin:round]",
   "[stroke-miterlimit:10]",
   [
+    // Vivusはstroke-dashoffsetを利用してストロークをアニメーションする
+    // @see https://github.com/maxwellito/vivus?tab=readme-ov-file#principles
     // ここの値を変えると見えなくなる領域の大きさ（粗さ）が変わる？
     "[stroke-dasharray:200]",
     "[stroke-dashoffset:200]",
@@ -41,6 +43,7 @@ export function AnimatedLogo({ ref, visible, ended }: Props) {
     ? undefined
     : { willChange: "stroke-dasharray, stroke-dashoffset" };
 
+  const blurFilterId = useId();
   const clipmask = useId();
 
   return (
@@ -73,7 +76,7 @@ export function AnimatedLogo({ ref, visible, ended }: Props) {
         <svg x={0} y={0} width={254} height={92} viewBox="0 0 423 154">
           <ポッドキャスト百合 fill={ended ? "#000" : "#fff"} />
         </svg>
-        {ended && <Blur deviation={30} color="white" />}
+        {ended && <Blur id={blurFilterId} deviation={30} color="white" />}
         <svg
           xmlnsXlink="http://www.w3.org/1999/xlink"
           x={0}
@@ -82,7 +85,10 @@ export function AnimatedLogo({ ref, visible, ended }: Props) {
           height={311}
           viewBox="0 0 1368 622"
         >
-          <ユードットエフエム fill={ended ? ThemeColor.Primary : "#fff"} />
+          <ユードットエフエム
+            blurFilterId={`#${blurFilterId}`}
+            fill={ended ? ThemeColor.Primary : "#fff"}
+          />
         </svg>
         <mask
           suppressHydrationWarning
@@ -116,11 +122,11 @@ export function AnimatedLogo({ ref, visible, ended }: Props) {
 }
 
 const Blur = ({
-  id = "blur1",
+  id,
   deviation,
   color,
 }: {
-  id?: string;
+  id: string;
   deviation: number;
   color: string;
 }) => (
@@ -144,13 +150,19 @@ const ポッドキャスト百合 = ({ fill = "#fff" }) => (
   </svg>
 );
 
-const ユードットエフエム = ({ fill = "#fff" }) => (
+const ユードットエフエム = ({
+  blurFilterId,
+  fill = "#fff",
+}: {
+  blurFilterId: `#${string}`;
+  fill?: string;
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1368"
     height="622"
     fill="none"
-    filter="url(#blur1)"
+    filter={`url(${blurFilterId})`}
     viewBox="0 0 1368 622"
   >
     <path
