@@ -3,3 +3,5 @@ declare module "*/seeds.yml" {
 
   export default seeds;
 }
+
+type StaticParams<Path extends string> = Awaited<PageProps<Path>["params"]>[];

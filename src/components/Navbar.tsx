@@ -19,7 +19,7 @@ export function Navbar() {
         <Icon name="16/Info" />
         Introduction
       </NavbarItem>
-      <NavbarItem href="https://youdotfm.fanbox.cc/" external>
+      <NavbarItem href="/outbound/fanbox" external>
         <Icon name="24/Announcement" unsafeNonGuidelineScale={16 / 24} />
         Blog (FANBOX)
       </NavbarItem>

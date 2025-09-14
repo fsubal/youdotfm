@@ -1,7 +1,7 @@
 import { Layout } from "../../../../components/Layout";
 import { products } from "../../../../domains/Product/seeds";
 
-export function generateStaticParams() {
+export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
 }
 

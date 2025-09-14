@@ -6,10 +6,11 @@ import yaml from "./seeds.yml";
 
 export const characters: Character[] = seed(Character, yaml);
 
-export const eri: Character = characters.find(
-  ({ slug }) => slug === "eri_takeuchi",
-)!;
+export function findCharacterBySlug(slug: string): Character | undefined {
+  const normalizedSlug = decodeURIComponent(slug);
 
-export const shiori: Character = characters.find(
-  ({ slug }) => slug === "shiori_chiba",
-)!;
+  return characters.find((character) => character.slug === normalizedSlug);
+}
+
+export const eri: Character = findCharacterBySlug("eri_takeuchi")!;
+export const shiori: Character = findCharacterBySlug("shiori_chiba")!;
