@@ -4,4 +4,4 @@ import { Episode } from "./model";
 import { seed } from "../../utils/seed";
 import yaml from "./seeds.yml";
 
-export const episodes = seed(Episode, yaml);
+export const episodes: Episode[] = seed(Episode, yaml);

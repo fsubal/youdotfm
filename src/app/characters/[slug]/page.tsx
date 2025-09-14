@@ -8,9 +8,7 @@ export function generateStaticParams() {
 
 export default async function CharacterPage({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+}: PageProps<"/characters/[slug]">) {
   const { slug } = await params;
   const normalizedSlug = decodeURIComponent(slug);
 
