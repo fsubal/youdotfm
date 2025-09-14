@@ -5,11 +5,11 @@ export const Character = z.object({
   slug: z.string(),
   thumbnail: ImageSource,
   portrait: ImageSource,
-  fullName: z.object({
+  name: z.object({
     japanese: z.string(),
     roman: z.string(),
   }),
   profile: z.string(),
 });
 
-export type CharacterType = z.infer<typeof Character>;
+export type Character = z.infer<typeof Character>;

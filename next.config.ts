@@ -7,7 +7,7 @@ export default {
   },
   turbopack: {
     rules: {
-      "*.yaml": {
+      "*.yml": {
         loaders: ["yaml-loader"],
         as: "*.js",
       },
