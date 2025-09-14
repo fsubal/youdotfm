@@ -1,9 +1,12 @@
+import { ImageSource } from "../ImageSource/model";
+
 export interface Character {
-  name: string;
-  roman: string;
   slug: string;
-  description: string;
-  iconUrl: string;
-  portraitUrl: string;
-  birthday: string;
+  thumbnail: ImageSource;
+  portrait: ImageSource;
+  fullName: {
+    japanese: string;
+    roman: string;
+  };
+  profile: string;
 }
