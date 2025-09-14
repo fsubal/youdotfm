@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
+import { OUTBOUND_LINKS } from "./src/domains/OutboundLink/model";
 
 export default {
-  output: "export",
   images: {
     unoptimized: true,
   },
@@ -12,5 +12,12 @@ export default {
         as: "*.js",
       },
     },
+  },
+  async redirects() {
+    return OUTBOUND_LINKS.map(({ source, destination }) => ({
+      source,
+      destination,
+      permanent: true,
+    }));
   },
 } satisfies NextConfig;

@@ -1,4 +1,9 @@
 import { Layout } from "../../../components/Layout";
+import { episodes } from "../../../domains/Episode/seeds";
+
+export function generateStaticParams() {
+  return episodes.map(({ slug }) => ({ slug }));
+}
 
 export default async function EpisodePage({
   params,

@@ -1,5 +1,4 @@
 import z from "zod";
-import { OutboundLink } from "../OutboundLink/model";
 
 /**
  * 販売サイトの区分
@@ -21,7 +20,7 @@ export const Shop = z.object({
   /**
    * サークルのページとか、作品の詳細ページなど（特定商品ではないURL）
    */
-  url: OutboundLink,
+  url: z.url(),
 });
 
 export type Shop = z.infer<typeof Shop>;

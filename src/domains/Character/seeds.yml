@@ -3,10 +3,10 @@
     japanese: "竹内エリ"
     roman: "Eri Takeuchi"
   thumbnail:
-    url: /example.jpeg
+    src: /example.jpeg
     alt: "url"
   portrait:
-    url: "/eri.png"
+    src: "/eri.png"
     alt: "url"
   profile: |
     主人公。シヲリのことが好き。
@@ -16,10 +16,10 @@
     japanese: "千葉シヲリ"
     roman: "Shiori Chiba"
   thumbnail:
-    url: /example.jpeg
+    src: /example.jpeg
     alt: "url"
   portrait:
-    url: /eri.png
+    src: /eri.png
     alt: "url"
   profile: |
     エリをポッドキャストに誘った人。ライター。

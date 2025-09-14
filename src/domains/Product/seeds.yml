@@ -5,7 +5,7 @@
   episodes:
     - "1"
   images:
-    - url: https://placehold.jp/300x400.png?text=Sample+Product+Image
+    - src: https://placehold.jp/300x400.png?text=Sample+Product+Image
       alt: "Sample Product Image"
   description: |
     これはサンプル商品の説明です。

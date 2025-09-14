@@ -3,7 +3,7 @@
   title: "第1話 象とうわばみ"
   description: ""
   images:
-    - alt: "url"
-      url: /example.jpeg
-  pixivArtworkUrl:
+    - src: /example.jpeg
+      alt: "url"
+  pixivArtwork:
     url: https://www.pixiv.net/

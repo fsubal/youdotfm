@@ -1,6 +1,5 @@
 import z from "zod";
 import { ImageSource } from "../ImageSource/model";
-import { OutboundLink } from "../OutboundLink/model";
 
 export const Episode = z.object({
   /**
@@ -15,7 +14,7 @@ export const Episode = z.object({
   title: z.string(),
   images: z.array(ImageSource),
   description: z.string(),
-  pixivArtworkUrl: OutboundLink.optional(),
+  pixivArtwork: z.object({ url: z.url() }).optional(),
 });
 
 export type Episode = z.infer<typeof Episode>;
