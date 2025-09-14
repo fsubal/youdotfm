@@ -1,14 +1,14 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { JPY } from "../utils/intl";
+import { JPY, JPYValue, JPYRange } from "../utils/intl";
 
 interface Props {
   name: string;
   description: string;
   shopUrl: string;
   imageUrl: string;
-  price: number | RangeOf<number>;
+  price: JPYValue | JPYRange;
 }
 
 export function BuyableItem({
@@ -73,7 +73,7 @@ export function BuyableItem({
 
 const priceLabelClass = clsx("font-bold", "text-primary");
 
-function PriceLabel({ children }: { children: number | RangeOf<number> }) {
+function PriceLabel({ children }: { children: JPYValue | JPYRange }) {
   if (Array.isArray(children)) {
     const [from, to] = children;
 

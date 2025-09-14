@@ -2,7 +2,7 @@ import z from "zod";
 import { ImageSource } from "../ImageSource/model";
 
 export const Character = z.object({
-  slug: z.string(),
+  slug: z.string().brand<"Character">(),
   thumbnail: ImageSource,
   portrait: ImageSource,
   name: z.object({

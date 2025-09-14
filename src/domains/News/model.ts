@@ -25,8 +25,8 @@ export const NewsKind = z.enum([
 export type NewsKind = z.infer<typeof NewsKind>;
 
 export const News = z.object({
-  id: z.number(),
-  datetime: z.iso.date(),
+  id: z.number().brand<"News">(),
+  datetime: z.iso.date().brand("ISO8601"),
   kind: NewsKind,
   title: z.string(),
   description: z.string(),

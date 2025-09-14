@@ -6,7 +6,7 @@ export const Episode = z.object({
   /**
    * 例: "1", "1_5" などの文字列
    */
-  slug: z.string(),
+  slug: z.string().brand<"Episode">(),
 
   /**
    * 例: "1話", "1.5話" などの文字列

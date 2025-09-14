@@ -7,7 +7,7 @@ export const Product = z.object({
   /**
    * @example episode_1, recap_1, tote_bag_1 など
    */
-  slug: z.string(),
+  slug: z.string().brand<"Product">(),
   title: z.string(),
   kind: z.array(ProductKind),
   variants: z.array(
@@ -25,7 +25,7 @@ export const Product = z.object({
  * 本の場合は「紙版」「電子版」だし、Tシャツの場合は「Sサイズ」などの区別に使っても良い
  */
 export const ProductVariant = z.object({
-  slug: z.string(),
+  slug: z.string().brand<"ProductVariant">(),
   name: z.string(),
 });
 

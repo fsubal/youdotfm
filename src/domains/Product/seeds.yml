@@ -8,6 +8,7 @@
     - slug: "digital"
       name: "電子版"
   images:
-    - url: "https://placehold.jp/300x400.png?text=Sample+Product+Image"
+    - url: https://placehold.jp/300x400.png?text=Sample+Product+Image
       alt: "Sample Product Image"
-  description: "これはサンプル商品の説明です。"
+  description: |
+    これはサンプル商品の説明です。
