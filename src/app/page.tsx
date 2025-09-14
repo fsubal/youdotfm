@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { eri, shiori } from "./characters/data";
+import { eri, shiori } from "../domains/Character/seeds";
 import clsx from "clsx";
 import { Layout } from "../components/Layout";
 

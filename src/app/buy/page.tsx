@@ -1,6 +1,5 @@
-import items from "./data";
+import items from "../../domains/Product/seeds";
 import clsx from "clsx";
-import { BuyableItem } from "../../components/BuyableItem";
 import { Layout } from "../../components/Layout";
 
 export default function BuyPage() {
@@ -21,14 +20,7 @@ export default function BuyPage() {
           )}
         >
           {items.map((item) => (
-            <BuyableItem
-              key={item.id}
-              name={item.name}
-              shopUrl={item.shopUrl}
-              description={item.description}
-              price={item.price}
-              imageUrl={item.imageUrl}
-            />
+            <pre key={item.slug}>{JSON.stringify(item)}</pre>
           ))}
         </div>
       </div>
