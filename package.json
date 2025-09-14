@@ -12,14 +12,17 @@
   "dependencies": {
     "@charcoal-ui/icons": "^3.4.0",
     "clsx": "^2.0.0",
+    "js-yaml": "^4.1.0",
     "next": "^15.5.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "vivus": "^0.4.6"
+    "vivus": "^0.4.6",
+    "zod": "^4.1.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -31,6 +34,7 @@
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.13",
-    "typescript": "^5"
+    "typescript": "^5",
+    "yaml-loader": "^0.8.1"
   }
 }

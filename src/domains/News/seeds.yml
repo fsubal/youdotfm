@@ -1,0 +1,6 @@
+- id: 1
+  datetime: 2024-06-01T12:00:00Z
+  kind: DojinEvent
+  title: コミティア153に出ます
+  description: らしいですよ
+  url: https://example.com

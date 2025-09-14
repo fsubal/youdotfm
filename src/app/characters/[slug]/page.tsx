@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Layout } from "../../../components/Layout";
-import characters from "../../../domains/Character/seeds";
+import { characters } from "../../../domains/Character/seeds";
 
 export function generateStaticParams() {
   return characters.map(({ slug }) => ({ slug }));

@@ -1,6 +1,6 @@
-import items from "../../domains/Product/seeds";
 import clsx from "clsx";
 import { Layout } from "../../components/Layout";
+import { products } from "../../domains/Product/seeds";
 
 export default function BuyPage() {
   return (
@@ -19,7 +19,7 @@ export default function BuyPage() {
             "gap-16",
           )}
         >
-          {items.map((item) => (
+          {products.map((item) => (
             <pre key={item.slug}>{JSON.stringify(item)}</pre>
           ))}
         </div>

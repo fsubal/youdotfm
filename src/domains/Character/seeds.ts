@@ -1,25 +1,10 @@
+import "server-only";
+
 import { Character } from "./model";
+import { seed } from "../../utils/seed";
+import yaml from "./seeds.yml";
 
-export const eri: Character = {
-  slug: "eri_takeuchi",
-  fullName: {
-    japanese: "竹内エリ",
-    roman: "Eri Takeuchi",
-  },
-  thumbnail: { alt: "url", url: new URL("/example.jpeg") },
-  portrait: { alt: "url", url: new URL("/example.jpeg") },
-  profile: "主人公。シヲリのことが好き。",
-};
+export const characters = seed(Character, yaml);
 
-export const shiori: Character = {
-  slug: "shiori_chiba",
-  fullName: {
-    japanese: "千葉シヲリ",
-    roman: "Shiori Chiba",
-  },
-  thumbnail: { alt: "url", url: new URL("/example.jpeg") },
-  portrait: { alt: "url", url: new URL("/example.jpeg") },
-  profile: "エリをポッドキャストに誘った人。ライター。",
-};
-
-export default [eri, shiori] satisfies Character[];
+export const eri = characters.find(({ slug }) => slug === "eri_takeuchi")!;
+export const shiori = characters.find(({ slug }) => slug === "shiori_chiba")!;

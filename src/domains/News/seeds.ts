@@ -1,7 +1,7 @@
 import "server-only";
 
-import { Product } from "./model";
+import { News } from "./model";
 import { seed } from "../../utils/seed";
 import yaml from "./seeds.yml";
 
-export const products = seed(Product, yaml);
+export const episodes = seed(News, yaml);

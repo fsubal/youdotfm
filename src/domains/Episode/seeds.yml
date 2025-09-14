@@ -1,0 +1,9 @@
+- slug: "1"
+  numbering: "1話"
+  title: "第1話 象とうわばみ"
+  description: ""
+  images:
+    - alt: "url"
+      url: /example.jpeg
+  pixivArtworkUrl:
+    url: https://www.pixiv.net/

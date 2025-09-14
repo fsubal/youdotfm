@@ -1,12 +1,7 @@
-import { Episode } from "./model";
+import "server-only";
 
-export default [
-  {
-    slug: "1",
-    numbering: "1話",
-    title: "第1話 象とうわばみ",
-    description: "",
-    images: [{ alt: "url", url: new URL("/example.jpeg") }],
-    pixivArtworkUrl: { url: new URL("https://www.pixiv.net/") },
-  },
-] satisfies Episode[];
+import { Episode } from "./model";
+import { seed } from "../../utils/seed";
+import yaml from "./seeds.yml";
+
+export const episodes = seed(Episode, yaml);

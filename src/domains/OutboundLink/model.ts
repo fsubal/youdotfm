@@ -1,11 +1,15 @@
-export interface OutboundLink {
-  url: URL;
-}
+import z from "zod";
 
-export function fromURL(url: URL): OutboundLink {
+export const OutboundLink = z.object({
+  url: z.url(),
+});
+
+export type OutboundLink = z.infer<typeof OutboundLink>;
+
+export function fromURL(url: URL) {
   return { url };
 }
 
-export function toURL(link: OutboundLink): URL {
+export function toURL(link: OutboundLink) {
   return link.url;
 }
