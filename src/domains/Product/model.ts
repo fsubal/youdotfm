@@ -1,5 +1,7 @@
 import z from "zod";
 import { ImageSource } from "../ImageSource/model";
+import { ShopKind } from "../Shop/model";
+import { JPYRange, JPYValue } from "../../utils/intl";
 
 export const ProductKind = z.enum(["doujinshi", "merch"]);
 
@@ -18,6 +20,7 @@ export const Product = z.object({
   ),
   images: z.array(ImageSource),
   description: z.string(),
+  episodes: z.array(z.string()).default([]),
 });
 
 /**
@@ -27,6 +30,20 @@ export const Product = z.object({
 export const ProductVariant = z.object({
   slug: z.string().brand<"ProductVariant">(),
   name: z.string(),
+
+  /**
+   * 販売サイトに対する出品
+   * たとえば「メロンブックスにはこのProductの紙版というVariantが500円で売っており、このURLで買えます」などを表す
+   */
+  listings: z
+    .array(
+      z.object({
+        shopKind: ShopKind,
+        price: z.union([JPYValue, JPYRange]),
+        url: z.url(),
+      }),
+    )
+    .default([]),
 });
 
 export type Product = z.infer<typeof Product>;

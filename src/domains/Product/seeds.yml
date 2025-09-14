@@ -5,10 +5,23 @@
   variants:
     - slug: "paper"
       name: "紙版"
+      listings:
+        - shop: Melonbooks
+          price: 500
+          url: https://www.melonbooks.co.jp/
+        - shop: Toranoana
+          price: [480, 520]
+          url: https://www.toranoana.jp/
     - slug: "digital"
       name: "電子版"
+      listings:
+        - shop: AmazonKindle
+          price: 400
+          url: https://www.amazon.co.jp/
   images:
     - url: https://placehold.jp/300x400.png?text=Sample+Product+Image
       alt: "Sample Product Image"
   description: |
     これはサンプル商品の説明です。
+  episodes:
+    - "1"
