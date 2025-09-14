@@ -1,5 +1,5 @@
-/outbound/x_twitter/author https://x.com/f_subal?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
-/outbound/pixiv/author https://www.pixiv.net/user/7126141?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
+/outbound/x_twitter/author https://x.com/f_subal
+/outbound/pixiv/author https://www.pixiv.net/users/7126141?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
 /outbound/pixiv/artwork/:id https://www.pixiv.net/artworks/:id?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
 /outbound/pixiv/series https://www.pixiv.net/user/7126141/series/240402?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
 /outbound/fanbox/:postId https://youdotfm.fanbox.cc/posts/:postId?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
