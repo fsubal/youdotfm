@@ -1,7 +1,12 @@
 import z, { type ZodType } from "zod";
 
 export function seed<T extends {}>(schema: ZodType<T>, content: unknown): T[] {
-  return z.array(schema).parse(content);
+  const { data, error } = z.array(schema).safeParse(content);
+  if (error) {
+    throw new AggregateError(error.issues, z.prettifyError(error));
+  }
+
+  return data;
 }
 
 export function byIdDesc<T extends { id: number }>(a: T, b: T) {
