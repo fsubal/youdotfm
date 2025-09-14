@@ -6,9 +6,18 @@ import yaml from "./seeds.yml";
 
 export const episodes: Episode[] = seed(Episode, yaml);
 
-const groupedEpisodes: Partial<{ [key: string]: Episode[] }> = Object.groupBy(
-  episodes,
-  ({ numbering }) => numbering,
+const groupedEpisodes = episodes.reduce(
+  (groups, episode) => {
+    const { numbering } = episode;
+    if (groups[numbering]) {
+      groups[numbering].push(episode);
+    } else {
+      groups[numbering] = [episode];
+    }
+
+    return groups;
+  },
+  {} as { [key: string]: Episode[] },
 );
 
 export function findEpisodesByNumberings(...numberings: string[]): Episode[] {

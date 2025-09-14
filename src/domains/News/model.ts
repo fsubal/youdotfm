@@ -26,7 +26,7 @@ export type NewsKind = z.infer<typeof NewsKind>;
 
 export const News = z.object({
   id: z.number().brand<"News">(),
-  datetime: z.iso.date().brand("ISO8601"),
+  datetime: z.iso.datetime().brand("ISO8601"),
   kind: NewsKind,
   title: z.string(),
   description: z.string(),

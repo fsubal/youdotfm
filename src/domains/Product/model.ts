@@ -40,7 +40,7 @@ export const ProductVariant = z.object({
       z.object({
         shopKind: ShopKind,
         price: z.union([JPYValue, JPYRange]),
-        url: z.url(),
+        url: z.string(),
       }),
     )
     .default([]),
