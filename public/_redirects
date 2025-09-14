@@ -1,7 +1,9 @@
-/outbound/x_twitter/author https://x.com/f_subal
-/outbound/pixiv/author https://www.pixiv.net/users/7126141?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
-/outbound/pixiv/artwork/:id https://www.pixiv.net/artworks/:id?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
-/outbound/pixiv/series https://www.pixiv.net/user/7126141/series/240402?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
-/outbound/fanbox/:postId https://youdotfm.fanbox.cc/posts/:postId?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
-/outbound/booth/:itemId https://umbrellahead.booth.pm/items/:itemId?utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
-/outbound/melonbooks/:productId https://www.melonbooks.co.jp/detail/detail.php?product_id=:productId&utm_source=youdotfm&utm_medium=referral&utm_campaign=outbound_link 301
+/outbound/x_twitter https://x.com/f_subal 301
+/outbound/pixiv https://www.pixiv.net/users/7126141 301
+/outbound/pixiv/artworks/:id https://www.pixiv.net/artworks/:id 301
+/outbound/pixiv/series https://www.pixiv.net/user/7126141/series/240402 301
+/outbound/fanbox https://youdotfm.fanbox.cc 301
+/outbound/fanbox/:postId https://youdotfm.fanbox.cc/posts/:postId 301
+/outbound/booth https://umbrellahead.booth.pm/item_lists/8bNT3aa3 301
+/outbound/booth/:itemId https://umbrellahead.booth.pm/items/:itemId 301
+/outbound/melonbooks/:productId https://www.melonbooks.co.jp/detail/detail.php?product_id=:productId 301
