@@ -5,24 +5,6 @@ import { JPYRange, JPYValue } from "../../utils/intl";
 
 export const ProductKind = z.enum(["doujinshi", "merch"]);
 
-export const Product = z.object({
-  /**
-   * @example episode_1, recap_1, tote_bag_1 など
-   */
-  slug: z.string().brand<"Product">(),
-  title: z.string(),
-  kind: z.array(ProductKind),
-  variants: z.array(
-    z.object({
-      slug: z.string(),
-      name: z.string(),
-    }),
-  ),
-  images: z.array(ImageSource),
-  description: z.string(),
-  episodes: z.array(z.string()).default([]),
-});
-
 /**
  * あるProductのバリエーション。
  * 本の場合は「紙版」「電子版」だし、Tシャツの場合は「Sサイズ」などの区別に使っても良い
@@ -46,7 +28,22 @@ export const ProductVariant = z.object({
     .default([]),
 });
 
+/**
+ * 1つの商品、たとえば「1つの同人誌（紙版と電子版を束ねたもの）」を表す。
+ */
+export const Product = z.object({
+  /**
+   * @example episode_1, recap_1, tote_bag_1 など
+   */
+  slug: z.string().brand<"Product">(),
+  title: z.string(),
+  kind: z.array(ProductKind),
+  variants: z.array(ProductVariant),
+  images: z.array(ImageSource),
+  description: z.string(),
+  episodes: z.array(z.string()).default([]),
+});
+
 export type Product = z.infer<typeof Product>;
 export type ProductKind = z.infer<typeof ProductKind>;
 export type ProductVariant = z.infer<typeof ProductVariant>;
-
