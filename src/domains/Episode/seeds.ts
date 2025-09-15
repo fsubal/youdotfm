@@ -7,8 +7,8 @@ import { groupBy } from "../../utils/iterable";
 
 export const episodes: Episode[] = seed(Episode, yaml);
 
-const groupedEpisodes = groupBy(episodes, ({ numbering }) => numbering);
+const groupedEpisodes = groupBy(episodes, ({ slug }) => slug);
 
-export function findEpisodesByNumberings(...numberings: string[]): Episode[] {
-  return numberings.flatMap((numbering) => groupedEpisodes[numbering] ?? []);
+export function findEpisodesBySlugs(...slugs: string[]): Episode[] {
+  return slugs.flatMap((slug) => groupedEpisodes[slug] ?? []);
 }

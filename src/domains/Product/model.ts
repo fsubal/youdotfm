@@ -56,7 +56,7 @@ export type ProductVariant = z.infer<typeof ProductVariant>;
  */
 export const ProductEpisode = z.object({
   productSlug: z.string(),
-  episodeNumbering: z.string(),
+  episodeSlug: z.string(),
 });
 
 export type ProductEpisode = z.infer<typeof ProductEpisode>;

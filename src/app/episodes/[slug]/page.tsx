@@ -17,7 +17,7 @@ export default async function EpisodePage({
   }
 
   const products = productEpisodes.filter(
-    ({ episodeNumbering }) => episodeNumbering === episode.numbering,
+    ({ episodeSlug }) => episodeSlug === episode.slug,
   );
 
   return (

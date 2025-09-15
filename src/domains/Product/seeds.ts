@@ -7,8 +7,8 @@ import yaml from "./seeds.yml";
 export const products: Product[] = seed(Product, yaml);
 
 export const productEpisodes: ProductEpisode[] = products.flatMap((product) =>
-  product.episodes.map((episodeNumbering) => ({
+  product.episodes.map((episodeSlug) => ({
     productSlug: product.slug,
-    episodeNumbering,
+    episodeSlug,
   })),
 );
