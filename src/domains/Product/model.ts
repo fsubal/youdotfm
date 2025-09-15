@@ -1,19 +1,49 @@
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  shopUrl: string;
-  imageUrl: string;
+import z from "zod";
+import { ImageSource } from "../ImageSource/model";
+import { ShopKind } from "../Shop/model";
+import { JPYRange, JPYValue } from "../../utils/intl";
+
+export const ProductKind = z.enum(["doujinshi", "merch"]);
+
+/**
+ * あるProductのバリエーション。
+ * 本の場合は「紙版」「電子版」だし、Tシャツの場合は「Sサイズ」などの区別に使っても良い
+ */
+export const ProductVariant = z.object({
+  slug: z.string().brand<"ProductVariant">(),
+  name: z.string(),
 
   /**
-   * numberを書いたら固定金額、長さ1の配列で書けば最低金額、長さ2の配列で書けば金額の範囲を表す
-   *
-   * @example
-   * ```ts
-   * price: 200 //=> 200円
-   * price: [200] //=> 200円〜
-   * price: [200, 300] //=> 200円〜300円
-   * ```
+   * 販売サイトに対する出品
+   * たとえば「メロンブックスにはこのProductの紙版というVariantが500円で売っており、このURLで買えます」などを表す
    */
-  price: number | RangeOf<number>;
-}
+  listings: z
+    .array(
+      z.object({
+        shopKind: ShopKind,
+        price: z.union([JPYValue, JPYRange]),
+        url: z.string(),
+      }),
+    )
+    .default([]),
+});
+
+/**
+ * 1つの商品、たとえば「1つの同人誌（紙版と電子版を束ねたもの）」を表す。
+ */
+export const Product = z.object({
+  /**
+   * @example episode_1, recap_1, tote_bag_1 など
+   */
+  slug: z.string().brand<"Product">(),
+  title: z.string(),
+  kind: z.array(ProductKind),
+  variants: z.array(ProductVariant),
+  images: z.array(ImageSource),
+  description: z.string(),
+  episodes: z.array(z.string()).default([]),
+});
+
+export type Product = z.infer<typeof Product>;
+export type ProductKind = z.infer<typeof ProductKind>;
+export type ProductVariant = z.infer<typeof ProductVariant>;

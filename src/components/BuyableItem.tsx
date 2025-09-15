@@ -1,14 +1,14 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { JPY } from "../utils/intl";
+import { JPY, JPYValue, JPYRange } from "../utils/intl";
 
 interface Props {
   name: string;
   description: string;
   shopUrl: string;
   imageUrl: string;
-  price: number | RangeOf<number>;
+  price: JPYValue | JPYRange;
 }
 
 export function BuyableItem({
@@ -27,15 +27,17 @@ export function BuyableItem({
         "group",
         "flex",
         "flex-col",
-        "text-slate-900",
+        "text-gr",
         "transition-colors",
-        ["bg-white", "hover:bg-white-hover"],
+        ["bg-white", "hover:bg-surface"],
         "border",
         "rounded-xl",
         "overflow-hidden",
       )}
     >
-      <div className={clsx("overflow-hidden", "w-full", "h-48", "tablet:h-64")}>
+      <div
+        className={clsx("overflow-hidden", "w-full", "h-48", "screen2:h-64")}
+      >
         <Image
           src={imageUrl}
           alt=""
@@ -43,7 +45,7 @@ export function BuyableItem({
           height={300}
           className={clsx(
             "block",
-            "bg-slate-500",
+            "bg-text-50",
             "w-full",
             "h-full",
             "object-cover",
@@ -53,15 +55,10 @@ export function BuyableItem({
         />
       </div>
 
-      <div className={clsx("py-16", "px-16", "tablet:px-24")}>
+      <div className={clsx("py-16", "px-16", "screen2:px-24")}>
         <h3 className={clsx("font-bold", "group-hover:underline")}>{name}</h3>
         <p
-          className={clsx(
-            "line-clamp-2",
-            "text-slate-500",
-            "text-sm",
-            "h-[2lh]",
-          )}
+          className={clsx("line-clamp-2", "text-text-50", "text-sm", "h-[2lh]")}
         >
           {description}
         </p>
@@ -73,7 +70,7 @@ export function BuyableItem({
 
 const priceLabelClass = clsx("font-bold", "text-primary");
 
-function PriceLabel({ children }: { children: number | RangeOf<number> }) {
+function PriceLabel({ children }: { children: JPYValue | JPYRange }) {
   if (Array.isArray(children)) {
     const [from, to] = children;
 

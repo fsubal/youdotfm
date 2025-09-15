@@ -1,34 +1,53 @@
 import Link from "next/link";
-import { eri, shiori } from "./characters/data";
+import { eri, shiori } from "../domains/Character/seeds";
 import clsx from "clsx";
 import { Layout } from "../components/Layout";
+import { SectionTitle } from "../components/SectionTitle";
 
 export default function Home() {
   return (
     <Layout>
-      <h2 className={clsx("font-serif", "font-normal")}>
+      <SectionTitle subheading="Introduction">
         『語って、話して、好きになる』
-      </h2>
-      <div className={clsx("lead", "leading-loose")}>
+      </SectionTitle>
+      <DropCap>
         <p>
-          うだつの上がらない音楽系ライター
+          うだつの上がらない新人音楽ライターの
           <Link href={`/characters/${eri.slug}#main`}>竹内エリ</Link>は、
-          <br />
-          素敵な文章を書くフォロワー
+          <wbr />
+          素敵な文章を書くフォロワーの
           <Link href={`/characters/${shiori.slug}#main`}>千葉シヲリ</Link>
-          のことが密かに気になっていた。
-        </p>
-        <p>
-          ある日エリはライブ会場でシヲリと対面し、互いに打ち解ける。
+          に心惹かれていた。
           <br />
-          数日後、突然シヲリからインターネットでラジオを一緒に始めないかと誘われてしまい――！？
-        </p>
-        <p>
-          書いて、語って、ふざけて、そして好きになる。
+          ある日エリはライブ会場でシヲリと対面し、意気投合する。
           <br />
-          ポッドキャスター女子2人が織りなす、大人の青春ストーリー！
+          数日後、突然シヲリからインターネットで
+          <wbr />
+          ラジオを一緒に始めないかと誘われてしまい！？
         </p>
-      </div>
+
+        <p>
+          語って、話して、好きになる。
+          <br />
+          ポッドキャスター女子ふたりが織りなす、大人の青春ストーリー！
+        </p>
+      </DropCap>
     </Layout>
+  );
+}
+
+function DropCap({ children }: React.PropsWithChildren) {
+  return (
+    <div
+      className={clsx("leading-loose", "text-base", "space-y-8", [
+        "first-letter:text-6xl",
+        "first-letter:text-primary",
+        "first-letter:font-bold",
+        "first-letter:float-left",
+        "first-letter:align-bottom",
+      ])}
+    >
+      {children}
+    </div>
   );
 }

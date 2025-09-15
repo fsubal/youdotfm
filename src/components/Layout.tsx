@@ -20,21 +20,30 @@ function Main({ children }: React.PropsWithChildren) {
     <div
       id="main"
       data-role="main"
-      className={clsx("flex", "flex-col", "min-h-screen")}
+      className={clsx("flex", "flex-col", "min-h-screen", "items-center")}
     >
       <main
-        className={clsx("flex-1", "flex", "flex-col", "tablet:flex-row", [
-          "divide-y",
-          "tablet:divide-x",
-          "divide-slate-100",
-        ])}
+        className={clsx(
+          "flex-1",
+          "flex",
+          "flex-col",
+          "screen2:flex-row",
+          "w-full",
+          "max-w-(--breakpoint-screen5)",
+          [
+            "divide-y",
+            "screen2:divide-y-0",
+            "screen2:divide-x",
+            "divide-x-text-50",
+          ],
+        )}
       >
         <nav
           className={clsx(
-            "tablet:h-full",
-            "tablet:top-0",
-            "tablet:left-0",
-            "tablet:sticky",
+            "screen2:top-0",
+            "screen2:left-0",
+            "screen2:sticky",
+            "shrink-0",
           )}
         >
           <LogoOneline />
@@ -45,13 +54,11 @@ function Main({ children }: React.PropsWithChildren) {
             "flex-1",
             "py-40",
             "px-24",
-            "tablet:py-40",
-            "tablet:px-32",
+            "screen2:py-40",
+            "screen2:px-40",
           )}
         >
-          <div className={clsx(proseClass, "prose-h1:tracking-wider")}>
-            {children}
-          </div>
+          <div className="max-w-full">{children}</div>
         </div>
       </main>
       <Footer />
@@ -72,7 +79,7 @@ function LogoOneline() {
         )}
         href="/"
       >
-        <p className={clsx("text-xs", "text-slate-500")}>
+        <p className={clsx("text-xs", "text-text-500")}>
           ポッドキャスト百合漫画
         </p>
         <Image
@@ -92,15 +99,20 @@ function Footer() {
     <footer
       data-role="footer"
       className={clsx(
-        "bg-slate-100",
+        "flex",
+        "justify-center",
+        "bg-surface",
+        "w-full",
         ["py-24", "px-24"],
         [proseClass, "prose-sm"],
         "max-w-none",
       )}
     >
-      footer
-      <br />
-      &copy; Subal FUJIAKI
+      <div className={clsx("w-full", "max-w-(--breakpoint-screen5)")}>
+        footer
+        <br />
+        &copy; Subal Fujiaki
+      </div>
     </footer>
   );
 }

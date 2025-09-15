@@ -8,11 +8,14 @@
   --breakpoint-screen4: 1160px;
   --breakpoint-screen5: 1368px;
 
-  --color-black: var(--color-slate-900);
   --color-primary: #226cff;
-  --color-link: var(--color-green-600);
-  --color-white-hover: var(--color-slate-100);
-  --color-white-active: var(--color-slate-200);
+  --color-surface: oklch(from var(--color-primary) 95% c h);
+  --color-active: oklch(from var(--color-primary) 90% c h);
+  --color-assertive: oklch(from var(--color-primary) l c 20);
+
+  --color-text-950: oklch(from var(--color-primary) 5% 5% h);
+  --color-text-500: oklch(from var(--color-primary) 50% 5% h);
+  --color-text-50: oklch(from var(--color-primary) 95% 5% h);
 
   @keyframes fadein {
     0% {
@@ -26,7 +29,7 @@
 
 @layer base {
   html {
-    color: var(--color-slate-900);
+    color: var(--color-text-950);
     font-family: "Trebuchet MS", ui-sans-serif, system-ui, sans-serif;
   }
 
@@ -35,7 +38,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-slate-200, currentColor);
+    border-color: var(--color-text-50, currentColor);
   }
 
   /**

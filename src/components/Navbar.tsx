@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { NavbarItem } from "./NavbarItem";
 import { Icon } from "./Icon";
-import { NewBadge } from "./NewBadge";
+import { defaultCharacter } from "../domains/Character/seeds";
 
 export function Navbar() {
   return (
@@ -9,32 +9,40 @@ export function Navbar() {
       data-role="navbar"
       className={clsx(
         ["grid", "grid-cols-2"],
-        ["tablet:flex", "tablet:flex-col"],
+        ["screen2:flex", "screen2:flex-col"],
         "w-full",
-        ["gap-12", "tablet:gap-24"],
-        ["my-12", "tablet:my-24", "px-12", "tablet:px-6"],
+        ["gap-12", "screen2:gap-24"],
+        ["my-12", "screen2:my-24", "px-12", "screen2:px-6"],
       )}
     >
-      <NavbarItem href="/">
-        <Icon name="16/Info" />
-        Introduction
+      <NavbarItem
+        href="/news"
+        subheading="News"
+        icon={<Icon name="24/Announcement" unsafeNonGuidelineScale={20 / 24} />}
+      >
+        お知らせ
       </NavbarItem>
-      <NavbarItem href="https://youdotfm.fanbox.cc/" external>
-        <Icon name="24/Announcement" unsafeNonGuidelineScale={16 / 24} />
-        Blog (FANBOX)
+      <NavbarItem
+        href={`/characters/${defaultCharacter.slug}`}
+        subheading="Characters"
+        icon={<Icon name="24/Person" unsafeNonGuidelineScale={20 / 24} />}
+      >
+        キャラクター
       </NavbarItem>
-      <NavbarItem href="/characters">
-        <Icon name="24/Person" unsafeNonGuidelineScale={16 / 24} />
-        Characters
+      <NavbarItem
+        href="/episodes"
+        subheading="Episodes"
+        icon={<Icon name="24/Manga" unsafeNonGuidelineScale={20 / 24} />}
+      >
+        エピソード
       </NavbarItem>
-      <NavbarItem href="/episodes">
-        <Icon name="24/Manga" unsafeNonGuidelineScale={16 / 24} />
-        Episodes
-      </NavbarItem>
-      <NavbarItem href="/buy">
-        <Icon name="24/Shopping" unsafeNonGuidelineScale={16 / 24} />
-        Buy
-        <NewBadge />
+      <NavbarItem
+        href="/shop"
+        subheading="Shop"
+        icon={<Icon name="24/Shopping" unsafeNonGuidelineScale={20 / 24} />}
+        isNew
+      >
+        本&amp;グッズ
       </NavbarItem>
     </ul>
   );

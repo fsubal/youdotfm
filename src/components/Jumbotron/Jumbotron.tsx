@@ -17,6 +17,7 @@ export function Jumbotron() {
   return (
     <section
       data-role="jumbotron"
+      data-animation-end={playingEnd}
       className={clsx("relative", "overflow-clip")}
     >
       <BackgroundImage zoomed={playingEnd} />
@@ -31,7 +32,7 @@ export function Jumbotron() {
             <Icon
               name="24/ArrowDown"
               unsafeNonGuidelineScale={32 / 24}
-              className={playingEnd ? "text-black" : "text-white"}
+              className={playingEnd ? "text-text-950" : "text-white"}
               aria-label="下にスクロール"
             />
           </ScrollTo>
