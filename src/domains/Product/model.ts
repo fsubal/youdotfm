@@ -5,6 +5,39 @@ import { JPYRange, JPYValue } from "../../utils/intl";
 
 export const ProductKind = z.enum(["doujinshi", "merch"]);
 
+export const ListingStatus = z.enum([
+  /**
+   * 発売前
+   */
+  "prerelease",
+
+  /**
+   * 発売中
+   */
+  "available",
+
+  /**
+   * 在庫なし
+   */
+  "stockout",
+
+  /**
+   * 廃盤
+   */
+  "discontinued",
+]);
+
+/**
+ * 販売サイトに対する出品
+ * たとえば「メロンブックスにはこのProductの紙版というVariantが500円で売っており、このURLで買えます」などを表す
+ */
+export const Listing = z.object({
+  shopKind: ShopKind,
+  price: z.union([JPYValue, JPYRange]),
+  url: z.string(),
+  status: ListingStatus.default(ListingStatus.enum.available),
+});
+
 /**
  * あるProductのバリエーション。
  * 本の場合は「紙版」「電子版」だし、Tシャツの場合は「Sサイズ」などの区別に使っても良い
@@ -12,20 +45,7 @@ export const ProductKind = z.enum(["doujinshi", "merch"]);
 export const ProductVariant = z.object({
   slug: z.string().brand<"ProductVariant">(),
   name: z.string(),
-
-  /**
-   * 販売サイトに対する出品
-   * たとえば「メロンブックスにはこのProductの紙版というVariantが500円で売っており、このURLで買えます」などを表す
-   */
-  listings: z
-    .array(
-      z.object({
-        shopKind: ShopKind,
-        price: z.union([JPYValue, JPYRange]),
-        url: z.string(),
-      }),
-    )
-    .default([]),
+  listings: z.array(Listing).default([]),
 });
 
 /**
@@ -47,3 +67,4 @@ export const Product = z.object({
 export type Product = z.infer<typeof Product>;
 export type ProductKind = z.infer<typeof ProductKind>;
 export type ProductVariant = z.infer<typeof ProductVariant>;
+export type Listing = z.infer<typeof Listing>;

@@ -1,5 +1,6 @@
-- slug: sample-product
-  title: サンプル商品
+# 同人版ユードットエフエム1話
+- slug: youdotfm_episode_01
+  title: ユードットエフエム 1話『象とうわばみ』
   kind:
     - doujinshi
   episodes:
@@ -15,7 +16,11 @@
       listings:
         - shopKind: Melonbooks
           price: 500
-          url: https://www.melonbooks.co.jp/
+          url: /melonbooks/2837742
+        - shopKind: Booth
+          price: 500
+          url: /booth/5741859
+          status: stockout
 
     - slug: digital
       name: 電子書籍
