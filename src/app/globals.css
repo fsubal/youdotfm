@@ -45,7 +45,7 @@
     --background-footer: var(--color-surface);
 
     &:has([data-animation-end="true"]) {
-      --background-header: transparent;
+      --background-header: var(--color-white);
     }
 
     [data-role="jumbotron"],
@@ -55,6 +55,7 @@
 
     /**
      * スクロールで現れた後ろの領域をヘッダーやフッターと同じ色にする
+     * REVIEW: Safariだと動いてなさそう
      *
      * @see https://x.com/dmytro_kondakov/status/1966041229042348075
      */
