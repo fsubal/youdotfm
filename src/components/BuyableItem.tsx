@@ -35,7 +35,9 @@ export function BuyableItem({
         "overflow-hidden",
       )}
     >
-      <div className={clsx("overflow-hidden", "w-full", "h-48", "tablet:h-64")}>
+      <div
+        className={clsx("overflow-hidden", "w-full", "h-48", "screen2:h-64")}
+      >
         <Image
           src={imageUrl}
           alt=""
@@ -53,7 +55,7 @@ export function BuyableItem({
         />
       </div>
 
-      <div className={clsx("py-16", "px-16", "tablet:px-24")}>
+      <div className={clsx("py-16", "px-16", "screen2:px-24")}>
         <h3 className={clsx("font-bold", "group-hover:underline")}>{name}</h3>
         <p
           className={clsx("line-clamp-2", "text-text-50", "text-sm", "h-[2lh]")}

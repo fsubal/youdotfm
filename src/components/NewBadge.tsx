@@ -7,15 +7,16 @@ export function NewBadge() {
       data-role="new-badge"
       className={clsx(
         "text-white",
-        "bg-red-500",
+        "bg-assertive",
         "font-bold",
         "text-xs",
         "py-2",
         "px-8",
         "rounded-sm",
+        "uppercase",
       )}
     >
-      NEW!
+      New!
     </span>
   );
 }

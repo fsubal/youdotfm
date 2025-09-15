@@ -5,6 +5,7 @@ import {
   findCharacterBySlug,
 } from "../../../domains/Character/seeds";
 import { VarDump } from "../../../components/VarDump";
+import { SectionTitle } from "../../../components/SectionTitle";
 
 export function generateStaticParams(): StaticParams<"/characters/[slug]"> {
   return characters.map(({ slug }) => ({ slug }));
@@ -21,6 +22,7 @@ export default async function CharacterPage({
 
   return (
     <Layout>
+      <SectionTitle subheading="Characters">キャラクター</SectionTitle>
       <VarDump>{character}</VarDump>
     </Layout>
   );
