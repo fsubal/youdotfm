@@ -58,9 +58,7 @@ function Main({ children }: React.PropsWithChildren) {
             "screen2:px-40",
           )}
         >
-          <div className={clsx(proseClass, "prose-h1:tracking-wider")}>
-            {children}
-          </div>
+          <div className="max-w-full">{children}</div>
         </div>
       </main>
       <Footer />

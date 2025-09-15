@@ -8,7 +8,7 @@ export default function BuyPage() {
   return (
     <Layout>
       <SectionTitle subheading="Shop">本 &amp; グッズ</SectionTitle>
-      <p className="lead">
+      <p>
         『ユードットエフエム』に関連する商品を紹介します。各種通販サイトで購入できます。
       </p>
 

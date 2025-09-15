@@ -6,6 +6,8 @@ const preStyle = clsx(
   "bg-text-50",
   "p-16",
   "text-sm",
+  "max-w-full",
+  "text-wrap",
 );
 
 /**

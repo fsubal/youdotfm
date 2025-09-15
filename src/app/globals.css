@@ -41,37 +41,6 @@
     border-color: var(--color-text-50, currentColor);
   }
 
-  :root {
-    --background-header: var(--color-primary);
-    --background-footer: var(--color-surface);
-
-    &:has([data-animation-end="true"]) {
-      --background-header: var(--color-white);
-    }
-
-    [data-role="jumbotron"],
-    [data-role="main"] {
-      background: var(--color-white);
-    }
-
-    /**
-     * スクロールで現れた後ろの領域をヘッダーやフッターと同じ色にする
-     * REVIEW: Safariだと動いてなさそう
-     *
-     * @see https://x.com/dmytro_kondakov/status/1966041229042348075
-     */
-    &::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(
-        var(--background-header) 49.99%,
-        var(--background-footer) 50%
-      );
-      z-index: -1;
-    }
-  }
-
   /**
    * @see https://charcoal-web.pixiv.design/@charcoal-ui/icons/ssr/
    */

@@ -39,7 +39,7 @@ export default function Home() {
 function DropCap({ children }: React.PropsWithChildren) {
   return (
     <div
-      className={clsx("lead", "leading-loose", "text-base", "space-y-8", [
+      className={clsx("leading-loose", "text-base", "space-y-8", [
         "first-letter:text-6xl",
         "first-letter:text-primary",
         "first-letter:font-bold",
