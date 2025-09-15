@@ -27,9 +27,9 @@ export function BuyableItem({
         "group",
         "flex",
         "flex-col",
-        "text-slate-900",
+        "text-gr",
         "transition-colors",
-        ["bg-white", "hover:bg-white-hover"],
+        ["bg-white", "hover:bg-surface"],
         "border",
         "rounded-xl",
         "overflow-hidden",
@@ -43,7 +43,7 @@ export function BuyableItem({
           height={300}
           className={clsx(
             "block",
-            "bg-slate-500",
+            "bg-text-50",
             "w-full",
             "h-full",
             "object-cover",
@@ -56,12 +56,7 @@ export function BuyableItem({
       <div className={clsx("py-16", "px-16", "tablet:px-24")}>
         <h3 className={clsx("font-bold", "group-hover:underline")}>{name}</h3>
         <p
-          className={clsx(
-            "line-clamp-2",
-            "text-slate-500",
-            "text-sm",
-            "h-[2lh]",
-          )}
+          className={clsx("line-clamp-2", "text-text-50", "text-sm", "h-[2lh]")}
         >
           {description}
         </p>

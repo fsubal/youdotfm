@@ -8,11 +8,13 @@
   --breakpoint-screen4: 1160px;
   --breakpoint-screen5: 1368px;
 
-  --color-black: var(--color-slate-900);
   --color-primary: #226cff;
-  --color-link: var(--color-green-600);
-  --color-white-hover: var(--color-slate-100);
-  --color-white-active: var(--color-slate-200);
+  --color-surface: oklch(from var(--color-primary) 0.95 c h);
+  --color-active: oklch(from var(--color-primary) 0.9 c h);
+
+  --color-text-950: oklch(from var(--color-primary) 0.05 0.05 h);
+  --color-text-500: oklch(from var(--color-primary) 0.5 0.05 h);
+  --color-text-50: oklch(from var(--color-primary) 0.95 0.05 h);
 
   @keyframes fadein {
     0% {
@@ -26,7 +28,7 @@
 
 @layer base {
   html {
-    color: var(--color-slate-900);
+    color: var(--color-text-950);
     font-family: "Trebuchet MS", ui-sans-serif, system-ui, sans-serif;
   }
 
@@ -35,7 +37,37 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-slate-200, currentColor);
+    border-color: var(--color-text-50, currentColor);
+  }
+
+  :root {
+    --background-header: var(--color-primary);
+    --background-footer: var(--color-surface);
+
+    &:has([data-animation-end="true"]) {
+      --background-header: transparent;
+    }
+
+    [data-role="jumbotron"],
+    [data-role="main"] {
+      background: var(--color-white);
+    }
+
+    /**
+     * スクロールで現れた後ろの領域をヘッダーやフッターと同じ色にする
+     *
+     * @see https://x.com/dmytro_kondakov/status/1966041229042348075
+     */
+    &::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        var(--background-header) 49.99%,
+        var(--background-footer) 50%
+      );
+      z-index: -1;
+    }
   }
 
   /**

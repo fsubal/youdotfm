@@ -3,7 +3,7 @@ import clsx from "clsx";
 const preStyle = clsx(
   "overflow-auto",
   "rounded-lg",
-  "bg-gray-100",
+  "bg-text-50",
   "p-16",
   "text-sm",
 );

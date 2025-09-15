@@ -32,9 +32,9 @@ export function NavbarItem({
           "whitespace-nowrap",
           [
             "bg-transpatent",
-            "hover:bg-white-hover",
-            "active:bg-white-active",
-            isActive && "bg-white-hover",
+            "hover:bg-surface",
+            "active:bg-active",
+            isActive && "bg-surface",
           ],
           "rounded-full",
           "py-8",
@@ -47,7 +47,7 @@ export function NavbarItem({
           <Icon
             name="Inline/External"
             unsafeNonGuidelineScale={10 / 16}
-            className="text-slate-400"
+            className="text-text-500"
           />
         )}
       </Link>

@@ -32,7 +32,7 @@ export function Chip({
         "items-center",
         "gap-8",
         "transition-colors",
-        ["hover:underline", "hover:bg-white-hover", "active:bg-white-active"],
+        ["hover:underline", "hover:bg-surface", "active:bg-active"],
       )}
     >
       {imageUrl && alt && (

@@ -26,7 +26,7 @@ function Main({ children }: React.PropsWithChildren) {
         className={clsx("flex-1", "flex", "flex-col", "tablet:flex-row", [
           "divide-y",
           "tablet:divide-x",
-          "divide-slate-100",
+          "divide-text-50",
         ])}
       >
         <nav
@@ -72,7 +72,7 @@ function LogoOneline() {
         )}
         href="/"
       >
-        <p className={clsx("text-xs", "text-slate-500")}>
+        <p className={clsx("text-xs", "text-text-500")}>
           ポッドキャスト百合漫画
         </p>
         <Image
@@ -92,7 +92,7 @@ function Footer() {
     <footer
       data-role="footer"
       className={clsx(
-        "bg-slate-100",
+        "bg-surface",
         ["py-24", "px-24"],
         [proseClass, "prose-sm"],
         "max-w-none",
