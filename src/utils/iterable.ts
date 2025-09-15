@@ -16,3 +16,24 @@ export function groupBy<T extends {}>(
 
   return groups;
 }
+
+/**
+ * `sort()`に渡す関数を組み立てるのに使う
+ *
+ * @example
+ * ```typescript
+ * items.sort(compareBy('id', 'asc'))
+ * ```
+ */
+export function compareBy<K extends string>(key: K, sort: "asc" | "desc") {
+  type Subject = { [key in K]: number };
+
+  return function compare(a: Subject, b: Subject) {
+    switch (sort) {
+      case "asc":
+        return a[key] - b[key];
+      case "desc":
+        return b[key] - a[key];
+    }
+  };
+}

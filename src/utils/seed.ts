@@ -8,7 +8,3 @@ export function seed<T extends {}>(schema: ZodType<T>, content: unknown): T[] {
 
   return data;
 }
-
-export function byIdDesc<T extends { id: number }>(a: T, b: T) {
-  return b.id - a.id;
-}
