@@ -1,3 +1,5 @@
+import "server-only";
+
 import { groupBy } from "../../utils/iterable";
 import { Episode } from "../Episode/model";
 import { episodes } from "../Episode/seeds";

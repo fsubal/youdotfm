@@ -1,5 +1,5 @@
 - slug: sample-product
-  title: "サンプル商品"
+  title: サンプル商品
   kind:
     - doujinshi
   episodes:
@@ -13,13 +13,13 @@
     - slug: paper
       name: 同人誌（紙）
       listings:
-        - shop: Melonbooks
+        - shopKind: Melonbooks
           price: 500
           url: https://www.melonbooks.co.jp/
 
     - slug: digital
       name: 電子書籍
       listings:
-        - shop: AmazonKindle
+        - shopKind: AmazonKindle
           price: 400
           url: https://www.amazon.co.jp/

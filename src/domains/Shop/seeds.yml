@@ -1,4 +1,6 @@
 - kind: Melonbooks
   name: メロンブックス
   url: https://www.melonbooks.co.jp/
-  logo: /melonbooks-logo.png
+  logo:
+    src: /melonbooks-logo.png
+    alt: 株式会社メロンブックスのロゴ

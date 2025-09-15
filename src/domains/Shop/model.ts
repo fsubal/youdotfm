@@ -1,11 +1,12 @@
 import z from "zod";
+import { ImageSource } from "../ImageSource/model";
 
 /**
  * 販売サイトの区分
  */
 export const ShopKind = z.enum([
-  "BOOTH",
-  "MelonBooks",
+  "Booth",
+  "Melonbooks",
   "AmazonKindle",
   "ComicCmoa",
 ]);
@@ -15,10 +16,10 @@ export type ShopKind = z.infer<typeof ShopKind>;
 export const Shop = z.object({
   kind: ShopKind,
   name: z.string(),
-  logo: z.string().optional(),
+  logo: ImageSource,
 
   /**
-   * サークルのページとか、作品の詳細ページなど（特定商品ではないURL）
+   * サークルのページとか、シリーズ全体のページなど（特定商品ではないURL）
    */
   url: z.url(),
 });
