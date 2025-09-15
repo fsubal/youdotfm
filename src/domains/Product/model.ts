@@ -50,13 +50,3 @@ export type Product = z.infer<typeof Product>;
 export type ProductKind = z.infer<typeof ProductKind>;
 export type ProductVariant = z.infer<typeof ProductVariant>;
 
-/**
- * ある商品に収録されている話数
- * たとえば、「総集編というProductに1話が収録されています」などを表現する
- */
-export const ProductEpisode = z.object({
-  productSlug: z.string(),
-  episodeSlug: z.string(),
-});
-
-export type ProductEpisode = z.infer<typeof ProductEpisode>;

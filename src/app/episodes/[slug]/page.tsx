@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { Layout } from "../../../components/Layout";
-import { episodes } from "../../../domains/Episode/seeds";
-import { productEpisodes } from "../../../domains/Product/seeds";
+import { episodes, findEpisodeBySlug } from "../../../domains/Episode/seeds";
+import { findProductsForEpisode } from "../../../domains/ProductEpisode/seeds";
+import { VarDump } from "../../../components/VarDump";
 
 export function generateStaticParams(): StaticParams<"/episodes/[slug]"> {
   return episodes.map(({ slug }) => ({ slug }));
@@ -11,21 +12,18 @@ export default async function EpisodePage({
   params,
 }: PageProps<"/episodes/[slug]">) {
   const { slug } = await params;
-  const episode = episodes.find((episode) => episode.slug === slug);
+  const episode = findEpisodeBySlug(slug);
   if (!episode) {
     return notFound();
   }
-
-  const products = productEpisodes.filter(
-    ({ episodeSlug }) => episodeSlug === episode.slug,
-  );
+  const products = findProductsForEpisode(episode.slug);
 
   return (
     <Layout>
       <h1>エピソード: {slug}</h1>
       <div>WIP</div>
-      {JSON.stringify(episode)}
-      {JSON.stringify(products)}
+      <VarDump>{episode}</VarDump>
+      <VarDump>{products}</VarDump>
     </Layout>
   );
 }

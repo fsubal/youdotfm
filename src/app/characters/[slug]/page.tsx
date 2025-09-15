@@ -4,6 +4,7 @@ import {
   characters,
   findCharacterBySlug,
 } from "../../../domains/Character/seeds";
+import { VarDump } from "../../../components/VarDump";
 
 export function generateStaticParams(): StaticParams<"/characters/[slug]"> {
   return characters.map(({ slug }) => ({ slug }));
@@ -20,7 +21,7 @@ export default async function CharacterPage({
 
   return (
     <Layout>
-      <pre>{JSON.stringify(character)}</pre>
+      <VarDump>{character}</VarDump>
     </Layout>
   );
 }

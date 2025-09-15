@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { NavbarItem } from "./NavbarItem";
 import { Icon } from "./Icon";
 import { NewBadge } from "./NewBadge";
+import { defaultCharacter } from "../domains/Character/seeds";
 
 export function Navbar() {
   return (
@@ -23,7 +24,7 @@ export function Navbar() {
         <Icon name="24/Announcement" unsafeNonGuidelineScale={16 / 24} />
         Blog (FANBOX)
       </NavbarItem>
-      <NavbarItem href="/characters">
+      <NavbarItem href={`/characters/${defaultCharacter.slug}`}>
         <Icon name="24/Person" unsafeNonGuidelineScale={16 / 24} />
         Characters
       </NavbarItem>
@@ -31,7 +32,7 @@ export function Navbar() {
         <Icon name="24/Manga" unsafeNonGuidelineScale={16 / 24} />
         Episodes
       </NavbarItem>
-      <NavbarItem href="/buy">
+      <NavbarItem href="/shop">
         <Icon name="24/Shopping" unsafeNonGuidelineScale={16 / 24} />
         Buy
         <NewBadge />

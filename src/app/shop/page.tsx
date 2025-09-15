@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { Layout } from "../../components/Layout";
 import { products } from "../../domains/Product/seeds";
+import { VarDump } from "../../components/VarDump";
 
 export default function BuyPage() {
   return (
@@ -20,7 +21,7 @@ export default function BuyPage() {
           )}
         >
           {products.map((item) => (
-            <pre key={item.slug}>{JSON.stringify(item)}</pre>
+            <VarDump key={item.slug}>{item}</VarDump>
           ))}
         </div>
       </div>
