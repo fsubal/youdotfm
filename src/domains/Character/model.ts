@@ -8,6 +8,7 @@ export const Character = z.object({
   name: z.object({
     japanese: z.string(),
     roman: z.string(),
+    screen: z.string().optional(),
   }),
   profile: z.string(),
 });
