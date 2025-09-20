@@ -8,7 +8,7 @@ export const Episode = z.object({
   slug: z.string().brand<"Episode">(),
 
   /**
-   * 例: "1話", "1.5話" などの文字列
+   * 例: "1話", "1.5話", "番外編" などの文字列
    */
   numbering: z.string(),
   title: z.string(),

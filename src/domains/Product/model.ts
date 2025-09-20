@@ -6,24 +6,9 @@ import { JPYRange, JPYValue } from "../../utils/intl";
 export const ProductKind = z.enum(["doujinshi", "merch"]);
 
 export const ListingStatus = z.enum([
-  /**
-   * 発売前
-   */
   "prerelease",
-
-  /**
-   * 発売中
-   */
   "available",
-
-  /**
-   * 在庫なし
-   */
   "stockout",
-
-  /**
-   * 廃盤
-   */
   "discontinued",
 ]);
 
@@ -35,6 +20,14 @@ export const Listing = z.object({
   shopKind: ShopKind,
   price: z.union([JPYValue, JPYRange]),
   url: z.string(),
+
+  /**
+   * @enum {string} 販売状況
+   * - 'prerelease' - 発売前
+   * - 'available' - 販売中
+   * - 'stockout' - 在庫切れ
+   * - 'discontinued' - 販売終了
+   */
   status: ListingStatus.default(ListingStatus.enum.available),
 });
 
@@ -57,6 +50,12 @@ export const Product = z.object({
    */
   slug: z.string().brand<"Product">(),
   title: z.string(),
+
+  /**
+   * @enum {string} 同人誌・グッズの種別
+   * - 'doujinshi' - 同人誌
+   * - 'merch' - グッズ
+   */
   kind: z.array(ProductKind),
   variants: z.array(ProductVariant),
   images: z.array(ImageSource),

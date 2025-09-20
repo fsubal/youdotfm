@@ -18,7 +18,12 @@ export function Jumbotron() {
     <section
       data-role="jumbotron"
       data-animation-end={playingEnd}
-      className={clsx("relative", "overflow-clip")}
+      className={clsx(
+        "relative",
+        "overflow-clip",
+        "transition-colors",
+        "transition-transform",
+      )}
     >
       <BackgroundImage zoomed={playingEnd} />
       <BackgroundColor className={playingEnd ? "bg-white/25" : "bg-primary"}>
@@ -28,7 +33,7 @@ export function Jumbotron() {
         </hgroup>
 
         <div className={clsx("mt-16", fadeInLater)}>
-          <ScrollTo className={clsx("block", "animate-bounce")} href="#main">
+          <ScrollTo href="#main" className={clsx("block", "animate-bounce")}>
             <Icon
               name="24/ArrowDown"
               unsafeNonGuidelineScale={32 / 24}
@@ -47,7 +52,6 @@ const BackgroundImage = ({ zoomed = false }) => (
     className={clsx(
       "w-full",
       "h-screen",
-      "transition-transform",
       "duration-800",
       zoomed ? "scale-105" : "scale-100",
       "bg-[url('/jumbotron_bg.jpg')]",
@@ -66,7 +70,6 @@ const BackgroundColor = ({
     className={clsx(
       "absolute",
       "inset-0",
-      "transition-colors",
       "duration-400",
       "w-full",
       "h-full",

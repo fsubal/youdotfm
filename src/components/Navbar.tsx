@@ -2,11 +2,53 @@ import clsx from "clsx";
 import { NavbarItem } from "./NavbarItem";
 import { Icon } from "./Icon";
 import { defaultCharacter } from "../domains/Character/seeds";
+import Image from "next/image";
+import Link from "next/link";
 
 export function Navbar() {
   return (
+    <nav className="shrink-0" data-role="navbar">
+      <div
+        className={clsx("screen2:top-0", "screen2:left-0", "screen2:sticky")}
+      >
+        <LogoOneline />
+        <NavbarMenu />
+      </div>
+    </nav>
+  );
+}
+
+function LogoOneline() {
+  return (
+    <hgroup className={clsx("pt-24", "px-24", "mb-3")}>
+      <Link
+        className={clsx(
+          "flex",
+          "flex-col",
+          "justify-start",
+          "items-start",
+          "gap-4",
+        )}
+        href="/"
+      >
+        <p className={clsx("text-xs", "text-text-500")}>
+          ポッドキャスト百合漫画
+        </p>
+        <Image
+          src="/logo_oneline.svg"
+          alt="トップに戻る"
+          width={160}
+          height={18}
+          className={clsx("h-[18px]", "w-auto")}
+        />
+      </Link>
+    </hgroup>
+  );
+}
+
+function NavbarMenu() {
+  return (
     <ul
-      data-role="navbar"
       className={clsx(
         ["grid", "grid-cols-2"],
         ["screen2:flex", "screen2:flex-col"],

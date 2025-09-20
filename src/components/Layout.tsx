@@ -1,8 +1,6 @@
 import clsx from "clsx";
 import { Jumbotron } from "./Jumbotron/Jumbotron";
 import { Navbar } from "./Navbar";
-import Image from "next/image";
-import Link from "next/link";
 
 export function Layout({ children }: React.PropsWithChildren) {
   return (
@@ -38,17 +36,7 @@ function Main({ children }: React.PropsWithChildren) {
           ],
         )}
       >
-        <nav
-          className={clsx(
-            "screen2:top-0",
-            "screen2:left-0",
-            "screen2:sticky",
-            "shrink-0",
-          )}
-        >
-          <LogoOneline />
-          <Navbar />
-        </nav>
+        <Navbar />
         <div
           className={clsx(
             "flex-1",
@@ -63,34 +51,6 @@ function Main({ children }: React.PropsWithChildren) {
       </main>
       <Footer />
     </div>
-  );
-}
-
-function LogoOneline() {
-  return (
-    <hgroup className={clsx("pt-24", "px-24", "mb-3")}>
-      <Link
-        className={clsx(
-          "flex",
-          "flex-col",
-          "justify-start",
-          "items-start",
-          "gap-4",
-        )}
-        href="/"
-      >
-        <p className={clsx("text-xs", "text-text-500")}>
-          ポッドキャスト百合漫画
-        </p>
-        <Image
-          src="/logo_oneline.svg"
-          alt="トップに戻る"
-          width={160}
-          height={18}
-          className={clsx("h-[18px]", "w-auto")}
-        />
-      </Link>
-    </hgroup>
   );
 }
 

@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Icon } from "./Icon";
 import { NewBadge } from "./NewBadge";
 
 interface Props {
