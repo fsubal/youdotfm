@@ -14,9 +14,8 @@ export const JapanDateTime = z.codec(
   z.string(),
   z.instanceof(Temporal.ZonedDateTime),
   {
-    decode: (isoString) =>
-      Temporal.PlainDateTime.from(isoString).toZonedDateTime(TIMEZONE),
-    encode: (date) => date.toString(),
+    decode: (str) => Temporal.PlainDateTime.from(str).toZonedDateTime(TIMEZONE),
+    encode: (datetime) => datetime.toString(),
   },
 );
 
@@ -31,7 +30,7 @@ export const YearMonth = z.codec(
   z.instanceof(Temporal.PlainYearMonth),
   {
     decode: (str) => Temporal.PlainYearMonth.from(str),
-    encode: (ym) => ym.toString(),
+    encode: (yearMonth) => yearMonth.toString(),
   },
 );
 
@@ -46,7 +45,7 @@ export const MonthDay = z.codec(
   z.instanceof(Temporal.PlainMonthDay),
   {
     decode: (str) => Temporal.PlainMonthDay.from(str),
-    encode: (md) => md.toString(),
+    encode: (monthDay) => monthDay.toString(),
   },
 );
 
