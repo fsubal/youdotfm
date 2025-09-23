@@ -44,6 +44,21 @@ export const enum Ordering {
   Greater = 1,
 }
 
+function toOrdering(difference: number): Ordering {
+  if (difference < 0) {
+    return Ordering.Less;
+  } else if (difference > 0) {
+    return Ordering.Greater;
+  } else {
+    return Ordering.Equal;
+  }
+}
+
+type CompareBy<K extends string> = (
+  a: Record<K, number>,
+  b: Record<K, number>,
+) => Ordering;
+
 /**
  * `sort()`に渡す関数を組み立てるのに使う
  *
@@ -52,15 +67,16 @@ export const enum Ordering {
  * items.sort(compareBy('id', 'asc'))
  * ```
  */
-export function compareBy<K extends string>(key: K, sort: "asc" | "desc") {
-  type Subject = { [key in K]: number };
-
-  return function compare(a: Subject, b: Subject) {
-    switch (sort) {
+export function compareBy<K extends string>(
+  key: K,
+  order: "asc" | "desc",
+): CompareBy<K> {
+  return function compare(a, b) {
+    switch (order) {
       case "asc":
-        return a[key] - b[key];
+        return toOrdering(a[key] - b[key]);
       case "desc":
-        return b[key] - a[key];
+        return toOrdering(b[key] - a[key]);
     }
   };
 }
