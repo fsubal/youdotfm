@@ -1,4 +1,4 @@
-declare module "*/seeds.yml" {
+declare module "*.yml" {
   const seeds: unknown;
 
   export default seeds;
