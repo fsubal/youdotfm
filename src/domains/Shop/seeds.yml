@@ -42,12 +42,6 @@
   logo:
     src: ""
     alt: ""
-# - kind: Renta
-#   name: Renta!
-#   url: https://renta.papy.co.jp
-#   logo:
-#     src: ""
-#     alt: ""
 - kind: BookLive
   name: ブックライブ
   url: https://booklive.jp/product/index/title_id/1906927
@@ -72,12 +66,6 @@
   logo:
     src: ""
     alt: ""
-# - kind: MechaComic
-#   name: めちゃコミック
-#   url: https://sp.comics.mecha.cc
-#   logo:
-#     src: ""
-#     alt: ""
 - kind: EbookJapan
   name: ebookjapan
   url: https://ebookjapan.yahoo.co.jp/books/903025/
@@ -90,12 +78,6 @@
   logo:
     src: ""
     alt: ""
-# - kind: Kinoppy
-#   name: kinoppy
-#   url: https://www.kinokuniya.co.jp
-#   logo:
-#     src: ""
-#     alt: ""
 - kind: CocoroBooks
   name: COCORO BOOKS
   url: https://galapagosstore.com/web/book/category/コミック/series/685004
@@ -144,18 +126,6 @@
   logo:
     src: ""
     alt: ""
-# - kind: MusicJP
-#   name: music.jp
-#   url: https://music-book.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: SevenNetShopping
-#   name: セブンネットショッピング
-#   url: https://7net.omni7.jp/top?yclid=YJAD.1578624579.hEFA.6edcq0eEyEMXpT9r0CXxRC66s2COi7cBqG1fJ0WVJbxv_qTB_mlnBecercO2Jqfi9JMt58VYZU-
-#   logo:
-#     src: ""
-#     alt: ""
 - kind: MangaZenkan
   name: 漫画全巻ドットコム
   url: https://www.mangazenkan.com/items/12419785/
@@ -228,84 +198,18 @@
   logo:
     src: ""
     alt: ""
-# - kind: NiconicoComic
-#   name: ニコニココミック
-#   url: https://nicocomic.jp/sd/page/000007f4/?titleName=ユードットエフエム
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: SmaComic
-#   name: スマコミ
-#   url: https://smacomi.com
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: ComicNoSusume
-#   name: コミックノススメ
-#   url: https://comisume.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: ComicPiece
-#   name: コミックピース
-#   url: https://comic-piece.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: KirakiraComic
-#   name: キラキラコミック
-#   url: https://kira-comi.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: ComicParadise
-#   name: コミックパラダイス
-#   url: https://comi-para.jp
-#   logo:
-#     src: ""
-#     alt: ""
 - kind: MangaChannel
   name: まんがちゃんねる
   url: https://manga-ch.jp/sd/page/search/00000a50/?ngenreId=00007j8u&order=22&titleName=ユードットエフエム&x=0&y=0
   logo:
     src: ""
     alt: ""
-# - kind: HeyComic
-#   name: Hey Comic
-#   url: https://heycomic.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: ComicWorld
-#   name: コミックワールド
-#   url: https://comicworld.jp/sd/page/0000063l/
-#   logo:
-#     src: ""
-#     alt: ""
 - kind: ComicBiyori
   name: コミック日和
   url: https://comicdays.jp/title/597919
   logo:
     src: ""
     alt: ""
-# - kind: ComicPlaza
-#   name: コミックプラザ
-#   url: https://comicplaza.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: ComicGO
-#   name: コミックGO
-#   url: https://comitama.jp/sd/page/title/wel3w66n
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: ComicApollo
-#   name: コミックアポロ
-#   url: https://comicapollo.jp
-#   logo:
-#     src: ""
-#     alt: ""
 - kind: ComicAngle
   name: コミックアングル
   url: https://comicangle.jp/sd/page/title/wel3w66n/
@@ -420,90 +324,12 @@
   logo:
     src: ""
     alt: ""
-# - kind: ComicMania
-#   name: コミックマニア
-#   url: https://comimani.jp
-#   logo:
-#     src: ""
-#     alt: ""
 - kind: MangaSeikatsu
   name: 漫画生活
   url: https://mangaseikatu.jp/title/597919
   logo:
     src: ""
     alt: ""
-# - kind: ComicYomouze
-#   name: コミック読もうぜ
-#   url: https://comicyomouze.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: MyComic
-#   name: マイコミック
-#   url: https://mycomic.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: ComicLog
-#   name: コミログ
-#   url: https://comilog.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: MegaComic
-#   name: メガコミック
-#   url: https://mega-comic.jp/sd/page/title/wel3w66n/
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: HimeComic
-#   name: 姫コミック
-#   url: https://hime-comic.jp/sd/page/title/wel3w66n/
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: OMGComic
-#   name: OMG！コミック
-#   url: https://omgcomic.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: HaiComic
-#   name: ハイっ☆コミック
-#   url: https://haicomic.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: Comisoku
-#   name: コミソク
-#   url: https://comisoku.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: ComicStore
-#   name: コミックストア
-#   url: https://comic-store.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: ComicSeikatsu
-#   name: コミック生活
-#   url: https://comic-life.jp/sd/page/title/wel3w66n/
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: ComicGold
-#   name: コミックゴールド
-#   url: https://comicgold.jp/sd/page/title/wel3w66n/
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: SuperComic
-#   name: スーパーコミック
-#   url: https://scomic.jp
-#   logo:
-#     src: ""
-#     alt: ""
 - kind: Yomina
   name: よみーな
   url: https://sp.yomi-na.jp/sd/page/title/wel3w66n/
@@ -546,30 +372,6 @@
   logo:
     src: ""
     alt: ""
-# - kind: TicketComic
-#   name: チケコミ
-#   url: https://www.ticket-comic.jp/
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: VComic
-#   name: Vコミ
-#   url: https://vcomi.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: BookSmart
-#   name: BOOKSMART Powered by Booker's
-#   url: https://booksmart.jp
-#   logo:
-#     src: ""
-#     alt: ""
-# - kind: YamadaShoten
-#   name: やまだ書店
-#   url: https://yamadashoten.com/page/index/pageid/939263/index.html
-#   logo:
-#     src: ""
-#     alt: ""
 - kind: HappyComic
   name: HAPPY!コミック
   url: https://happycomic.jp/web/book/index.php?id=00604-094A281133
