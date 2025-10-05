@@ -2,14 +2,9 @@ import z from "zod";
 import { ImageSource } from "../ImageSource/model";
 
 /**
- * 販売サイトの区分
+ * 販売サイトの区分（多すぎるのでenumでは管理しきれない）
  */
-export const ShopKind = z.enum([
-  "Booth",
-  "Melonbooks",
-  "AmazonKindle",
-  "ComicCmoa",
-]);
+export const ShopKind = z.string().brand<"ShopKind">();
 
 export type ShopKind = z.infer<typeof ShopKind>;
 
