@@ -1,62 +1,79 @@
-# https://no9.co.jp/other/faq/591
+# 電子配信はここを参照 https://no9.co.jp/other/faq/591
 # すべてを載せるわけではない（Web版がない、エピソードのリンクが切れているなどの理由で載せてないサイトもある）
+- kind: BOOTH
+  name: BOOTH
+  url: https://umbrellahead.booth.pm/item_lists/8bNT3aa3
+  featured: true
+  logo:
+    src: /booth-logo.png
+    alt: BOOTHのロゴ
 - kind: Melonbooks
   name: メロンブックス
-  url: https://www.melonbooks.co.jp/circle/index.php?circle_id=28340
+  url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2837742
+  featured: true
   logo:
     src: /melonbooks-logo.png
     alt: 株式会社メロンブックスのロゴ
 - kind: LineManga
   name: LINEマンガ
   url: https://manga.line.me/book/product_list?product_id=E903025
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: Kindle
-  name: Kindle
+  name: Amazon/Kindle
   url: https://www.amazon.co.jp/dp/B0FDWQVL5X/
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: AppleBooks
   name: Apple Books
   url: https://books.apple.com/jp/book-series/id1819939603
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: RakutenKobo
   name: 楽天kobo
   url: https://books.rakuten.co.jp/search?series=ユードットエフエム&maker=ナンバーナイン
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: ComicCmoa
   name: コミックシーモア
   url: https://www.cmoa.jp/search/series/73204/
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: GooglePlayBooks
   name: GooglePlayブックス
   url: https://play.google.com/store/books/series?id=tK55HAAAABDMsM&hl=ja
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: BookLive
   name: ブックライブ
   url: https://booklive.jp/product/index/title_id/1906927
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: Bukkomi
   name: ブッコミ
   url: https://sp.handycomic.jp/product/index/title_id/1906927
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: BookWalker
   name: BOOK☆WALKER
   url: https://bookwalker.jp/series/531744/
+  featured: true
   logo:
     src: ""
     alt: ""
@@ -75,6 +92,7 @@
 - kind: Honto
   name: honto
   url: https://honto.jp/ebook/pd-series_C-MBJ-29118-8-567428X.html
+  featured: true
   logo:
     src: ""
     alt: ""
@@ -117,12 +135,14 @@
 - kind: DLsiteComipo
   name: DLsite/comipo
   url: https://www.comipo.app/product/BJ02031350
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: DMMFANZA
   name: DMM.com
   url: https://book.dmm.com/product/6147013/k804annbn14817/
+  featured: true
   logo:
     src: ""
     alt: ""
@@ -183,6 +203,7 @@
 - kind: PixivComic
   name: pixivコミック
   url: https://comic.pixiv.net/store/products/1906927
+  featured: true
   logo:
     src: ""
     alt: ""
@@ -345,30 +366,35 @@
 - kind: DAnimeStore
   name: dアニメストア
   url: https://animestore.docomo.ne.jp/animestore/book/content?titleid=BKT00565550
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: MangaBang
   name: マンガBANG！
   url: https://manga-bang.com/store/books/BT000190692700100101
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: Piccoma
   name: ピッコマ
   url: https://piccoma.com/web/product/186686
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: BookHodai
   name: ブック放題
   url: https://bookhodai.jp/manga/backnumber/94317
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: MangaOukoku
   name: まんが王国
   url: https://comic.k-manga.jp/title/223680/pv
+  featured: true
   logo:
     src: ""
     alt: ""
@@ -387,12 +413,14 @@
 - kind: Yodobashi
   name: yodobashi.com
   url: https://www.yodobashi.com/product/100000086602829175/
+  featured: true
   logo:
     src: ""
     alt: ""
 - kind: AnimateBookstore
   name: アニメイトブックストア
   url: https://www.animatebookstore.com/products/detail.php?product_id=1682840
+  featured: true
   logo:
     src: ""
     alt: ""

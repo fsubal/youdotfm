@@ -13,6 +13,11 @@ export const Shop = z.object({
   name: z.string(),
 
   /**
+   * 全部表示したくないケースで優先的に表示する
+   */
+  featured: z.boolean().default(false),
+
+  /**
    * ECサイトや配信サービスのロゴ
    * 不明な場合や権利的に使えないケースもあるのでoptional
    */
@@ -25,3 +30,6 @@ export const Shop = z.object({
 });
 
 export type Shop = z.infer<typeof Shop>;
+
+export const isFeatured = (shop: Shop) => shop.featured;
+export const isNotFeatured = (shop: Shop) => !shop.featured;
