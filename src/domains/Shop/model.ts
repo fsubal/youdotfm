@@ -16,7 +16,12 @@ export type ShopKind = z.infer<typeof ShopKind>;
 export const Shop = z.object({
   kind: ShopKind,
   name: z.string(),
-  logo: ImageSource,
+
+  /**
+   * ECサイトや配信サービスのロゴ
+   * 不明な場合や権利的に使えないケースもあるのでoptional
+   */
+  logo: ImageSource.optional(),
 
   /**
    * サークルのページとか、シリーズ全体のページなど（特定商品ではないURL）
