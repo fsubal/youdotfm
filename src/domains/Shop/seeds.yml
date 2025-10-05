@@ -139,7 +139,7 @@
   logo:
     src: ""
     alt: ""
-- kind: DMMFANZA
+- kind: DMMcom
   name: DMM.com
   url: https://book.dmm.com/product/6147013/k804annbn14817/
   featured: true
@@ -152,12 +152,12 @@
   logo:
     src: ""
     alt: ""
-- kind: IComicLand
-  name: iコミック★らんど
-  url: https://sp.pun-c.jp/sd/page/author/k7urtic4/
-  logo:
-    src: ""
-    alt: ""
+# - kind: IComicLand
+#   name: iコミック★らんど
+#   url: https://sp.pun-c.jp/sd/page/author/k7urtic4/
+#   logo:
+#     src: ""
+#     alt: ""
 - kind: RakurakuComic
   name: ラクラクコミック
   url: https://rakurakucomic.com/sd/page/title/wel3w66n
@@ -207,132 +207,132 @@
   logo:
     src: ""
     alt: ""
-- kind: ComicCenter
-  name: コミックセンター
-  url: https://comiccenter.jp/sd/page/title/wel3w66n
-  logo:
-    src: ""
-    alt: ""
-- kind: ComicFreak
-  name: コミックフリーク
-  url: https://comicfreak.jp/sd/page/title/wel3w66n
-  logo:
-    src: ""
-    alt: ""
-- kind: MangaChannel
-  name: まんがちゃんねる
-  url: https://manga-ch.jp/sd/page/search/00000a50/?ngenreId=00007j8u&order=22&titleName=ユードットエフエム&x=0&y=0
-  logo:
-    src: ""
-    alt: ""
+# - kind: ComicCenter
+#   name: コミックセンター
+#   url: https://comiccenter.jp/sd/page/title/wel3w66n
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicFreak
+#   name: コミックフリーク
+#   url: https://comicfreak.jp/sd/page/title/wel3w66n
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: MangaChannel
+#   name: まんがちゃんねる
+#   url: https://manga-ch.jp/sd/page/search/00000a50/?ngenreId=00007j8u&order=22&titleName=ユードットエフエム&x=0&y=0
+#   logo:
+#     src: ""
+#     alt: ""
 - kind: ComicBiyori
   name: コミック日和
   url: https://comicdays.jp/title/597919
   logo:
     src: ""
     alt: ""
-- kind: ComicAngle
-  name: コミックアングル
-  url: https://comicangle.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: IineComic
-  name: イイネ！コミック
-  url: https://iine-comic.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: GigaComics
-  name: ギガコミックス
-  url: https://gigacomic.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: Doricomi
-  name: ドリコミ
-  url: https://dream-comic.jp/sd/page/title/wel3w66n
-  logo:
-    src: ""
-    alt: ""
-- kind: ComiFull
-  name: コミ★フル
-  url: https://comifull.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: ComiSokuVIP
-  name: コミ速VIP
-  url: https://comi-vip.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: KakuueComic
-  name: 格上コミック
-  url: https://kakuuecomic.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: ComicTube
-  name: コミックTube
-  url: https://comitube.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: ComicEight
-  name: コミックエイト
-  url: https://comic8.jp/sd/page/title/wel3w66n
-  logo:
-    src: ""
-    alt: ""
-- kind: ComicStar
-  name: コミックスター
-  url: https://comicstar.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: ComicMiku
-  name: コミックミク
-  url: https://comimiku.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: ComicLand
-  name: コミランド
-  url: https://comiland.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: ComicWeek
-  name: コミックウィーク
-  url: https://comicweek.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: ComicKing
-  name: コミックキング
-  url: https://comicking.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
-- kind: ComicGuide
-  name: コミックガイド
-  url: https://comicguide.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
+# - kind: ComicAngle
+#   name: コミックアングル
+#   url: https://comicangle.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: IineComic
+#   name: イイネ！コミック
+#   url: https://iine-comic.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: GigaComics
+#   name: ギガコミックス
+#   url: https://gigacomic.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: Doricomi
+#   name: ドリコミ
+#   url: https://dream-comic.jp/sd/page/title/wel3w66n
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComiFull
+#   name: コミ★フル
+#   url: https://comifull.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComiSokuVIP
+#   name: コミ速VIP
+#   url: https://comi-vip.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: KakuueComic
+#   name: 格上コミック
+#   url: https://kakuuecomic.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicTube
+#   name: コミックTube
+#   url: https://comitube.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicEight
+#   name: コミックエイト
+#   url: https://comic8.jp/sd/page/title/wel3w66n
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicStar
+#   name: コミックスター
+#   url: https://comicstar.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicMiku
+#   name: コミックミク
+#   url: https://comimiku.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicLand
+#   name: コミランド
+#   url: https://comiland.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicWeek
+#   name: コミックウィーク
+#   url: https://comicweek.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicKing
+#   name: コミックキング
+#   url: https://comicking.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicGuide
+#   name: コミックガイド
+#   url: https://comicguide.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
 - kind: GalaxyComic
   name: ギャラクシーコミック
   url: https://galcomi.jp/sd/page/title/wel3w66n/
   logo:
     src: ""
     alt: ""
-- kind: ComiComiComic
-  name: コミコミコミック
-  url: https://comi2comic.jp/sd/page/title/wel3w66n/
-  logo:
-    src: ""
-    alt: ""
+# - kind: ComiComiComic
+#   name: コミコミコミック
+#   url: https://comi2comic.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
 - kind: ComicSylvia
   name: コミックシルビア
   url: https://comic-sylvia.jp/title/597919
