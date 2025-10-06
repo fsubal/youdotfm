@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NewBadge } from "./NewBadge";
+import { NewBadge } from "../NewBadge";
 
 interface Props {
   href: string;
@@ -39,7 +39,7 @@ export function NavbarItem({
             isActive && "bg-surface",
           ],
           "rounded-full",
-          ["py-8", "screen2:py-12"],
+          "py-12",
           "px-16",
           ["focus-visible:outline-4", "focus-visible:outline-blue-400/50"],
         )}

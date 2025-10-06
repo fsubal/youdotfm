@@ -1,11 +1,16 @@
 import clsx from "clsx";
 import { Jumbotron } from "./Jumbotron/Jumbotron";
-import { Navbar } from "./Navbar";
+import { NavbarDropdown } from "./Navbar/NavbarDropdown";
+import { LogoOneline, NavbarMenu } from "./Navbar/Navbar";
 
 export function Layout({ children }: React.PropsWithChildren) {
   return (
     <>
       <Jumbotron />
+      <NavbarDropdown>
+        <LogoOneline />
+        <NavbarMenu />
+      </NavbarDropdown>
       <Main>{children}</Main>
     </>
   );
@@ -36,7 +41,6 @@ function Main({ children }: React.PropsWithChildren) {
           ],
         )}
       >
-        <Navbar />
         <div
           className={clsx(
             "flex-1",

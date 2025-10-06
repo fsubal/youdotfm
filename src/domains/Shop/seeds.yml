@@ -1,6 +1,438 @@
+# 電子配信はここを参照 https://no9.co.jp/other/faq/591
+# すべてを載せるわけではない（Web版がない、エピソードのリンクが切れているなどの理由で載せてないサイトもある）
+- kind: BOOTH
+  name: BOOTH
+  url: https://umbrellahead.booth.pm/item_lists/8bNT3aa3
+  featured: true
+  logo:
+    src: /booth-logo.png
+    alt: BOOTHのロゴ
 - kind: Melonbooks
   name: メロンブックス
-  url: https://www.melonbooks.co.jp/
+  url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2837742
+  featured: true
   logo:
     src: /melonbooks-logo.png
     alt: 株式会社メロンブックスのロゴ
+- kind: LineManga
+  name: LINEマンガ
+  url: https://manga.line.me/book/product_list?product_id=E903025
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: Kindle
+  name: Amazon/Kindle
+  url: https://www.amazon.co.jp/dp/B0FDWQVL5X/
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: AppleBooks
+  name: Apple Books
+  url: https://books.apple.com/jp/book-series/id1819939603
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: RakutenKobo
+  name: 楽天kobo
+  url: https://books.rakuten.co.jp/search?series=ユードットエフエム&maker=ナンバーナイン
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: ComicCmoa
+  name: コミックシーモア
+  url: https://www.cmoa.jp/search/series/73204/
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: GooglePlayBooks
+  name: GooglePlayブックス
+  url: https://play.google.com/store/books/series?id=tK55HAAAABDMsM&hl=ja
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: BookLive
+  name: ブックライブ
+  url: https://booklive.jp/product/index/title_id/1906927
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: Bukkomi
+  name: ブッコミ
+  url: https://sp.handycomic.jp/product/index/title_id/1906927
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: BookWalker
+  name: BOOK☆WALKER
+  url: https://bookwalker.jp/series/531744/
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: UNEXT
+  name: U-NEXT
+  url: https://video.unext.jp/freeword?query=ユードットエフエム&btd=BSD0000986011&bvc=TOTAL
+  logo:
+    src: ""
+    alt: ""
+- kind: EbookJapan
+  name: ebookjapan
+  url: https://ebookjapan.yahoo.co.jp/books/903025/
+  logo:
+    src: ""
+    alt: ""
+- kind: Honto
+  name: honto
+  url: https://honto.jp/ebook/pd-series_C-MBJ-29118-8-567428X.html
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: CocoroBooks
+  name: COCORO BOOKS
+  url: https://galapagosstore.com/web/book/category/コミック/series/685004
+  logo:
+    src: ""
+    alt: ""
+- kind: ReaderStore
+  name: Reader Store
+  url: https://ebookstore.sony.jp/title/01906927/
+  logo:
+    src: ""
+    alt: ""
+- kind: AuBookPass
+  name: auブックパス
+  url: https://bookpass.auone.jp/collections/01906927
+  logo:
+    src: ""
+    alt: ""
+- kind: DBook
+  name: dブック
+  url: https://dbook.docomo.ne.jp/list/1I21/aff7e81103600d1739d9b5931115e284f52899474c51b7b7a2ff631c9333091e/
+  logo:
+    src: ""
+    alt: ""
+- kind: AmebaManga
+  name: Amebaマンガ
+  url: https://dokusho-ojikan.jp/series_list/series_id=875000
+  logo:
+    src: ""
+    alt: ""
+- kind: SokuYomi
+  name: ソク読み
+  url: https://sokuyomi.jp/product/yuhdottoef_001/CO/1/
+  logo:
+    src: ""
+    alt: ""
+- kind: DLsiteComipo
+  name: DLsite/comipo
+  url: https://www.comipo.app/product/BJ02031350
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: DMMcom
+  name: DMM.com
+  url: https://book.dmm.com/product/6147013/k804annbn14817/
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: MangaZenkan
+  name: 漫画全巻ドットコム
+  url: https://www.mangazenkan.com/items/12419785/
+  logo:
+    src: ""
+    alt: ""
+# - kind: IComicLand
+#   name: iコミック★らんど
+#   url: https://sp.pun-c.jp/sd/page/author/k7urtic4/
+#   logo:
+#     src: ""
+#     alt: ""
+- kind: RakurakuComic
+  name: ラクラクコミック
+  url: https://rakurakucomic.com/sd/page/title/wel3w66n
+  logo:
+    src: ""
+    alt: ""
+- kind: Comicist
+  name: 電子書店コミスト
+  url: https://comist.jp/sd/page/title/wel3w66n
+  logo:
+    src: ""
+    alt: ""
+- kind: MangaSaison
+  name: まんがセゾン
+  url: https://mechacomi.jp/titles/1906927
+  logo:
+    src: ""
+    alt: ""
+- kind: MobiBook
+  name: モビぶっく
+  url: https://s.mobi-book.com/sd/page/title/wel3w66n/
+  logo:
+    src: ""
+    alt: ""
+- kind: LLove
+  name: エルラブ
+  url: https://www.l-love.jp/sd/page/title/wel3w66n/
+  logo:
+    src: ""
+    alt: ""
+- kind: HeartOneBooks
+  name: HeartOne BooKs
+  url: https://heartonebooks.jp/sd/page/title/wel3w66n/
+  logo:
+    src: ""
+    alt: ""
+- kind: Comico
+  name: comico
+  url: https://www.comico.jp/magazine_comic/245177
+  logo:
+    src: ""
+    alt: ""
+- kind: PixivComic
+  name: pixivコミック
+  url: https://comic.pixiv.net/store/products/1906927
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+# - kind: ComicCenter
+#   name: コミックセンター
+#   url: https://comiccenter.jp/sd/page/title/wel3w66n
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicFreak
+#   name: コミックフリーク
+#   url: https://comicfreak.jp/sd/page/title/wel3w66n
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: MangaChannel
+#   name: まんがちゃんねる
+#   url: https://manga-ch.jp/sd/page/search/00000a50/?ngenreId=00007j8u&order=22&titleName=ユードットエフエム&x=0&y=0
+#   logo:
+#     src: ""
+#     alt: ""
+- kind: ComicBiyori
+  name: コミック日和
+  url: https://comicdays.jp/title/597919
+  logo:
+    src: ""
+    alt: ""
+# - kind: ComicAngle
+#   name: コミックアングル
+#   url: https://comicangle.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: IineComic
+#   name: イイネ！コミック
+#   url: https://iine-comic.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: GigaComics
+#   name: ギガコミックス
+#   url: https://gigacomic.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: Doricomi
+#   name: ドリコミ
+#   url: https://dream-comic.jp/sd/page/title/wel3w66n
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComiFull
+#   name: コミ★フル
+#   url: https://comifull.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComiSokuVIP
+#   name: コミ速VIP
+#   url: https://comi-vip.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: KakuueComic
+#   name: 格上コミック
+#   url: https://kakuuecomic.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicTube
+#   name: コミックTube
+#   url: https://comitube.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicEight
+#   name: コミックエイト
+#   url: https://comic8.jp/sd/page/title/wel3w66n
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicStar
+#   name: コミックスター
+#   url: https://comicstar.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicMiku
+#   name: コミックミク
+#   url: https://comimiku.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicLand
+#   name: コミランド
+#   url: https://comiland.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicWeek
+#   name: コミックウィーク
+#   url: https://comicweek.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicKing
+#   name: コミックキング
+#   url: https://comicking.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+# - kind: ComicGuide
+#   name: コミックガイド
+#   url: https://comicguide.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+- kind: GalaxyComic
+  name: ギャラクシーコミック
+  url: https://galcomi.jp/sd/page/title/wel3w66n/
+  logo:
+    src: ""
+    alt: ""
+# - kind: ComiComiComic
+#   name: コミコミコミック
+#   url: https://comi2comic.jp/sd/page/title/wel3w66n/
+#   logo:
+#     src: ""
+#     alt: ""
+- kind: ComicSylvia
+  name: コミックシルビア
+  url: https://comic-sylvia.jp/title/597919
+  logo:
+    src: ""
+    alt: ""
+- kind: ComicHearts
+  name: コミックハーツ
+  url: https://comic-hearts.jp/title/597919
+  logo:
+    src: ""
+    alt: ""
+- kind: MangaSeikatsu
+  name: 漫画生活
+  url: https://mangaseikatu.jp/title/597919
+  logo:
+    src: ""
+    alt: ""
+- kind: Yomina
+  name: よみーな
+  url: https://sp.yomi-na.jp/sd/page/title/wel3w66n/
+  logo:
+    src: ""
+    alt: ""
+- kind: LezhinComics
+  name: レジンコミックス
+  url: https://lezhin.jp/comic/t5_1906927
+  logo:
+    src: ""
+    alt: ""
+- kind: DAnimeStore
+  name: dアニメストア
+  url: https://animestore.docomo.ne.jp/animestore/book/content?titleid=BKT00565550
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: MangaBang
+  name: マンガBANG！
+  url: https://manga-bang.com/store/books/BT000190692700100101
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: Piccoma
+  name: ピッコマ
+  url: https://piccoma.com/web/product/186686
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: BookHodai
+  name: ブック放題
+  url: https://bookhodai.jp/manga/backnumber/94317
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: MangaOukoku
+  name: まんが王国
+  url: https://comic.k-manga.jp/title/223680/pv
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: HappyComic
+  name: HAPPY!コミック
+  url: https://happycomic.jp/web/book/index.php?id=00604-094A281133
+  logo:
+    src: ""
+    alt: ""
+- kind: DokodemoDokusho
+  name: どこでも読書
+  url: https://dokodoku.jp/pc/page/series_product.asp?sid=567428
+  logo:
+    src: ""
+    alt: ""
+- kind: Yodobashi
+  name: yodobashi.com
+  url: https://www.yodobashi.com/product/100000086602829175/
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: AnimateBookstore
+  name: アニメイトブックストア
+  url: https://www.animatebookstore.com/products/detail.php?product_id=1682840
+  featured: true
+  logo:
+    src: ""
+    alt: ""
+- kind: PontaManga
+  name: Pontaマンガ
+  url: https://ponta-manga.jp/comics/rpxv1eagsl1gsup84i0gau1mm8fehrmh/detail/
+  logo:
+    src: ""
+    alt: ""
+- kind: BoruComic
+  name: ぼるコミ
+  url: https://voltage-comics.com/series/177131
+  logo:
+    src: ""
+    alt: ""
