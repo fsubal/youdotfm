@@ -7,7 +7,10 @@ import Link from "next/link";
 
 export function Navbar() {
   return (
-    <nav className="shrink-0" data-role="navbar">
+    <nav
+      className={clsx("bg-white", "flex-1", "max-w-400", "h-screen")}
+      data-role="navbar"
+    >
       <div
         className={clsx("screen2:top-0", "screen2:left-0", "screen2:sticky")}
       >
@@ -50,11 +53,10 @@ function NavbarMenu() {
   return (
     <ul
       className={clsx(
-        ["grid", "grid-cols-2"],
-        ["screen2:flex", "screen2:flex-col"],
+        ["flex", "flex-col"],
         "w-full",
-        ["gap-12", "screen2:gap-24"],
-        ["my-12", "screen2:my-24", "px-12", "screen2:px-6"],
+        ["gap-12"],
+        ["my-12", "px-12"],
       )}
     >
       <NavbarItem
