@@ -1,10 +1,10 @@
 import { Layout } from "../../components/Layout";
 import { products } from "../../domains/Product/seeds";
-import { VarDump } from "../../components/VarDump";
 import { SectionTitle } from "../../components/SectionTitle";
 import { shops } from "../../domains/Shop/seeds";
 import { ShopList } from "../../components/ShopList";
 import { groupBy } from "../../utils/iterable";
+import { ProductListItem } from "../../components/Product/ProductListItem";
 
 const shopGroups = groupBy(shops, ({ featured }) =>
   featured ? "featured" : "notFeatured",
@@ -20,8 +20,8 @@ export default function BuyPage() {
         </p>
       </div>
       <div className="not-prose">
-        {products.map((item) => (
-          <VarDump key={item.slug}>{item}</VarDump>
+        {products.map((product) => (
+          <ProductListItem key={product.slug} product={product} />
         ))}
         {/* <div
           className={clsx(

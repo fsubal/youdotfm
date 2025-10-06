@@ -57,6 +57,12 @@ export const Product = z.object({
   title: z.string(),
 
   /**
+   * 一覧で表示するときに使う価格。
+   * 電子版と紙で値段が違うこともあるが、標準的とみなす価格を表示する
+   */
+  defaultPrice: JPYRange,
+
+  /**
    * @enum {string} 同人誌・グッズの種別
    * - 'doujinshi' - 同人誌
    * - 'merch' - グッズ

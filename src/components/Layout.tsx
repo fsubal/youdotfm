@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Jumbotron } from "./Jumbotron/Jumbotron";
 import { NavbarDropdown } from "./Navbar/NavbarDropdown";
-import { LogoOneline, NavbarMenu } from "./Navbar/Navbar";
+import { LogoOneline, NavbarMenu } from "./Navbar/NavbarContent";
 
 export function Layout({ children }: React.PropsWithChildren) {
   return (

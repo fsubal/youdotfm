@@ -1,28 +1,20 @@
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
-import { JPY, JPYValue, JPYRange } from "../utils/intl";
+import Image from "next/image";
+import { Product } from "../../domains/Product/model";
+import { PriceLabel } from "../PriceLabel";
 
 interface Props {
-  name: string;
-  description: string;
-  shopUrl: string;
-  imageUrl: string;
-  price: JPYValue | JPYRange;
+  product: Product;
 }
 
-export function BuyableItem({
-  name,
-  description,
-  shopUrl,
-  imageUrl,
-  price,
-}: Props) {
+export function ProductListItem({ product }: Props) {
+  const [mainImage] = product.images;
+
   return (
     <Link
       data-role="buyable-item"
-      href={shopUrl}
-      target="_blank"
+      href={`/shop/products/${product.slug}#main`}
       className={clsx(
         "group",
         "flex",
@@ -39,8 +31,8 @@ export function BuyableItem({
         className={clsx("overflow-hidden", "w-full", "h-48", "screen2:h-64")}
       >
         <Image
-          src={imageUrl}
-          alt=""
+          src={mainImage.src}
+          alt={mainImage.alt}
           width={200}
           height={300}
           className={clsx(
@@ -56,30 +48,16 @@ export function BuyableItem({
       </div>
 
       <div className={clsx("py-16", "px-16", "screen2:px-24")}>
-        <h3 className={clsx("font-bold", "group-hover:underline")}>{name}</h3>
+        <h3 className={clsx("font-bold", "group-hover:underline")}>
+          {product.title}
+        </h3>
         <p
           className={clsx("line-clamp-2", "text-text-50", "text-sm", "h-[2lh]")}
         >
-          {description}
+          {product.description}
         </p>
-        <PriceLabel>{price}</PriceLabel>
+        <PriceLabel>{product.defaultPrice}</PriceLabel>
       </div>
     </Link>
   );
-}
-
-const priceLabelClass = clsx("font-bold", "text-primary");
-
-function PriceLabel({ children }: { children: JPYValue | JPYRange }) {
-  if (Array.isArray(children)) {
-    const [from, to] = children;
-
-    return (
-      <div className={priceLabelClass}>
-        {JPY.format(from)}〜{to ? JPY.format(to) : undefined}
-      </div>
-    );
-  }
-
-  return <div className={priceLabelClass}>{JPY.format(children)}</div>;
 }
