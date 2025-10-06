@@ -38,6 +38,11 @@ export const Listing = z.object({
 export const ProductVariant = z.object({
   slug: z.string().brand<"ProductVariant">(),
   name: z.string(),
+
+  /**
+   * どのショップで売っているか
+   * ショップの数が多いので、全部を載せる必要はない
+   */
   listings: z.array(Listing).default([]),
 });
 

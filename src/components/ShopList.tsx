@@ -38,7 +38,7 @@ export function ShopList({ defaultShops, hiddenShops }: Props) {
   return (
     <div data-role="shop-list" id="shop-list" className="my-16">
       <h2 className={clsx("flex", "mb-8", "items-center", "text-xl", "flex-1")}>
-        通販サイト
+        通販・配信サイト
       </h2>
 
       <div className={shopLinkContainer}>
@@ -64,7 +64,10 @@ export function ShopList({ defaultShops, hiddenShops }: Props) {
         </div>
 
         <summary className={showMoreButtonClass}>
-          もっと見る
+          <span className={clsx("inline", "group-open:hidden")}>
+            もっと見る
+          </span>
+          <span className={clsx("hidden", "group-open:inline")}>閉じる</span>
           <Icon
             name="16/Menu"
             className={clsx("transition-transform", "group-open:rotate-180")}
