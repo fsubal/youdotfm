@@ -1,27 +1,11 @@
 import clsx from "clsx";
 import { NavbarItem } from "./NavbarItem";
-import { Icon } from "./Icon";
-import { defaultCharacter } from "../domains/Character/seeds";
+import { Icon } from "../Icon";
+import { defaultCharacter } from "../../domains/Character/seeds";
 import Image from "next/image";
 import Link from "next/link";
 
-export function Navbar() {
-  return (
-    <nav
-      className={clsx("bg-white", "flex-1", "max-w-400", "h-screen")}
-      data-role="navbar"
-    >
-      <div
-        className={clsx("screen2:top-0", "screen2:left-0", "screen2:sticky")}
-      >
-        <LogoOneline />
-        <NavbarMenu />
-      </div>
-    </nav>
-  );
-}
-
-function LogoOneline() {
+export function LogoOneline() {
   return (
     <hgroup className={clsx("pt-24", "px-24", "mb-3")}>
       <Link
@@ -49,7 +33,7 @@ function LogoOneline() {
   );
 }
 
-function NavbarMenu() {
+export function NavbarMenu() {
   return (
     <ul
       className={clsx(

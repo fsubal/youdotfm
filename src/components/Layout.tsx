@@ -1,14 +1,15 @@
 import clsx from "clsx";
 import { Jumbotron } from "./Jumbotron/Jumbotron";
-import { NavbarDropdown } from "./NavbarDropdown";
-import { Navbar } from "./Navbar";
+import { NavbarDropdown } from "./Navbar/NavbarDropdown";
+import { LogoOneline, NavbarMenu } from "./Navbar/Navbar";
 
 export function Layout({ children }: React.PropsWithChildren) {
   return (
     <>
       <Jumbotron />
       <NavbarDropdown>
-        <Navbar />
+        <LogoOneline />
+        <NavbarMenu />
       </NavbarDropdown>
       <Main>{children}</Main>
     </>

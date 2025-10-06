@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { Icon } from "./Icon";
+import { Icon } from "../Icon";
 import { useRef } from "react";
 
 export function NavbarDropdown({ children }: React.PropsWithChildren) {
@@ -37,7 +37,9 @@ export function NavbarDropdown({ children }: React.PropsWithChildren) {
         )}
         ref={backdrop}
       >
-        {children}
+        <nav className={clsx("bg-white", "flex-1", "max-w-400", "h-screen")}>
+          {children}
+        </nav>
       </div>
     </details>
   );
