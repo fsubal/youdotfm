@@ -4,7 +4,10 @@ import { SectionTitle } from "../../components/SectionTitle";
 import { shops } from "../../domains/Shop/seeds";
 import { ShopList } from "../../components/Shop/ShopList";
 import { groupBy } from "../../utils/iterable";
-import { ProductListItem } from "../../components/Product/ProductListItem";
+import {
+  ProductList,
+  ProductListItem,
+} from "../../components/Product/ProductListItem";
 import clsx from "clsx";
 
 const shopGroups = groupBy(shops, ({ featured }) =>
@@ -21,18 +24,11 @@ export default function BuyPage() {
         </p>
       </div>
       <div className="not-prose">
-        <div
-          className={clsx(
-            "grid",
-            "screen2:grid-cols-2",
-            "screen3:grid-cols-3",
-            "gap-24",
-          )}
-        >
+        <ProductList>
           {products.map((product) => (
             <ProductListItem key={product.slug} product={product} />
           ))}
-        </div>
+        </ProductList>
       </div>
       <hr className="my-24" />
       <ShopList

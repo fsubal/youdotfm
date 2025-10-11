@@ -48,6 +48,21 @@ export function ListingLink({ listing }: Props) {
         </ListingLinkBase>
       );
     }
+
+    case "LineManga": {
+      return (
+        <ListingLinkBase
+          url={listing.url}
+          className={clsx("bg-teal-300", "active:bg-teal-400", "text-text-950")}
+        >
+          LINEマンガで購入
+        </ListingLinkBase>
+      );
+    }
+
+    default: {
+      return null;
+    }
   }
 }
 

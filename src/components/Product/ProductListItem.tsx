@@ -64,3 +64,18 @@ export function ProductListItem({ product }: Props) {
     </Link>
   );
 }
+
+export function ProductList({ children }: React.PropsWithChildren) {
+  return (
+    <div
+      className={clsx(
+        "grid",
+        "screen2:grid-cols-2",
+        "screen3:grid-cols-3",
+        "gap-24",
+      )}
+    >
+      {children}
+    </div>
+  );
+}

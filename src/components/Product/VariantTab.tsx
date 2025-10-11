@@ -115,7 +115,7 @@ export function CurrentVariant({ variant }: { variant: ProductVariant }) {
             "font-bold",
           )}
         >
-          ほかのサイトで購入する
+          すべての通販・配信サイトを見る
           <Icon
             name="24/Next"
             className="mr-4"

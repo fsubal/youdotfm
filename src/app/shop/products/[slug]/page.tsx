@@ -1,6 +1,10 @@
 import { notFound } from "next/navigation";
 import { Layout } from "../../../../components/Layout";
-import { findProductBySlug, products } from "../../../../domains/Product/seeds";
+import {
+  findProductBySlug,
+  findProductsByKind,
+  products,
+} from "../../../../domains/Product/seeds";
 import { findEpisodesForProduct } from "../../../../domains/ProductEpisode/seeds";
 import { SectionTitle } from "../../../../components/SectionTitle";
 import { simpleFormat } from "../../../../utils/text";
@@ -11,18 +15,18 @@ import {
   VariantTab,
 } from "../../../../components/Product/VariantTab";
 import { formatDate } from "../../../../utils/datetime";
-import {
-  ProductBreadCrumb,
-  ProductKindTag,
-} from "../../../../components/Product/ProductKindTag";
+import { ProductBreadCrumb } from "../../../../components/Product/ProductKindTag";
 import { ProductThumbnail } from "../../../../components/Product/ProductThumbnail";
-import { Icon } from "../../../../components/Icon";
+import {
+  ProductList,
+  ProductListItem,
+} from "../../../../components/Product/ProductListItem";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
 }
 
-const h2style = clsx("font-serif", "text-xl", "mb-8");
+const h2style = clsx("font-serif", "text-xl", "mb-8", "text-text-950");
 
 export default async function ProductPage({
   params,
@@ -33,6 +37,11 @@ export default async function ProductPage({
     return notFound();
   }
   const episodes = findEpisodesForProduct(product.slug);
+
+  const relatedProducts = findProductsByKind(product.kind).filter(
+    // 同じ商品は除く
+    (related) => related.slug !== product.slug,
+  );
 
   return (
     <Layout>
@@ -70,7 +79,7 @@ export default async function ProductPage({
 
           <dl className="my-16">
             <dt className={h2style}>発売日</dt>
-            <dd>{formatDate(product.publishedAt)}</dd>
+            <dd className="text-text-950">{formatDate(product.publishedAt)}</dd>
           </dl>
 
           {episodes.length > 0 && (
@@ -104,6 +113,19 @@ export default async function ProductPage({
           {simpleFormat(product.description)}
         </div>
       </div>
+
+      {relatedProducts.length > 0 && (
+        <div className="mt-16">
+          <h2 className={h2style}>
+            {product.kind === "doujinshi" ? "同人誌" : "グッズ"}の商品一覧
+          </h2>
+          <ProductList>
+            {relatedProducts.map((product) => (
+              <ProductListItem key={product.slug} product={product} />
+            ))}
+          </ProductList>
+        </div>
+      )}
     </Layout>
   );
 }
