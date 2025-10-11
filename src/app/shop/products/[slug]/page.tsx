@@ -3,10 +3,9 @@ import { Layout } from "../../../../components/Layout";
 import { findProductBySlug, products } from "../../../../domains/Product/seeds";
 import { findEpisodesForProduct } from "../../../../domains/ProductEpisode/seeds";
 import { SectionTitle } from "../../../../components/SectionTitle";
-import { simpleFormat } from "../../../../utils/nl2br";
+import { simpleFormat } from "../../../../utils/text";
 import clsx from "clsx";
 import Link from "next/link";
-import { JPY } from "../../../../utils/intl";
 import { PriceLabel } from "../../../../components/PriceLabel";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
@@ -54,7 +53,7 @@ export default async function ProductPage({
 
       {episodes.length > 0 && (
         <div className={clsx("border-t", "pt-24", "mt-40")}>
-          <h2>この商品に乗っているエピソード</h2>
+          <h2 className={clsx("font-serif", "text-xl")}>収録エピソード</h2>
           {episodes.map((episode) => (
             <Link key={episode.slug} href={`/episodes/${episode.slug}#main`}>
               {episode.title}

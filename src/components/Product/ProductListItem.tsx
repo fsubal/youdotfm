@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { Product } from "../../domains/Product/model";
 import { PriceLabel } from "../PriceLabel";
-import { firstParagraph } from "../../utils/nl2br";
+import { firstLine } from "../../utils/text";
 
 interface Props {
   product: Product;
@@ -55,7 +55,7 @@ export function ProductListItem({ product }: Props) {
             "h-[2lh]",
           )}
         >
-          {firstParagraph(product.description)}
+          {firstLine(product.description)}
         </p>
         <PriceLabel className={clsx("font-bold", "text-primary")}>
           {product.defaultPrice}

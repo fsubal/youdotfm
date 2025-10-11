@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { News } from "../../domains/News/model";
-import { simpleFormat, nl2br } from "../../utils/nl2br";
+import { simpleFormat, nl2br } from "../../utils/text";
 import clsx from "clsx";
 import { NewsMetadata } from "./NewsMetadata";
 import { NewsSourceLink } from "./NewsKind";

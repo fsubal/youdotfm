@@ -17,5 +17,5 @@ export function PriceLabel({
     );
   }
 
-  return <div className={className}>{JPY.format(children)}</div>;
+  return <span className={className}>{JPY.format(children)}</span>;
 }
