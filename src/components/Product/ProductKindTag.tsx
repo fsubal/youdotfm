@@ -19,7 +19,7 @@ export function ProductKindTag({ kind }: Props) {
     case "doujinshi": {
       return (
         <span className={tagClass}>
-          <Icon name="16/Book" unsafeNonGuidelineScale={24 / 16} />
+          <ProductKindTagIcon kind={kind} />
           同人誌
         </span>
       );
@@ -28,10 +28,21 @@ export function ProductKindTag({ kind }: Props) {
     case "merch": {
       return (
         <span className={tagClass}>
-          <Icon name="24/Fashion" />
+          <ProductKindTagIcon kind={kind} />
           グッズ
         </span>
       );
+    }
+  }
+}
+
+export function ProductKindTagIcon({ kind }: Props) {
+  switch (kind) {
+    case "doujinshi": {
+      return <Icon name="16/Book" unsafeNonGuidelineScale={24 / 16} />;
+    }
+    case "merch": {
+      return <Icon name="24/Fashion" />;
     }
   }
 }

@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { Layout } from "../../../components/Layout";
 import { episodes, findEpisodeBySlug } from "../../../domains/Episode/seeds";
-import { findProductsForEpisode } from "../../../domains/ProductEpisode/seeds";
-import { VarDump } from "../../../components/VarDump";
+import { EpisodeListItem } from "../../../components/Episode/EpisodeListItem";
+import { SectionTitle } from "../../../components/SectionTitle";
 
 export function generateStaticParams(): StaticParams<"/episodes/[slug]"> {
   return episodes.map(({ slug }) => ({ slug }));
@@ -16,14 +16,14 @@ export default async function EpisodePage({
   if (!episode) {
     return notFound();
   }
-  const products = findProductsForEpisode(episode.slug);
 
   return (
     <Layout>
-      <h1>エピソード: {slug}</h1>
-      <div>WIP</div>
-      <VarDump>{episode}</VarDump>
-      <VarDump>{products}</VarDump>
+      <SectionTitle subheading="Episode" backToHref="/episodes">
+        {episode.numbering}「{episode.title}」
+      </SectionTitle>
+
+      <EpisodeListItem episode={episode} />
     </Layout>
   );
 }

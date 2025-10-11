@@ -1,6 +1,6 @@
 - slug: "1"
   numbering: 1話
-  title: "第1話 象とうわばみ"
+  title: 象とうわばみ
   description: |
     うだつの上がらない新人音楽ライターのエリは、
     素敵な文章を書くフォロワーのシヲリに心惹かれていた。
@@ -14,4 +14,22 @@
     - src: /example.jpeg
       alt: "url"
   pixivArtwork:
-    url: https://www.pixiv.net/
+    url: https://www.pixiv.net/artworks/118880927#1
+
+- slug: "1_5"
+  numbering: 1.5話
+  title: 見る前に飛べ！
+  description: |
+    うだつの上がらない新人音楽ライターのエリは、
+    素敵な文章を書くフォロワーのシヲリに心惹かれていた。
+    ある日エリはライブ会場でシヲリと対面し、意気投合する。
+    数日後、突然シヲリからインターネットで
+    ラジオを一緒に始めないかと誘われてしまい！？
+
+    語って、話して、好きになる。
+    ポッドキャスター女子ふたりが織りなす、大人の青春ストーリー！
+  images:
+    - src: /example.jpeg
+      alt: "url"
+  pixivArtwork:
+    url: https://www.pixiv.net/artworks/118880927#1

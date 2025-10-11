@@ -91,7 +91,7 @@ export default async function ProductPage({
                   href={`/episodes/${episode.slug}#main`}
                   className={clsx("inline-block", "underline", "text-primary")}
                 >
-                  {episode.title}
+                  {episode.numbering}「{episode.title}」
                 </Link>
               ))}
             </div>

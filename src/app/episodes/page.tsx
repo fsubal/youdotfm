@@ -1,17 +1,18 @@
+import clsx from "clsx";
 import { Layout } from "../../components/Layout";
 import { SectionTitle } from "../../components/SectionTitle";
+import { episodes } from "../../domains/Episode/seeds";
+import { EpisodeListItem } from "../../components/Episode/EpisodeListItem";
 
 export default function EpisodesPage() {
   return (
     <Layout>
       <SectionTitle subheading="Episode">エピソード</SectionTitle>
-      <div>
-        pixivで公開されている『ユードットエフエム』の各話エピソードや、同人誌のサンプルなどを紹介します。
-      </div>
 
-      <h2>一章</h2>
-      <div>
-        うだつの上がらない音楽系ライターのエリは、推しフォロワーのシヲリとポッドキャストを始めることになる。
+      <div className="divide-y">
+        {episodes.map((episode) => (
+          <EpisodeListItem key={episode.slug} episode={episode} />
+        ))}
       </div>
     </Layout>
   );
