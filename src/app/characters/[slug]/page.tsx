@@ -23,7 +23,7 @@ export default async function CharacterPage({
   return (
     <Layout>
       <SectionTitle subheading="Characters">キャラクター</SectionTitle>
-      <VarDump>{character}</VarDump>
+      <div>{character.name.japanese}</div>
     </Layout>
   );
 }
