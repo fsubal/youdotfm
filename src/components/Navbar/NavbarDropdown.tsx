@@ -5,10 +5,10 @@ import { Icon } from "../Icon";
 import { useRef } from "react";
 
 export function NavbarDropdown({ children }: React.PropsWithChildren) {
-  const details = useRef<HTMLDetailsElement>(null);
   const backdrop = useRef<HTMLDivElement>(null);
 
   const onClickMenu = (e: React.MouseEvent<HTMLDetailsElement>) => {
+    // クリックしたのがbackdropだったときだけ、メニューを閉じる
     if (e.target === backdrop.current) {
       e.preventDefault();
       e.currentTarget.open = false;
@@ -17,7 +17,6 @@ export function NavbarDropdown({ children }: React.PropsWithChildren) {
 
   return (
     <details
-      ref={details}
       onClick={onClickMenu}
       className="group"
       data-role="navbar-dropdown"

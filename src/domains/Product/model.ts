@@ -69,7 +69,7 @@ export const Product = z.object({
    */
   kind: z.array(ProductKind),
   variants: z.array(ProductVariant),
-  images: z.array(ImageSource),
+  images: z.array(ImageSource).min(1),
   description: z.string(),
   episodes: z.array(z.string()).default([]),
 });
