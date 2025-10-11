@@ -1,13 +1,16 @@
 import clsx from "clsx";
-import { Jumbotron } from "./Jumbotron";
-import { Navbar } from "./Navbar";
-import Image from "next/image";
-import Link from "next/link";
+import { Jumbotron } from "./Jumbotron/Jumbotron";
+import { NavbarDropdown } from "./Navbar/NavbarDropdown";
+import { LogoOneline, NavbarMenu } from "./Navbar/NavbarContent";
 
 export function Layout({ children }: React.PropsWithChildren) {
   return (
     <>
       <Jumbotron />
+      <NavbarDropdown>
+        <LogoOneline />
+        <NavbarMenu />
+      </NavbarDropdown>
       <Main>{children}</Main>
     </>
   );
@@ -20,51 +23,37 @@ function Main({ children }: React.PropsWithChildren) {
     <div
       id="main"
       data-role="main"
-      className={clsx("flex", "flex-col", "min-h-screen")}
+      className={clsx("flex", "flex-col", "min-h-screen", "items-center")}
     >
       <main
-        className={clsx("flex-1", "flex", "flex-col", "tablet:flex-row", [
-          "divide-y",
-          "tablet:divide-x",
-          "divide-slate-100",
-        ])}
+        className={clsx(
+          "flex-1",
+          "flex",
+          "flex-col",
+          "screen2:flex-row",
+          "w-full",
+          "max-w-(--breakpoint-screen5)",
+          [
+            "divide-y",
+            "screen2:divide-y-0",
+            "screen2:divide-x",
+            "divide-x-text-50",
+          ],
+        )}
       >
-        <nav
-          className={clsx(
-            "tablet:h-full",
-            "tablet:top-0",
-            "tablet:left-0",
-            "tablet:sticky"
-          )}
-        >
-          <Logo />
-          <Navbar />
-        </nav>
         <div
           className={clsx(
             "flex-1",
-            "py-10",
-            "px-6",
-            "tablet:py-10",
-            "tablet:px-8"
+            "py-40",
+            "px-24",
+            "screen2:py-40",
+            "screen2:px-40",
           )}
         >
-          <div className={clsx(proseClass, "prose-h1:tracking-wider")}>
-            {children}
-          </div>
+          <div className="max-w-full">{children}</div>
         </div>
       </main>
       <Footer />
-    </div>
-  );
-}
-
-function Logo() {
-  return (
-    <div className={clsx("pt-6", "px-6", "mb-3", "flex", "justify-center")}>
-      <Link href="/">
-        <Image src="/text.svg" alt="トップに戻る" width={160} height={30} />
-      </Link>
     </div>
   );
 }
@@ -74,15 +63,20 @@ function Footer() {
     <footer
       data-role="footer"
       className={clsx(
-        "bg-slate-100",
-        ["py-6", "px-6"],
+        "flex",
+        "justify-center",
+        "bg-surface",
+        "w-full",
+        ["py-24", "px-24"],
         [proseClass, "prose-sm"],
-        "max-w-none"
+        "max-w-none",
       )}
     >
-      footer
-      <br />
-      &copy; Subal FUJIAKI
+      <div className={clsx("w-full", "max-w-(--breakpoint-screen5)")}>
+        footer
+        <br />
+        &copy; Subal Fujiaki
+      </div>
     </footer>
   );
 }

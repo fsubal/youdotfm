@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import Link from "next/link";
-import Image from "next/image";
 import { type HTMLAttributeAnchorTarget } from "react";
 
 interface Props {
@@ -26,17 +25,17 @@ export function Chip({
         "rounded-full",
         "border",
         "bg-white",
-        "py-3",
-        "px-4",
+        "py-12",
+        "px-16",
         "inline-flex",
         "items-center",
-        "gap-2",
+        "gap-8",
         "transition-colors",
-        ["hover:underline", "hover:bg-white-hover", "active:bg-white-active"]
+        ["hover:underline", "hover:bg-surface", "active:bg-active"],
       )}
     >
       {imageUrl && alt && (
-        <Image
+        <img
           className={clsx("inline-block", "rounded-full")}
           src={imageUrl}
           width={24}

@@ -1,0 +1,43 @@
+---
+slug: episode_1
+title: ユードットエフエム 1話『象とうわばみ』
+kind: doujinshi
+episodes:
+  - "1"
+images:
+  - src: https://booth.pximg.net/cd04c594-71c2-4976-b85b-24de2c763e22/i/5741859/9c06e4cb-e3e1-4432-a3f0-9376b18ab46c_base_resized.jpg
+    alt: ユードットエフエム 1話『象とうわばみ』の表紙画像
+defaultPrice: [400]
+publishedAt: 2024-05-26
+description: |
+  コミティア148に出したポッドキャスト百合漫画『ユードットエフエム』第1話です。全40ページ。
+
+  ◆◆◆ あらすじ ◆◆◆
+  うだつの上がらない新人音楽ライターのエリは、素敵な文章を書くフォロワーのシヲリに心惹かれていた。
+  ある日エリはライブ会場でシヲリと対面し、意気投合する。
+  数日後、突然シヲリからインターネットでラジオを一緒に始めないかと誘われてしまい！？
+
+  語って、話して、好きになる。ポッドキャスター女子ふたりが織りなす、大人の青春ストーリー！
+variants:
+  - slug: paper
+    name: 紙版
+    defaultPrice: [500]
+    listings:
+      - shopKind: Melonbooks
+        price: 500
+        url: /melonbooks/2837742
+      - shopKind: BOOTH
+        price: 500
+        url: /booth/5741859
+        status: stockout
+
+  - slug: digital
+    name: 電子書籍
+    defaultPrice: [400]
+    listings:
+      - shopKind: Kindle
+        price: 400
+        url: https://www.amazon.co.jp/
+      - shopKind: LineManga
+        price: 400
+        url: https://www.amazon.co.jp/

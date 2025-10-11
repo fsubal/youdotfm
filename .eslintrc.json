@@ -1,8 +1,12 @@
 {
-  "extends": "next/core-web-vitals",
-  "plugins": ["classnames"],
-  "rules": {
-    "classnames/prefer-classnames-function": [2, { "functionName": "clsx" }],
-    "classnames/one-by-one-arguments": [2, { "functionName": "clsx" }]
-  }
+    "extends": "next/core-web-vitals",
+    "plugins": ["classnames"],
+    "rules": {
+        "classnames/prefer-classnames-function": [
+            2,
+            { "functionName": "clsx" }
+        ],
+        "classnames/one-by-one-arguments": [2, { "functionName": "clsx" }],
+        "@next/next/no-img-element": 0
+    }
 }

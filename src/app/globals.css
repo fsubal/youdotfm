@@ -1,10 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --spacing: 1px;
+
+  --breakpoint-screen2: 744px;
+  --breakpoint-screen3: 952px;
+  --breakpoint-screen4: 1160px;
+  --breakpoint-screen5: 1368px;
+
+  --color-primary: #226cff;
+  --color-surface: oklch(from var(--color-primary) 95% c h);
+  --color-active: oklch(from var(--color-primary) 90% c h);
+  --color-assertive: oklch(from var(--color-primary) l c 20);
+
+  --color-text-950: oklch(from var(--color-primary) 5% 5% h);
+  --color-text-500: oklch(from var(--color-primary) 50% 5% h);
+  --color-text-50: oklch(from var(--color-primary) 95% 5% h);
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
 
 @layer base {
   html {
-    color: theme("colors.slate.900");
+    color: var(--color-text-950);
+    font-family: "Trebuchet MS", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-text-50, currentColor);
   }
 
   /**
@@ -34,19 +68,5 @@
     &[scale="3"] {
       --scale: 3;
     }
-
-    /** NOTICE: 現状だと attr(... number) はほとんどのブラウザで動かない */
-    &[unsafe-non-guideline-scale] {
-      --scale: attr(unsafe-non-guideline-scale number);
-    }
-  }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

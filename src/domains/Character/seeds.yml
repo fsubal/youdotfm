@@ -1,0 +1,33 @@
+- slug: eri_takeuchi
+  name:
+    japanese: 竹内エリ
+    roman: Eri Takeuchi
+    screen: kei
+  thumbnail:
+    src: /eri.png
+    alt: "url"
+  portrait:
+    src: "/eri.png"
+    alt: "url"
+  profile: |
+    音楽雑誌の新人ライター。
+    シヲリの文章が好きすぎてネトストしている。
+    ポッドキャスト文化のことはよく知らないが、
+    突然シヲリにラジオに誘われる。
+
+- slug: shiori_chiba
+  name:
+    japanese: "千葉シヲリ"
+    roman: "Shiori Chiba"
+  thumbnail:
+    src: /shiori.png
+    alt: "url"
+  portrait:
+    src: /shiori.png
+    alt: "url"
+  profile: |
+    Webライター。
+    Webメディアで取材記事を書いたり、
+    ブログでエッセイを書いたりしている。
+    ライブで意気投合したエリを
+    ポッドキャストに誘う。
