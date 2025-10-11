@@ -4,7 +4,7 @@
     roman: Eri Takeuchi
     screen: kei
   thumbnail:
-    src: /example.jpeg
+    src: /eri.png
     alt: "url"
   portrait:
     src: "/eri.png"
@@ -20,10 +20,10 @@
     japanese: "千葉シヲリ"
     roman: "Shiori Chiba"
   thumbnail:
-    src: /example.jpeg
+    src: /shiori.png
     alt: "url"
   portrait:
-    src: /eri.png
+    src: /shiori.png
     alt: "url"
   profile: |
     Webライター。
