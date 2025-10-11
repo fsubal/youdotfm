@@ -2,68 +2,104 @@
 
 import clsx from "clsx";
 import { Icon } from "../Icon";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+
+const navId = "navbar-dropdown-nav";
 
 export function NavbarDropdown({ children }: React.PropsWithChildren) {
-  const backdrop = useRef<HTMLDivElement>(null);
+  const backdrop = useRef<HTMLDivElement | null>(null);
+  const [open, setOpen] = useState(false);
 
-  const onClickMenu = (e: React.MouseEvent<HTMLDetailsElement>) => {
+  const onToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setOpen((prev) => !prev);
+  };
+
+  const onClickBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
     // クリックしたのがbackdropだったときだけ、メニューを閉じる
     if (e.target === backdrop.current) {
       e.preventDefault();
-      e.currentTarget.open = false;
+      setOpen(false);
     }
   };
 
   return (
-    <details
-      onClick={onClickMenu}
-      className="group"
-      data-role="navbar-dropdown"
-    >
-      <DropdownTrigger>
-        <Icon name="24/Menu" className={clsx("group-open:hidden", "block")} />
-        <Icon name="24/Close" className={clsx("group-open:block", "hidden")} />
+    <>
+      <DropdownTrigger
+        onClick={onToggle}
+        ariaExpanded={open}
+        ariaControls={navId}
+      >
+        <Icon
+          name="24/Menu"
+          unsafeNonGuidelineScale={28 / 24}
+          className={clsx("group-open:hidden", "block")}
+        />
+        <Icon
+          name="24/Close"
+          unsafeNonGuidelineScale={28 / 24}
+          className={clsx("group-open:block", "hidden")}
+        />
       </DropdownTrigger>
+
       <div
         className={clsx(
+          [open ? "flex" : "hidden", "justify-end"],
           "fixed",
           "inset-0",
           "bg-text-950/50",
           "pl-80",
-          "flex",
-          "justify-end",
         )}
         ref={backdrop}
+        onClick={onClickBackdrop}
       >
-        <nav className={clsx("bg-white", "flex-1", "max-w-400", "h-screen")}>
+        <nav
+          id={navId}
+          role="menu"
+          className={clsx("bg-white", "flex-1", "max-w-400", "h-screen")}
+        >
           {children}
         </nav>
       </div>
-    </details>
+    </>
   );
 }
 
-function DropdownTrigger({ children }: React.PropsWithChildren) {
+function DropdownTrigger({
+  children,
+  onClick,
+  ariaExpanded,
+  ariaControls,
+}: React.PropsWithChildren & {
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  ariaExpanded?: boolean;
+  ariaControls?: string;
+}) {
   return (
-    <summary
+    <button
+      type="button"
+      onClick={onClick}
+      aria-haspopup="menu"
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
       className={clsx(
         "z-1",
-        ["fixed", "right-24", "top-24"],
+        ["fixed", "right-16", "top-16"],
         "list-none",
         "cursor-pointer",
         [
-          "w-40",
-          "h-40",
+          "w-48",
+          "h-48",
           "inline-flex",
           "justify-center",
           "items-center",
           "rounded-full",
         ],
+        "not-group-open:bg-primary/10",
         "active:bg-active",
       )}
     >
       {children}
-    </summary>
+    </button>
   );
 }

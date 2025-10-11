@@ -23,7 +23,7 @@ export function NavbarItem({
   const isActive = pathname === href;
 
   return (
-    <li data-role="navbar-item">
+    <li data-role="navbar-item" role="menuitem">
       <Link
         href={`${href}#main`}
         className={clsx(
