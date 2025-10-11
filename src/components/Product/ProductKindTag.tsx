@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { ProductKind } from "../../domains/Product/model";
+import { Product, ProductKind } from "../../domains/Product/model";
 import { Icon } from "../Icon";
 
 interface Props {
@@ -34,4 +34,23 @@ export function ProductKindTag({ kind }: Props) {
       );
     }
   }
+}
+
+export function ProductBreadCrumb({ product }: { product: Product }) {
+  return (
+    <div
+      className={clsx(
+        "hidden",
+        "screen2:flex",
+        "items-center",
+        "mb-16",
+        "overflow-auto",
+        "whitespace-nowrap",
+      )}
+    >
+      <ProductKindTag kind={product.kind} />
+      <Icon name="24/Next" className="mx-4" unsafeNonGuidelineScale={16 / 24} />
+      <span className="text-sm">{product.title}</span>
+    </div>
+  );
 }

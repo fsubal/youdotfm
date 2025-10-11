@@ -12,7 +12,7 @@ export function ListingLink({ listing }: Props) {
       return (
         <ListingLinkBase
           url={listing.url}
-          className={clsx("bg-rose-600", "text-white")}
+          className={clsx("bg-rose-600", "active:bg-rose-700", "text-white")}
         >
           BOOTHで購入
         </ListingLinkBase>
@@ -23,7 +23,11 @@ export function ListingLink({ listing }: Props) {
       return (
         <ListingLinkBase
           url={listing.url}
-          className={clsx("bg-emerald-500", "text-white")}
+          className={clsx(
+            "bg-emerald-500",
+            "active:bg-emerald-600",
+            "text-white",
+          )}
         >
           メロンブックスで購入
         </ListingLinkBase>
@@ -34,7 +38,11 @@ export function ListingLink({ listing }: Props) {
       return (
         <ListingLinkBase
           url={listing.url}
-          className={clsx("bg-amber-300", "text-text-950")}
+          className={clsx(
+            "bg-amber-300",
+            "active:bg-amber-400",
+            "text-text-950",
+          )}
         >
           Amazon（Kindle）で購入
         </ListingLinkBase>
@@ -53,7 +61,7 @@ function ListingLinkBase({
       href={url}
       className={clsx(
         "flex",
-        "screen2:inline-flex",
+        "whitespace-nowrap",
         "justify-center",
         "rounded-full",
         "py-12",

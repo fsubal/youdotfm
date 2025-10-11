@@ -74,7 +74,7 @@ export const Product = z.object({
    * - 'doujinshi' - 同人誌
    * - 'merch' - グッズ
    */
-  kind: z.array(ProductKind),
+  kind: ProductKind,
   variants: z.array(ProductVariant),
   images: z.array(ImageSource).min(1),
   description: z.string(),

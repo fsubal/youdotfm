@@ -15,7 +15,8 @@ export function ProductThumbnail({ className, images }: Props) {
           className={clsx(
             "w-full",
             "bg-text-50/50",
-            "aspect-square",
+            "aspect-[5/4]",
+            "screen2:aspect-square",
             "rounded",
           )}
         >

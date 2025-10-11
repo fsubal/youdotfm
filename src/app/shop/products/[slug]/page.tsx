@@ -6,15 +6,23 @@ import { SectionTitle } from "../../../../components/SectionTitle";
 import { simpleFormat } from "../../../../utils/text";
 import clsx from "clsx";
 import Link from "next/link";
-import { VariantTab } from "../../../../components/Product/VariantTab";
-import { PriceLabel } from "../../../../components/PriceLabel";
+import {
+  CurrentVariant,
+  VariantTab,
+} from "../../../../components/Product/VariantTab";
 import { formatDate } from "../../../../utils/datetime";
-import { ProductKindTag } from "../../../../components/Product/ProductKindTag";
+import {
+  ProductBreadCrumb,
+  ProductKindTag,
+} from "../../../../components/Product/ProductKindTag";
 import { ProductThumbnail } from "../../../../components/Product/ProductThumbnail";
+import { Icon } from "../../../../components/Icon";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
 }
+
+const h2style = clsx("font-serif", "text-xl", "mb-8");
 
 export default async function ProductPage({
   params,
@@ -36,7 +44,7 @@ export default async function ProductPage({
         className={clsx(
           "flex",
           "flex-col",
-          "gap-y-24",
+          "gap-y-16",
           "screen2:flex-row",
           "screen2:gap-x-40",
           "screen2:gap-y-0",
@@ -46,34 +54,33 @@ export default async function ProductPage({
           className={clsx("screen2:w-272", "screen3:w-440")}
           images={product.images}
         />
-        <div className="flex-1">
-          <div>
-            {product.kind.map((kind) => (
-              <ProductKindTag key={kind} kind={kind} />
-            ))}
-          </div>
+        <div className={clsx("flex-1", "text-text-500")}>
+          <ProductBreadCrumb product={product} />
 
-          <VariantTab variants={product.variants} />
+          {
+            // 選択肢が1個しかないときはタブUIにしない
+            product.variants.length === 1 ? (
+              <CurrentVariant variant={product.variants[0]} />
+            ) : (
+              <VariantTab variants={product.variants} />
+            )
+          }
 
           <hr />
-          <dl>
-            {/* <dt>定価</dt>
-            <dd>
-              <PriceLabel>{product.defaultPrice}</PriceLabel>
-            </dd> */}
 
-            <dt>発売日</dt>
+          <dl className="my-16">
+            <dt className={h2style}>発売日</dt>
             <dd>{formatDate(product.publishedAt)}</dd>
           </dl>
-          <hr />
 
           {episodes.length > 0 && (
-            <div>
-              <h2 className={clsx("font-serif", "text-xl")}>収録エピソード</h2>
+            <div className="mt-16">
+              <h2 className={h2style}>収録エピソード</h2>
               {episodes.map((episode) => (
                 <Link
                   key={episode.slug}
                   href={`/episodes/${episode.slug}#main`}
+                  className={clsx("inline-block", "underline", "text-primary")}
                 >
                   {episode.title}
                 </Link>
@@ -83,16 +90,19 @@ export default async function ProductPage({
         </div>
       </div>
 
-      <h2>商品説明</h2>
-      <div
-        className={clsx(
-          "text-base",
-          "leading-loose",
-          "[&_p+p]:mt-16",
-          "[&_br:last-child]:hidden",
-        )}
-      >
-        {simpleFormat(product.description)}
+      <div className="mt-16">
+        <h2 className={h2style}>商品説明</h2>
+        <div
+          className={clsx(
+            "text-base",
+            "leading-loose",
+            "tracking-wider",
+            "[&_p+p]:mt-16",
+            "[&_br:last-child]:hidden",
+          )}
+        >
+          {simpleFormat(product.description)}
+        </div>
       </div>
     </Layout>
   );

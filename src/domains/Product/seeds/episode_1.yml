@@ -1,8 +1,7 @@
 ---
 slug: episode_1
 title: ユードットエフエム 1話『象とうわばみ』
-kind:
-  - doujinshi
+kind: doujinshi
 episodes:
   - "1"
 images:
@@ -11,7 +10,7 @@ images:
 defaultPrice: [400]
 publishedAt: 2024-05-26
 description: |
-  コミティア148（2024/05/26）に出したポッドキャスト百合漫画『ユードットエフエム』第1話です。全40ページ。
+  コミティア148に出したポッドキャスト百合漫画『ユードットエフエム』第1話です。全40ページ。
 
   ◆◆◆ あらすじ ◆◆◆
   うだつの上がらない新人音楽ライターのエリは、
@@ -24,7 +23,7 @@ description: |
 variants:
   - slug: paper
     name: 紙版
-    defaultPrice: [400]
+    defaultPrice: [500]
     listings:
       - shopKind: Melonbooks
         price: 500
