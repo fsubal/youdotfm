@@ -34,22 +34,28 @@ export default async function ProductPage({
 
       <div
         className={clsx(
-          "grid",
-          "grid-cols-1",
+          "flex",
+          "flex-col",
           "gap-y-24",
-          "screen2:grid-cols-3",
+          "screen2:flex-row",
           "screen2:gap-x-40",
           "screen2:gap-y-0",
         )}
       >
-        <ProductThumbnail className="col-span-1" images={product.images} />
-        <div className="col-span-2">
+        <ProductThumbnail
+          className={clsx("screen2:w-272", "screen3:w-440")}
+          images={product.images}
+        />
+        <div className="flex-1">
           <div>
             {product.kind.map((kind) => (
               <ProductKindTag key={kind} kind={kind} />
             ))}
           </div>
 
+          <VariantTab variants={product.variants} />
+
+          <hr />
           <dl>
             {/* <dt>定価</dt>
             <dd>
@@ -61,12 +67,8 @@ export default async function ProductPage({
           </dl>
           <hr />
 
-          <VariantTab variants={product.variants} />
-
-          <hr />
-
           {episodes.length > 0 && (
-            <div className="mt-40">
+            <div>
               <h2 className={clsx("font-serif", "text-xl")}>収録エピソード</h2>
               {episodes.map((episode) => (
                 <Link

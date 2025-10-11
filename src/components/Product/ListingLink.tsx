@@ -6,42 +6,44 @@ interface Props {
   listing: Listing;
 }
 
-export function ShopPurchaseLink({ listing }: Props) {
+export function ListingLink({ listing }: Props) {
   switch (listing.shopKind) {
     case "BOOTH": {
       return (
-        <PurchaseLinkBase
+        <ListingLinkBase
           url={listing.url}
-          className={clsx("bg-red-500", "text-white")}
+          className={clsx("bg-rose-600", "text-white")}
         >
           BOOTHで購入
-        </PurchaseLinkBase>
+        </ListingLinkBase>
       );
     }
+
     case "Melonbooks": {
       return (
-        <PurchaseLinkBase
+        <ListingLinkBase
           url={listing.url}
-          className={clsx("bg-green-600", "text-white")}
+          className={clsx("bg-emerald-500", "text-white")}
         >
           メロンブックスで購入
-        </PurchaseLinkBase>
+        </ListingLinkBase>
       );
     }
+
     case "Kindle": {
       return (
-        <PurchaseLinkBase
+        <ListingLinkBase
           url={listing.url}
           className={clsx("bg-amber-300", "text-text-950")}
         >
           Amazon（Kindle）で購入
-        </PurchaseLinkBase>
+        </ListingLinkBase>
       );
     }
   }
 }
 
-function PurchaseLinkBase({
+function ListingLinkBase({
   url,
   className,
   children,
@@ -50,7 +52,9 @@ function PurchaseLinkBase({
     <a
       href={url}
       className={clsx(
-        "inline-flex",
+        "flex",
+        "screen2:inline-flex",
+        "justify-center",
         "rounded-full",
         "py-12",
         "px-40",
