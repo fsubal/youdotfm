@@ -33,6 +33,23 @@ export function formatDateTime(datetime: Temporal.ZonedDateTime) {
 }
 
 /**
+ * RFC 9557に準拠した日本時間の日付文字列
+ * 例: `2024-06-01`
+ */
+export const JapanDate = z.codec(z.string(), z.instanceof(Temporal.PlainDate), {
+  decode: (str) => Temporal.PlainDate.from(str),
+  encode: (date) => date.toString(),
+});
+
+export function formatDate(date: Temporal.PlainDate) {
+  return date.toLocaleString("ja-jp", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
+/**
  * ◯年◯月を表す値（例: `2024-06`）
  * ある1ヶ月の期間を表すのに使える
  */

@@ -2,6 +2,7 @@ import z from "zod";
 import { ImageSource } from "../ImageSource/model";
 import { ShopKind } from "../Shop/model";
 import { JPYRange, JPYValue } from "../../utils/intl";
+import { JapanDate } from "../../utils/datetime";
 
 export const ProductKind = z.enum(["doujinshi", "merch"]);
 
@@ -78,6 +79,7 @@ export const Product = z.object({
   images: z.array(ImageSource).min(1),
   description: z.string(),
   episodes: z.array(z.string()).default([]),
+  publishedAt: JapanDate,
 });
 
 export type Product = z.infer<typeof Product>;

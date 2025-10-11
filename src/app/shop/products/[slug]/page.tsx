@@ -6,7 +6,9 @@ import { SectionTitle } from "../../../../components/SectionTitle";
 import { simpleFormat } from "../../../../utils/text";
 import clsx from "clsx";
 import Link from "next/link";
+import { VariantTab } from "../../../../components/Product/VariantTab";
 import { PriceLabel } from "../../../../components/PriceLabel";
+import { formatDate } from "../../../../utils/datetime";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
@@ -28,27 +30,45 @@ export default async function ProductPage({
         {product.title}
       </SectionTitle>
 
-      <div className={clsx("flex", "flex-col", "screen2:flex-row", "gap-24")}>
-        <div>
+      <div
+        className={clsx("grid", "grid-cols-1", "screen2:grid-cols-3", "gap-40")}
+      >
+        <div className="col-span-1">
           {product.images.map((image) => (
-            <img key={image.src} src={image.src} alt={image.alt} />
+            <img
+              className="max-w-full"
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+            />
           ))}
         </div>
-        {product.variants.map((variant) => (
-          <div key={variant.slug}>
-            {variant.name}（<PriceLabel>{variant.defaultPrice}</PriceLabel>）
-          </div>
-        ))}
-        <div
-          className={clsx(
-            "text-base",
-            "leading-loose",
-            "[&_p+p]:mt-16",
-            "[&_br:last-child]:hidden",
-          )}
-        >
-          {simpleFormat(product.description)}
+        <div className="col-span-2">
+          <dl>
+            <dt>定価</dt>
+            <dd>
+              <PriceLabel>{product.defaultPrice}</PriceLabel>
+            </dd>
+
+            <dt>発売日</dt>
+            <dd>{formatDate(product.publishedAt)}</dd>
+          </dl>
+          <hr />
+          <VariantTab variants={product.variants} />
+
+          <hr />
         </div>
+      </div>
+
+      <div
+        className={clsx(
+          "text-base",
+          "leading-loose",
+          "[&_p+p]:mt-16",
+          "[&_br:last-child]:hidden",
+        )}
+      >
+        {simpleFormat(product.description)}
       </div>
 
       {episodes.length > 0 && (
