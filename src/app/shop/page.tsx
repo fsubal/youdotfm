@@ -5,6 +5,7 @@ import { shops } from "../../domains/Shop/seeds";
 import { ShopList } from "../../components/ShopList";
 import { groupBy } from "../../utils/iterable";
 import { ProductListItem } from "../../components/Product/ProductListItem";
+import clsx from "clsx";
 
 const shopGroups = groupBy(shops, ({ featured }) =>
   featured ? "featured" : "notFeatured",
@@ -14,16 +15,17 @@ export default function BuyPage() {
   return (
     <Layout>
       <SectionTitle subheading="Shop">本 &amp; グッズ</SectionTitle>
-      <div>
+      <div className={clsx("text-text-500", "my-16")}>
         <p>
           『ユードットエフエム』に関連する商品を紹介します。各種通販サイトで購入できます。
         </p>
       </div>
       <div className="not-prose">
-        {products.map((product) => (
-          <ProductListItem key={product.slug} product={product} />
-        ))}
-        {/* <div
+        <div className={clsx("grid", "screen2:grid-cols-2", "gap-24")}>
+          {products.map((product) => (
+            <ProductListItem key={product.slug} product={product} />
+          ))}
+          {/* <div
           className={clsx(
             "grid",
             "screen2:grid-cols-2",
@@ -31,7 +33,9 @@ export default function BuyPage() {
             "gap-16",
           )}
         >
+          
         </div> */}
+        </div>
       </div>
       <hr className="my-24" />
       <ShopList
