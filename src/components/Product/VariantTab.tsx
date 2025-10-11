@@ -3,13 +3,9 @@
 import clsx from "clsx";
 import { ProductVariant } from "../../domains/Product/model";
 import { PriceLabel } from "../PriceLabel";
-import {
-  SelectionIndicator,
-  Tab,
-  TabList,
-  TabPanel,
-  Tabs,
-} from "react-aria-components";
+import { Tab, TabList, TabPanel, Tabs } from "react-aria-components";
+import { ShopPurchaseLink } from "./ListingLink";
+import Link from "next/link";
 
 interface Props {
   variants: ProductVariant[];
@@ -44,9 +40,16 @@ export function VariantTab({ variants }: Props) {
       {variants.map((variant) => (
         <TabPanel key={variant.slug} id={variant.slug}>
           <PriceLabel>{variant.defaultPrice}</PriceLabel>
-          {variant.listings.map((listing) => (
-            <div key={listing.shopKind}>{listing.shopKind}</div>
-          ))}
+
+          <div className="space-y-8">
+            {variant.listings.map((listing) => (
+              <div key={listing.shopKind}>
+                <ShopPurchaseLink listing={listing} />
+              </div>
+            ))}
+
+            <Link href="/shop#shop-list">ほかのサイトで購入する</Link>
+          </div>
         </TabPanel>
       ))}
     </Tabs>

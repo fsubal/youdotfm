@@ -23,13 +23,13 @@ description: |
   ポッドキャスター女子ふたりが織りなす、大人の青春ストーリー！
 variants:
   - slug: paper
-    name: 同人誌（紙）
+    name: 紙版
     defaultPrice: [400]
     listings:
       - shopKind: Melonbooks
         price: 500
         url: /melonbooks/2837742
-      - shopKind: Booth
+      - shopKind: BOOTH
         price: 500
         url: /booth/5741859
         status: stockout
@@ -38,6 +38,6 @@ variants:
     name: 電子書籍
     defaultPrice: [400]
     listings:
-      - shopKind: AmazonKindle
+      - shopKind: Kindle
         price: 400
         url: https://www.amazon.co.jp/

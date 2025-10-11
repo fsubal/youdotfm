@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import { Shop } from "../domains/Shop/model";
-import { Icon } from "./Icon";
+import { Shop } from "../../domains/Shop/model";
+import { Icon } from "../Icon";
 
 interface Props {
   defaultShops: Shop[];

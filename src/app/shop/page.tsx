@@ -2,7 +2,7 @@ import { Layout } from "../../components/Layout";
 import { products } from "../../domains/Product/seeds";
 import { SectionTitle } from "../../components/SectionTitle";
 import { shops } from "../../domains/Shop/seeds";
-import { ShopList } from "../../components/ShopList";
+import { ShopList } from "../../components/Shop/ShopList";
 import { groupBy } from "../../utils/iterable";
 import { ProductListItem } from "../../components/Product/ProductListItem";
 import clsx from "clsx";

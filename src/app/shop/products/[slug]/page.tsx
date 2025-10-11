@@ -9,6 +9,8 @@ import Link from "next/link";
 import { VariantTab } from "../../../../components/Product/VariantTab";
 import { PriceLabel } from "../../../../components/PriceLabel";
 import { formatDate } from "../../../../utils/datetime";
+import { ProductKindTag } from "../../../../components/Product/ProductKindTag";
+import { ProductThumbnail } from "../../../../components/Product/ProductThumbnail";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
@@ -31,35 +33,55 @@ export default async function ProductPage({
       </SectionTitle>
 
       <div
-        className={clsx("grid", "grid-cols-1", "screen2:grid-cols-3", "gap-40")}
+        className={clsx(
+          "grid",
+          "grid-cols-1",
+          "gap-y-24",
+          "screen2:grid-cols-3",
+          "screen2:gap-x-40",
+          "screen2:gap-y-0",
+        )}
       >
-        <div className="col-span-1">
-          {product.images.map((image) => (
-            <img
-              className="max-w-full"
-              key={image.src}
-              src={image.src}
-              alt={image.alt}
-            />
-          ))}
-        </div>
+        <ProductThumbnail className="col-span-1" images={product.images} />
         <div className="col-span-2">
+          <div>
+            {product.kind.map((kind) => (
+              <ProductKindTag key={kind} kind={kind} />
+            ))}
+          </div>
+
           <dl>
-            <dt>定価</dt>
+            {/* <dt>定価</dt>
             <dd>
               <PriceLabel>{product.defaultPrice}</PriceLabel>
-            </dd>
+            </dd> */}
 
             <dt>発売日</dt>
             <dd>{formatDate(product.publishedAt)}</dd>
           </dl>
           <hr />
+
           <VariantTab variants={product.variants} />
 
           <hr />
+
+          {episodes.length > 0 && (
+            <div className="mt-40">
+              <h2 className={clsx("font-serif", "text-xl")}>収録エピソード</h2>
+              {episodes.map((episode) => (
+                <Link
+                  key={episode.slug}
+                  href={`/episodes/${episode.slug}#main`}
+                >
+                  {episode.title}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
+      <h2>商品説明</h2>
       <div
         className={clsx(
           "text-base",
@@ -70,17 +92,6 @@ export default async function ProductPage({
       >
         {simpleFormat(product.description)}
       </div>
-
-      {episodes.length > 0 && (
-        <div className={clsx("border-t", "pt-24", "mt-40")}>
-          <h2 className={clsx("font-serif", "text-xl")}>収録エピソード</h2>
-          {episodes.map((episode) => (
-            <Link key={episode.slug} href={`/episodes/${episode.slug}#main`}>
-              {episode.title}
-            </Link>
-          ))}
-        </div>
-      )}
     </Layout>
   );
 }
