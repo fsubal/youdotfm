@@ -1,6 +1,23 @@
-- id: 1
-  datetime: 2024-06-01 12:00:00
-  kind: DojinEvent
+- datetime: 2024-06-01 12:00:00
+  kind: FanboxPost
   title: コミティア153に出ます
   description: らしいですよ
+  url: https://example.com
+
+- datetime: 2024-07-01 12:00:00
+  kind: NewProduct
+  title: ユードットエフエム3話電子版は10/10に配信開始📢
+  url: https://example.com
+  description: |
+    お知らせです。
+    『ユードットエフエム』3話 コネクティング・ザ・ドッツの電子版の配信日が決まりました。
+
+    ◆◆◆ 日程 ◆◆◆
+    配信開始は 2025/10/10 (金) です！
+    予約は1週間前の 10/03 (金) ごろから行える予定です。
+
+- datetime: 2024-08-01 12:00:00
+  kind: Publicity
+  title: コミティア155に出ます
+  description: らしいですよ200
   url: https://example.com

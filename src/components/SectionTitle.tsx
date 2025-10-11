@@ -56,7 +56,10 @@ const Subheading = ({
 
   if (href) {
     return (
-      <a href={href} className={clsx(subheadingStyle, "hover:underline")}>
+      <a
+        href={`${href}#main`}
+        className={clsx(subheadingStyle, "hover:underline")}
+      >
         <Icon name="16/Back" />
         {children}
       </a>

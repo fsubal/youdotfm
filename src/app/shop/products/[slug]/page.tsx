@@ -23,7 +23,7 @@ export default async function ProductPage({
 
   return (
     <Layout>
-      <SectionTitle subheading="Shop" backToHref="/shop#main">
+      <SectionTitle subheading="Shop" backToHref="/shop">
         {product.title}
       </SectionTitle>
       {product.images.map((image) => (

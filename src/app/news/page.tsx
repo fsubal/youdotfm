@@ -1,15 +1,19 @@
 import { Layout } from "../../components/Layout";
+import { NewsArticleListItem } from "../../components/NewsArticle";
 import { SectionTitle } from "../../components/SectionTitle";
-import { VarDump } from "../../components/VarDump";
 import { newsFeed } from "../../domains/News/seeds";
+import clsx from "clsx";
 
 export default function NewsPage() {
   return (
     <Layout>
       <SectionTitle subheading="News">お知らせ</SectionTitle>
-      {newsFeed.map((news) => (
-        <VarDump key={news.id}>{news}</VarDump>
-      ))}
+
+      <div className={clsx("divide-y", "divide-text-50")}>
+        {newsFeed.map((news) => (
+          <NewsArticleListItem key={news.id} news={news} />
+        ))}
+      </div>
     </Layout>
   );
 }

@@ -21,6 +21,17 @@ export const JapanDateTime = z.codec(
 
 export type JapanDateTime = z.infer<typeof JapanDateTime>;
 
+export function formatDateTime(datetime: Temporal.ZonedDateTime) {
+  return datetime.toLocaleString("ja-jp", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  });
+}
+
 /**
  * ◯年◯月を表す値（例: `2024-06`）
  * ある1ヶ月の期間を表すのに使える
