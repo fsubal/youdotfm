@@ -1,5 +1,5 @@
 import { Layout } from "../../components/Layout";
-import { NewsArticleListItem } from "../../components/NewsArticle";
+import { NewsArticleListItem } from "../../components/News/NewsArticle";
 import { SectionTitle } from "../../components/SectionTitle";
 import { newsFeed } from "../../domains/News/seeds";
 import clsx from "clsx";

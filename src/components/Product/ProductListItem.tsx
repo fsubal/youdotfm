@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import Link from "next/link";
-import Image from "next/image";
 import { Product } from "../../domains/Product/model";
 import { PriceLabel } from "../PriceLabel";
 import { firstParagraph } from "../../utils/nl2br";
@@ -29,16 +28,14 @@ export function ProductListItem({ product }: Props) {
       )}
     >
       <div className={clsx("overflow-hidden", "w-full", "aspect-video")}>
-        <Image
+        <img
           src={mainImage.src}
           alt={mainImage.alt}
-          width={200}
-          height={300}
           className={clsx(
             "block",
             "w-full",
             "h-full",
-            // NOTICE: 表紙はどうせ上の方に人の顔があるので、気持ち上の方を切り取る
+            // NOTICE: 表紙はどうせ上の方に人の顔があるので、上の方を切り取る
             ["object-cover", "object-[50%_25%]"],
             "transition-transform",
             "group-hover:scale-110",

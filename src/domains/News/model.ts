@@ -30,7 +30,7 @@ export const News = z.object({
   kind: NewsKind,
   title: z.string(),
   description: z.string(),
-  url: z.url(),
+  url: z.string().optional(),
 });
 
 export type News = z.infer<typeof News>;

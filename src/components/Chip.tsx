@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import Link from "next/link";
-import Image from "next/image";
 import { type HTMLAttributeAnchorTarget } from "react";
 
 interface Props {
@@ -36,7 +35,7 @@ export function Chip({
       )}
     >
       {imageUrl && alt && (
-        <Image
+        <img
           className={clsx("inline-block", "rounded-full")}
           src={imageUrl}
           width={24}

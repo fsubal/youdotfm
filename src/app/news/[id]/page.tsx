@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Layout } from "../../../components/Layout";
-import { NewsArticle } from "../../../components/NewsArticle";
+import { NewsArticle } from "../../../components/News/NewsArticle";
 import { SectionTitle } from "../../../components/SectionTitle";
 
 import { findNewsById, newsFeed } from "../../../domains/News/seeds";

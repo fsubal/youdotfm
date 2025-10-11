@@ -2,12 +2,12 @@
   kind: FanboxPost
   title: コミティア153に出ます
   description: らしいですよ
-  url: https://example.com
+  url: https://youdotfm.fanbox.cc/
 
 - datetime: 2024-07-01 12:00:00
   kind: NewProduct
   title: ユードットエフエム3話電子版は10/10に配信開始📢
-  url: https://example.com
+  url: /shop/products/episode_1#main
   description: |
     お知らせです。
     『ユードットエフエム』3話 コネクティング・ザ・ドッツの電子版の配信日が決まりました。

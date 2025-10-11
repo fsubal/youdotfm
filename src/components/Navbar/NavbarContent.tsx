@@ -2,7 +2,6 @@ import clsx from "clsx";
 import { NavbarItem } from "./NavbarItem";
 import { Icon } from "../Icon";
 import { defaultCharacter } from "../../domains/Character/seeds";
-import Image from "next/image";
 import Link from "next/link";
 
 export function LogoOneline() {
@@ -21,7 +20,7 @@ export function LogoOneline() {
         <p className={clsx("text-xs", "text-text-500")}>
           ポッドキャスト百合漫画
         </p>
-        <Image
+        <img
           src="/logo_oneline.svg"
           alt="トップに戻る"
           width={160}

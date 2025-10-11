@@ -21,20 +21,17 @@ export default function BuyPage() {
         </p>
       </div>
       <div className="not-prose">
-        <div className={clsx("grid", "screen2:grid-cols-2", "gap-24")}>
-          {products.map((product) => (
-            <ProductListItem key={product.slug} product={product} />
-          ))}
-          {/* <div
+        <div
           className={clsx(
             "grid",
             "screen2:grid-cols-2",
             "screen3:grid-cols-3",
-            "gap-16",
+            "gap-24",
           )}
         >
-          
-        </div> */}
+          {products.map((product) => (
+            <ProductListItem key={product.slug} product={product} />
+          ))}
         </div>
       </div>
       <hr className="my-24" />

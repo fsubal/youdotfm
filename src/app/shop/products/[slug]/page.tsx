@@ -5,7 +5,6 @@ import { findEpisodesForProduct } from "../../../../domains/ProductEpisode/seeds
 import { VarDump } from "../../../../components/VarDump";
 import { SectionTitle } from "../../../../components/SectionTitle";
 import { nl2br } from "../../../../utils/nl2br";
-import Image from "next/image";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
@@ -27,13 +26,7 @@ export default async function ProductPage({
         {product.title}
       </SectionTitle>
       {product.images.map((image) => (
-        <Image
-          key={image.src}
-          width={500}
-          height={500}
-          src={image.src}
-          alt={image.alt}
-        />
+        <img key={image.src} src={image.src} alt={image.alt} />
       ))}
       <div>{nl2br(product.description)}</div>
       <VarDump>{product}</VarDump>
