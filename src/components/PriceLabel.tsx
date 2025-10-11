@@ -1,18 +1,21 @@
-import clsx from "clsx";
 import { JPYValue, JPYRange, JPY } from "../utils/intl";
 
-const priceLabelClass = clsx("font-bold", "text-primary");
-
-export function PriceLabel({ children }: { children: JPYValue | JPYRange }) {
+export function PriceLabel({
+  className,
+  children,
+}: {
+  className?: string;
+  children: JPYValue | JPYRange;
+}) {
   if (Array.isArray(children)) {
     const [from, to] = children;
 
     return (
-      <div className={priceLabelClass}>
+      <span className={className}>
         {JPY.format(from)}〜{to ? JPY.format(to) : undefined}
-      </div>
+      </span>
     );
   }
 
-  return <div className={priceLabelClass}>{JPY.format(children)}</div>;
+  return <div className={className}>{JPY.format(children)}</div>;
 }

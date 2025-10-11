@@ -57,7 +57,9 @@ export function ProductListItem({ product }: Props) {
         >
           {firstParagraph(product.description)}
         </p>
-        <PriceLabel>{product.defaultPrice}</PriceLabel>
+        <PriceLabel className={clsx("font-bold", "text-primary")}>
+          {product.defaultPrice}
+        </PriceLabel>
       </div>
     </Link>
   );

@@ -23,6 +23,7 @@ description: |
 variants:
   - slug: paper
     name: 同人誌（紙）
+    defaultPrice: [400]
     listings:
       - shopKind: Melonbooks
         price: 500
@@ -34,6 +35,7 @@ variants:
 
   - slug: digital
     name: 電子書籍
+    defaultPrice: [400]
     listings:
       - shopKind: AmazonKindle
         price: 400
