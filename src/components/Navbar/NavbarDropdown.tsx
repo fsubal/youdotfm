@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { Icon } from "../Icon";
 import { useRef, useState, useId } from "react";
+import { usePreventScroll } from "react-aria";
 
 export function NavbarDropdown({ children }: React.PropsWithChildren) {
   const controlId = useId();
@@ -21,6 +22,8 @@ export function NavbarDropdown({ children }: React.PropsWithChildren) {
       setIsOpen(false);
     }
   };
+
+  usePreventScroll({ isDisabled: !isOpen });
 
   return (
     <>
@@ -84,7 +87,7 @@ function DropdownTrigger({
           "items-center",
           "rounded-full",
         ],
-        "not-group-open:bg-primary/10",
+        !isOpen && "bg-primary/10",
         "active:bg-active",
       )}
     >

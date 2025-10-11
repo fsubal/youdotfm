@@ -41,6 +41,11 @@ export function ShopList({ defaultShops, hiddenShops }: Props) {
         通販・配信サイト
       </h2>
 
+      <p className={clsx("text-sm", "text-text-500", "mb-16")}>
+        『ユードットエフエム』は以下のサイトで取扱があります。Kindle
+        unlimited会員の方は無料でも読めます。
+      </p>
+
       <div className={shopLinkContainer}>
         {defaultShops.map((shop) => (
           <ShopLink key={shop.kind} shop={shop} />

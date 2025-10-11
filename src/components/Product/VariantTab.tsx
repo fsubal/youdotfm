@@ -77,15 +77,29 @@ export function CurrentVariant({ variant }: { variant: ProductVariant }) {
           "screen2:justify-start",
           "items-baseline",
           "gap-4",
+          "screen2:mb-4",
         )}
       >
         <dt className="text-sm">定価</dt>
         <dd>
-          <PriceLabel className={clsx("text-primary", "font-bold", "text-2xl")}>
+          <PriceLabel className={clsx("text-primary", "font-bold", "text-3xl")}>
             {variant.defaultPrice}
           </PriceLabel>
         </dd>
       </dl>
+
+      <div
+        className={clsx(
+          "text-xs",
+          "text-text-500",
+          "flex",
+          "justify-center",
+          "screen2:justify-start",
+          "before:content-['※_']",
+        )}
+      >
+        価格は販売サイトによって異なる場合があります
+      </div>
 
       <div
         className={clsx(

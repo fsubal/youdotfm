@@ -55,7 +55,7 @@ export function ListingLink({ listing }: Props) {
           url={listing.url}
           className={clsx("bg-teal-300", "active:bg-teal-400", "text-text-950")}
         >
-          LINEマンガで購入
+          LINEマンガで読む
         </ListingLinkBase>
       );
     }

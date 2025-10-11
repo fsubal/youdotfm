@@ -78,7 +78,7 @@ export function NewsSourceLink({ kind, url }: { kind: NewsKind; url: string }) {
           url={url}
           className={clsx("bg-pink-700", "active:bg-pink-800", "text-white")}
         >
-          記事を見にいく
+          掲載先を見にいく
         </SourceLink>
       );
     default:
