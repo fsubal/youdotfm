@@ -9,9 +9,6 @@ export default function CharactersPage() {
     <Layout>
       <SectionTitle subheading="Character">キャラクター紹介</SectionTitle>
 
-      <h2 className={clsx("font-bold", "text-lg")}>
-        「📻️ペンときどき音楽」パーソナリティ
-      </h2>
       <div className="divide-y">
         {characters.map((character) => (
           <CharacterListItem key={character.slug} character={character} />
