@@ -27,13 +27,6 @@ export function NavbarDropdown({ children }: React.PropsWithChildren) {
 
   return (
     <>
-      <DropdownTrigger onClick={onToggle} isOpen={isOpen} controlId={controlId}>
-        <Icon
-          name={isOpen ? "24/Close" : "24/Menu"}
-          unsafeNonGuidelineScale={28 / 24}
-        />
-      </DropdownTrigger>
-
       <div
         className={clsx(
           "z-[calc(infinity)]",
@@ -54,6 +47,14 @@ export function NavbarDropdown({ children }: React.PropsWithChildren) {
           {children}
         </nav>
       </div>
+
+      {/* ボタンはnavより絶対に上に来ないといけない */}
+      <DropdownTrigger onClick={onToggle} isOpen={isOpen} controlId={controlId}>
+        <Icon
+          name={isOpen ? "24/Close" : "24/Menu"}
+          unsafeNonGuidelineScale={28 / 24}
+        />
+      </DropdownTrigger>
     </>
   );
 }
@@ -76,7 +77,7 @@ function DropdownTrigger({
       aria-expanded={isOpen}
       aria-controls={controlId}
       className={clsx(
-        "z-1",
+        "z-[calc(infinity)]",
         ["fixed", "right-16", "top-16"],
         "list-none",
         "cursor-pointer",

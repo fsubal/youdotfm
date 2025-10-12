@@ -5,10 +5,11 @@ import { PriceLabel } from "../PriceLabel";
 import { firstLine } from "../../utils/text";
 
 interface Props {
+  thumbnailFit?: "cover" | "contain";
   product: Product;
 }
 
-export function ProductListItem({ product }: Props) {
+export function ProductListItem({ thumbnailFit = "cover", product }: Props) {
   const [mainImage] = product.images;
 
   return (
@@ -36,7 +37,11 @@ export function ProductListItem({ product }: Props) {
             "w-full",
             "h-full",
             // NOTICE: 表紙はどうせ上の方に人の顔があるので、上の方を切り取る
-            ["object-cover", "object-[50%_25%]"],
+            thumbnailFit === "cover"
+              ? ["object-cover", "object-[50%_25%]"]
+              : "object-contain",
+
+            "bg-text-50",
             "transition-transform",
             "group-hover:scale-110",
           )}

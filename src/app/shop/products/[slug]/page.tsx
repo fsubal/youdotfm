@@ -44,10 +44,12 @@ export default async function ProductPage({
   }
   const episodes = findEpisodesForProduct(product.slug);
 
-  const relatedProducts = findProductsByKind(product.kind).filter(
-    // 同じ商品は除く
-    (related) => related.slug !== product.slug,
-  );
+  const relatedProducts = findProductsByKind(product.kind)
+    .filter(
+      // 同じ商品は除く
+      (related) => related.slug !== product.slug,
+    )
+    .slice(0, 3);
 
   return (
     <Layout>
@@ -125,7 +127,11 @@ export default async function ProductPage({
           <h2 className={h2style}>{getKindLabel(product.kind)}の商品一覧</h2>
           <ProductList>
             {relatedProducts.map((product) => (
-              <ProductListItem key={product.slug} product={product} />
+              <ProductListItem
+                key={product.slug}
+                product={product}
+                thumbnailFit="contain"
+              />
             ))}
           </ProductList>
         </div>
