@@ -11,6 +11,12 @@ import { products } from "../domains/Product/seeds";
 import { DropCap } from "../components/DropCap";
 import { NewsListItem } from "../components/News/NewsListItem";
 
+export const metadata = {
+  title: {
+    absolute: "ポッドキャスト百合『ユードットエフエム』公式サイト",
+  },
+};
+
 export default function Home() {
   return (
     <Layout>

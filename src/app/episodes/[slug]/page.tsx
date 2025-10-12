@@ -12,9 +12,26 @@ import { findNewsForEpisode } from "../../../domains/EpisodeNews/seeds";
 import { findProductsForEpisode } from "../../../domains/ProductEpisode/seeds";
 import { simpleFormat } from "../../../utils/text";
 import { MarshmallowLink } from "../../../components/SocialMedia/MarshmallowLink";
+import { ResolvingMetadata } from "next";
 
 export function generateStaticParams(): StaticParams<"/episodes/[slug]"> {
   return episodes.map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata(
+  { params }: PageProps<"/episodes/[slug]">,
+  parent: ResolvingMetadata,
+) {
+  const { slug } = await params;
+  const { title } = await parent;
+  const episode = findEpisodeBySlug(slug)!;
+
+  return {
+    title: {
+      template: title!.template,
+      default: `${episode.numbering}『${episode.title}』`,
+    },
+  };
 }
 
 export default async function EpisodePage({

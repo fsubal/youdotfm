@@ -1,6 +1,18 @@
 import clsx from "clsx";
 import { Layout } from "../../components/Layout";
 import { SectionTitle } from "../../components/SectionTitle";
+import { ResolvingMetadata } from "next";
+
+export async function generateMetadata(_: unknown, parent: ResolvingMetadata) {
+  const { title } = await parent;
+
+  return {
+    title: {
+      template: title!.template,
+      default: "プライバシーポリシー",
+    },
+  };
+}
 
 export default async function TermsPage() {
   return (

@@ -9,12 +9,24 @@ import {
   ProductListItem,
 } from "../../components/Product/ProductListItem";
 import clsx from "clsx";
+import { ResolvingMetadata } from "next";
 
 const shopGroups = groupBy(shops, ({ featured }) =>
   featured ? "featured" : "notFeatured",
 );
 
-export default function BuyPage() {
+export async function generateMetadata(_: unknown, parent: ResolvingMetadata) {
+  const { title } = await parent;
+
+  return {
+    title: {
+      template: title!.template,
+      default: "本&グッズ",
+    },
+  };
+}
+
+export default function ShopPage() {
   return (
     <Layout>
       <SectionTitle subheading="Shop">本 &amp; グッズ</SectionTitle>

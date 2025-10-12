@@ -25,9 +25,26 @@ import {
 } from "../../../../domains/Product/model";
 import { RelatedProductList } from "../../../../components/Product/RelatedProductList";
 import { MarshmallowLink } from "../../../../components/SocialMedia/MarshmallowLink";
+import { ResolvingMetadata } from "next";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata(
+  { params }: PageProps<"/shop/products/[slug]">,
+  parent: ResolvingMetadata,
+) {
+  const { slug } = await params;
+  const { title } = await parent;
+  const product = findProductBySlug(slug)!;
+
+  return {
+    title: {
+      template: title!.template,
+      default: product.title,
+    },
+  };
 }
 
 const h2style = clsx("font-serif", "text-xl", "mb-8", "text-text-950");

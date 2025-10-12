@@ -6,9 +6,25 @@ import {
 } from "../../../domains/Character/seeds";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { CharacterListItem } from "../../../components/Character/CharacterListItem";
+import { ResolvingMetadata } from "next";
 
 export function generateStaticParams(): StaticParams<"/characters/[slug]"> {
   return characters.map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata(
+  { params }: PageProps<"/characters/[slug]">,
+  parent: ResolvingMetadata,
+) {
+  const { slug } = await params;
+  const { title } = await parent;
+
+  return {
+    title: {
+      template: title!.template,
+      default: findCharacterBySlug(slug)?.name,
+    },
+  };
 }
 
 export default async function CharacterPage({
