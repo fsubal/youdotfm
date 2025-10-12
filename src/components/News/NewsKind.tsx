@@ -2,7 +2,14 @@ import clsx from "clsx";
 import { Unreachable } from "../../utils/unreachable";
 import { NewsKind } from "../../domains/News/model";
 
-const newsCategory = clsx("px-8", "py-4", "text-xs", "font-bold", "rounded");
+const newsCategory = clsx(
+  "px-8",
+  "py-4",
+  "text-xs",
+  "font-bold",
+  "rounded",
+  "whitespace-nowrap",
+);
 
 export function NewsKindBadge({ kind }: { kind: NewsKind }) {
   switch (kind) {

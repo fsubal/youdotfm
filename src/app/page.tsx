@@ -2,15 +2,14 @@ import Link from "next/link";
 import clsx from "clsx";
 import { Layout } from "../components/Layout";
 import { SectionTitle } from "../components/SectionTitle";
-import { newsFeed } from "../domains/News/seeds";
-import { formatDate } from "../utils/datetime";
-import { NewsKindBadge } from "../components/News/NewsKind";
+import { findNewsById, newsFeed } from "../domains/News/seeds";
 import {
   ProductList,
   ProductListItem,
 } from "../components/Product/ProductListItem";
 import { products } from "../domains/Product/seeds";
 import { DropCap } from "../components/DropCap";
+import { NewsListItem } from "../components/News/NewsListItem";
 
 export default function Home() {
   return (
@@ -58,29 +57,11 @@ export default function Home() {
 
           <div className="space-y-8">
             <div className={clsx("divide-y", "divide-text-50")}>
-              {newsFeed.slice(0, 5).map((news) => (
-                <Link
-                  key={news.id}
-                  className={clsx(
-                    "flex",
-                    "flex-col",
-                    "screen2:flex-row",
-                    "py-8",
-                    "gap-8",
-                    "active:bg-active/50",
-                  )}
-                  href={`/news/${news.id}#main`}
-                >
-                  <span className="text-text-500">
-                    {formatDate(news.datetime.toPlainDate())}
-                  </span>
-                  <div className={clsx("flex-1", "flex")}>
-                    <span className="flex-1">{news.title}</span>
-                    <div>
-                      <NewsKindBadge kind={news.kind} />
-                    </div>
-                  </div>
-                </Link>
+              {/* となジャンへの掲載は固定する */}
+              <NewsListItem pinned news={findNewsById(13)!} />
+
+              {newsFeed.slice(0, 3).map((news) => (
+                <NewsListItem key={news.id} news={news} />
               ))}
             </div>
             <MoreButton href="/news#main" />

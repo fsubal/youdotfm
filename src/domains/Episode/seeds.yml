@@ -39,6 +39,8 @@
       alt: "url"
   pixivArtwork:
     url: https://www.pixiv.net/artworks/124297135
+  newsIds:
+    - 9
 
 - slug: "2_5"
   numbering: 2.5話
