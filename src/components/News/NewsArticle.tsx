@@ -59,7 +59,6 @@ export function NewsArticle({ news }: Props) {
           "leading-loose",
           "tracking-wide",
           "[&_p+p]:mt-24",
-          "[&_br:last-child]:hidden",
         )}
       >
         {simpleFormat(news.description)}

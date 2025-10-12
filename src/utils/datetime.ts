@@ -28,7 +28,6 @@ export function formatDateTime(datetime: Temporal.ZonedDateTime) {
     day: "numeric",
     hour: "numeric",
     minute: "numeric",
-    second: "numeric",
   });
 }
 

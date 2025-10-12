@@ -70,7 +70,7 @@ export function VariantTab({ variants }: Props) {
 export function CurrentVariant({ variant }: { variant: ProductVariant }) {
   return (
     <div className="py-16">
-      <dl
+      <div
         className={clsx(
           "flex",
           "justify-center",
@@ -80,13 +80,10 @@ export function CurrentVariant({ variant }: { variant: ProductVariant }) {
           "screen2:mb-4",
         )}
       >
-        <dt className="text-sm">定価</dt>
-        <dd>
-          <PriceLabel className={clsx("text-primary", "font-bold", "text-3xl")}>
-            {variant.defaultPrice}
-          </PriceLabel>
-        </dd>
-      </dl>
+        <PriceLabel className={clsx("text-primary", "font-bold", "text-3xl")}>
+          {variant.defaultPrice}
+        </PriceLabel>
+      </div>
 
       <div
         className={clsx(
