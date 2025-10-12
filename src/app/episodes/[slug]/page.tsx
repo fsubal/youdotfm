@@ -23,7 +23,7 @@ export default async function EpisodePage({
   return (
     <Layout>
       <SectionTitle subheading="Episode" backToHref="/episodes">
-        {episode.numbering}「{episode.title}」
+        {episode.numbering}『{episode.title}』
       </SectionTitle>
 
       <EpisodeListItem episode={episode} />

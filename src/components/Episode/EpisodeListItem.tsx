@@ -116,7 +116,7 @@ export function EpisodeListItem({ episode }: Props) {
                 "screen2:text-3xl/tight",
               )}
             >
-              「{episode.title}」
+              『{episode.title}』
             </h2>
           </a>
         </hgroup>
@@ -162,16 +162,27 @@ export function EpisodeListItem({ episode }: Props) {
             >
               このエピソードに関するお知らせ
             </h3>
-            {relatedNews.map((news) => (
-              <Link
-                key={news.id}
-                className={clsx("flex", "gap-8")}
-                href={`/news/${news.id}#main`}
-              >
-                <NewsKindBadge kind={news.kind} />
-                <span className={relatedLinkStyle}>{news.title}</span>
-              </Link>
-            ))}
+            <div className="space-y-8">
+              {relatedNews.map((news) => (
+                <Link
+                  key={news.id}
+                  className="block"
+                  href={`/news/${news.id}#main`}
+                >
+                  <NewsKindBadge kind={news.kind} />
+                  <span
+                    className={clsx(
+                      "ml-8",
+                      "underline",
+                      "text-primary",
+                      "text-sm",
+                    )}
+                  >
+                    {news.title}
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         )}
       </div>

@@ -5,33 +5,62 @@
     うだつの上がらない新人音楽ライターのエリは、
     素敵な文章を書くフォロワーのシヲリに心惹かれていた。
     ある日エリはライブ会場でシヲリと対面し、意気投合する。
-    数日後、突然シヲリからインターネットで
-    ラジオを一緒に始めないかと誘われてしまい！？
-
-    語って、話して、好きになる。
-    ポッドキャスター女子ふたりが織りなす、大人の青春ストーリー！
+    数日後、突然シヲリからインターネットでラジオを一緒に始めないかと誘われてしまい！？
   images:
     - src: /shiori.png
       alt: "url"
   pixivArtwork:
     url: https://www.pixiv.net/artworks/118880927#1
   newsIds:
-    - 1
+    - 13
+    - 10
+    - 12
 
 - slug: "1_5"
   numbering: 1.5話
   title: 見る前に飛べ！
   description: |
-    うだつの上がらない新人音楽ライターのエリは、
-    素敵な文章を書くフォロワーのシヲリに心惹かれていた。
-    ある日エリはライブ会場でシヲリと対面し、意気投合する。
-    数日後、突然シヲリからインターネットで
-    ラジオを一緒に始めないかと誘われてしまい！？
-
-    語って、話して、好きになる。
-    ポッドキャスター女子ふたりが織りなす、大人の青春ストーリー！
+    シヲリに突然ポッドキャストに誘われたエリ。一緒に収録することになったエリはドキドキしながらシヲリ宅を訪ねるが…？
   images:
     - src: /shiori.png
       alt: "url"
   pixivArtwork:
-    url: https://www.pixiv.net/artworks/118880927#1
+    url: https://www.pixiv.net/artworks/121383249
+
+- slug: "2"
+  numbering: 2話
+  title: NOW ON AIR
+  description: |
+    シヲリに突然ポッドキャストに誘われたエリ。
+    家で一緒に収録することになったエリはドキドキしながらシヲリ宅を訪ねる。
+    自分にどんなトークが求められているのか、どんな番組になるのかを手探りながら、二人は第一回の収録に臨む――。
+  images:
+    - src: /shiori.png
+      alt: "url"
+  pixivArtwork:
+    url: https://www.pixiv.net/artworks/124297135
+
+- slug: "2_5"
+  numbering: 2.5話
+  title: サードプレイス
+  description: |
+    無事に第一回の収録を済ませたエリとシヲリ。
+    急に録ったので二人分のちゃんとしたマイクがないと気づき、一緒に買い物に行くことに…？
+  images:
+    - src: /shiori.png
+      alt: "url"
+  pixivArtwork:
+    url: https://www.pixiv.net/artworks/127039294
+
+- slug: "3"
+  numbering: 3話
+  title: コネクティング・ザ・ドッツ
+  description: |
+    ついにポッドキャストの第一回が公開されたエリとシヲリ。
+    収録では楽しく話せたと振り返りつつも、エリは自分のやりたいトークを掴みきれずにいた。
+    シヲリといっしょにリスナーの反応を読みながら、自分たちが本当にやりたい番組が何なのかを考え始めたエリは！？
+  images:
+    - src: /shiori.png
+      alt: "url"
+  pixivArtwork:
+    url: https://www.pixiv.net/artworks/134674526
