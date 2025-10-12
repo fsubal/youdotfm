@@ -29,10 +29,13 @@ export function NewsMetadata({ news }: Props) {
           "screen2:text-lg",
         )}
       >
-        <time dateTime={news.datetime.toPlainDateTime().toString()}>
+        <time
+          dateTime={news.datetime.toPlainDateTime().toString()}
+          className="mr-4"
+        >
           {datetimeLabel}
         </time>
-        &nbsp;に公開
+        に公開
       </span>
       <NewsKindBadge kind={news.kind} />
     </aside>
