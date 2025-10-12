@@ -37,7 +37,16 @@ const linkStyle = clsx("text-primary", "underline");
 export function ShopList({ defaultShops, hiddenShops }: Props) {
   return (
     <div data-role="shop-list" id="shop-list" className="my-16">
-      <h2 className={clsx("flex", "mb-8", "items-center", "text-xl", "flex-1")}>
+      <h2
+        className={clsx(
+          "flex",
+          "mb-8",
+          "items-center",
+          "text-2xl",
+          "font-serif",
+          "flex-1",
+        )}
+      >
         通販・配信サイト
       </h2>
 
