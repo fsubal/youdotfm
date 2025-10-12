@@ -1,15 +1,14 @@
-export abstract class SocialUrl {
-  abstract get url(): URL;
-  abstract toString(): string;
+export interface SocialUrl {
+  get url(): URL;
+  toString(): string;
 }
 
-export class XIntentUrl extends SocialUrl {
+export class XIntentUrl implements SocialUrl {
   #intent = new URL("https://x.com/intent/post");
   #url: string;
   #text: string;
 
   constructor(url: string | URL, text: string) {
-    super();
     this.#url = url.toString();
     this.#text = text;
   }
@@ -26,13 +25,12 @@ export class XIntentUrl extends SocialUrl {
   }
 }
 
-export class BlueskyIntentUrl extends SocialUrl {
+export class BlueskyIntentUrl implements SocialUrl {
   #intent = new URL("https://bsky.app/intent/compose");
   #url: string;
   #text: string;
 
   constructor(url: string | URL, text: string) {
-    super();
     this.#url = url.toString();
     this.#text = text;
   }
