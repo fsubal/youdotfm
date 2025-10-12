@@ -3,10 +3,10 @@ import { SectionTitle } from "../../components/SectionTitle";
 import { episodes } from "../../domains/Episode/seeds";
 import { EpisodeListItem } from "../../components/Episode/EpisodeListItem";
 
-export default function EpisodesPage() {
+export default function CharactersPage() {
   return (
     <Layout>
-      <SectionTitle subheading="Episode">エピソード</SectionTitle>
+      <SectionTitle subheading="Character">キャラクター紹介</SectionTitle>
 
       <div className="divide-y">
         {episodes.map((episode) => (

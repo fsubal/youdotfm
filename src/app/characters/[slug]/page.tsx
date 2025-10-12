@@ -4,7 +4,6 @@ import {
   characters,
   findCharacterBySlug,
 } from "../../../domains/Character/seeds";
-import { VarDump } from "../../../components/VarDump";
 import { SectionTitle } from "../../../components/SectionTitle";
 
 export function generateStaticParams(): StaticParams<"/characters/[slug]"> {
