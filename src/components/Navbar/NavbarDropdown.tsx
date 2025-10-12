@@ -36,6 +36,7 @@ export function NavbarDropdown({ children }: React.PropsWithChildren) {
 
       <div
         className={clsx(
+          "z-[calc(infinity)]",
           [isOpen ? "flex" : "hidden", "justify-end"],
           "fixed",
           "inset-0",
