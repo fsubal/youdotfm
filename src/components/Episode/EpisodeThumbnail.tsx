@@ -30,6 +30,7 @@ export function EpisodeThumbnail({ episode }: Props) {
             "aspect-[5/4]",
             "screen2:aspect-square",
             "object-cover",
+            "object-top",
           )}
           src={image.src}
           alt={image.alt}

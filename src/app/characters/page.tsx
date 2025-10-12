@@ -2,7 +2,6 @@ import { Layout } from "../../components/Layout";
 import { SectionTitle } from "../../components/SectionTitle";
 import { CharacterListItem } from "../../components/Character/CharacterListItem";
 import { characters } from "../../domains/Character/seeds";
-import clsx from "clsx";
 
 export default function CharactersPage() {
   return (

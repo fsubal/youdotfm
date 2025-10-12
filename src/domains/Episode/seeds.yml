@@ -7,8 +7,8 @@
     ある日エリはライブ会場でシヲリと対面し、意気投合する。
     数日後、突然シヲリからインターネットでラジオを一緒に始めないかと誘われてしまい！？
   images:
-    - src: /shiori.png
-      alt: "url"
+    - src: /episodes/1.jpg
+      alt: 漫画ユードットエフエム1話の1ページ目の画像
   pixivArtwork:
     url: https://www.pixiv.net/artworks/118880927#1
   newsIds:
@@ -22,10 +22,10 @@
   description: |
     シヲリに突然ポッドキャストに誘われたエリ。一緒に収録することになったエリはドキドキしながらシヲリ宅を訪ねるが…？
   images:
-    - src: /shiori.png
-      alt: "url"
+    - src: /episodes/1_5.jpg
+      alt: 漫画ユードットエフエム1.5話の1ページ目の画像
   pixivArtwork:
-    url: https://www.pixiv.net/artworks/121383249
+    url: https://www.pixiv.net/artworks/121383249#1
 
 - slug: "2"
   numbering: 2話
@@ -35,10 +35,10 @@
     家で一緒に収録することになったエリはドキドキしながらシヲリ宅を訪ねる。
     自分にどんなトークが求められているのか、どんな番組になるのかを手探りながら、二人は第一回の収録に臨む――。
   images:
-    - src: /shiori.png
-      alt: "url"
+    - src: /episodes/2.jpg
+      alt: 漫画ユードットエフエム2話の1ページ目の画像
   pixivArtwork:
-    url: https://www.pixiv.net/artworks/124297135
+    url: https://www.pixiv.net/artworks/124297135#1
   newsIds:
     - 9
 
@@ -49,10 +49,10 @@
     無事に第一回の収録を済ませたエリとシヲリ。
     急に録ったので二人分のちゃんとしたマイクがないと気づき、一緒に買い物に行くことに…？
   images:
-    - src: /shiori.png
-      alt: "url"
+    - src: /episodes/2_5.jpg
+      alt: 漫画ユードットエフエム2.5話の1ページ目の画像
   pixivArtwork:
-    url: https://www.pixiv.net/artworks/127039294
+    url: https://www.pixiv.net/artworks/127039294#1
 
 - slug: "3"
   numbering: 3話
@@ -62,7 +62,7 @@
     収録では楽しく話せたと振り返りつつも、エリは自分のやりたいトークを掴みきれずにいた。
     シヲリといっしょにリスナーの反応を読みながら、自分たちが本当にやりたい番組が何なのかを考え始めたエリは！？
   images:
-    - src: /shiori.png
-      alt: "url"
+    - src: /episodes/3.jpg
+      alt: 漫画ユードットエフエム3話の1ページ目の画像
   pixivArtwork:
-    url: https://www.pixiv.net/artworks/134674526
+    url: https://www.pixiv.net/artworks/134674526#1
