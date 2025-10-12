@@ -38,7 +38,7 @@ export class BlueskyIntentUrl extends SocialUrl {
   }
 
   get url() {
-    this.#intent.searchParams.set("text", `${this.#text}+${this.#url}`);
+    this.#intent.searchParams.set("text", `${this.#text} ${this.#url}`);
 
     return this.#intent;
   }
