@@ -76,6 +76,17 @@ export function ListingLink({ listing }: Props) {
       );
     }
 
+    case "BookWalker": {
+      return (
+        <ListingLinkBase
+          url={listing.url}
+          className={clsx("bg-blue-300", "active:bg-blue-400", "text-text-950")}
+        >
+          BOOK☆WALKERで読む
+        </ListingLinkBase>
+      );
+    }
+
     default: {
       return Unreachable.assert(listing as never);
     }
