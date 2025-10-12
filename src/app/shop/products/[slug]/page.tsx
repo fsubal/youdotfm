@@ -77,9 +77,12 @@ export default async function ProductPage({
           {
             // 選択肢が1個しかないときはタブUIにしない
             product.variants.length === 1 ? (
-              <CurrentVariant variant={product.variants[0]} />
+              <CurrentVariant
+                kind={product.kind}
+                variant={product.variants[0]}
+              />
             ) : (
-              <VariantTab variants={product.variants} />
+              <VariantTab kind={product.kind} variants={product.variants} />
             )
           }
 

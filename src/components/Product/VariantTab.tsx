@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { ProductVariant } from "../../domains/Product/model";
+import { ProductKind, ProductVariant } from "../../domains/Product/model";
 import { PriceLabel } from "../PriceLabel";
 import { Tab, TabList, TabPanel, Tabs } from "react-aria-components";
 import { ListingLink } from "./ListingLink";
@@ -9,10 +9,11 @@ import Link from "next/link";
 import { Icon } from "../Icon";
 
 interface Props {
+  kind: ProductKind;
   variants: ProductVariant[];
 }
 
-export function VariantTab({ variants }: Props) {
+export function VariantTab({ kind, variants }: Props) {
   return (
     <Tabs>
       <TabList
@@ -60,14 +61,29 @@ export function VariantTab({ variants }: Props) {
 
       {variants.map((variant) => (
         <TabPanel key={variant.slug} id={variant.slug}>
-          <CurrentVariant variant={variant} />
+          <CurrentVariant kind={kind} variant={variant} />
         </TabPanel>
       ))}
     </Tabs>
   );
 }
 
-export function CurrentVariant({ variant }: { variant: ProductVariant }) {
+const sidenoteStyle = clsx(
+  "text-xs",
+  "text-text-500",
+  "flex",
+  "justify-center",
+  "screen2:justify-start",
+  "before:content-['※_']",
+);
+
+export function CurrentVariant({
+  kind,
+  variant,
+}: {
+  kind: ProductKind;
+  variant: ProductVariant;
+}) {
   return (
     <div className="py-16">
       <div
@@ -80,23 +96,23 @@ export function CurrentVariant({ variant }: { variant: ProductVariant }) {
           "screen2:mb-4",
         )}
       >
+        {variant.listings.length === 1 && <span>定価</span>}
         <PriceLabel className={clsx("text-primary", "font-bold", "text-3xl")}>
           {variant.defaultPrice}
         </PriceLabel>
       </div>
 
-      <div
-        className={clsx(
-          "text-xs",
-          "text-text-500",
-          "flex",
-          "justify-center",
-          "screen2:justify-start",
-          "before:content-['※_']",
-        )}
-      >
-        価格は販売サイトによって異なる場合があります
-      </div>
+      {kind === "merch" && (
+        <div className={sidenoteStyle}>
+          グッズは送料が別途かかる場合があります
+        </div>
+      )}
+
+      {variant.listings.length > 1 && (
+        <div className={sidenoteStyle}>
+          価格は販売サイトによって異なる場合があります
+        </div>
+      )}
 
       <div
         className={clsx(
@@ -115,25 +131,29 @@ export function CurrentVariant({ variant }: { variant: ProductVariant }) {
         ))}
       </div>
 
-      <div className={clsx("flex", "justify-center", "screen2:justify-start")}>
-        <Link
-          href="/shop#shop-list"
-          className={clsx(
-            "inline-flex",
-            "text-text-500",
-            "items-center",
-            "text-sm",
-            "font-bold",
-          )}
+      {kind === "doujinshi" && (
+        <div
+          className={clsx("flex", "justify-center", "screen2:justify-start")}
         >
-          すべての通販・配信サイトを見る
-          <Icon
-            name="24/Next"
-            className="mr-4"
-            unsafeNonGuidelineScale={20 / 24}
-          />
-        </Link>
-      </div>
+          <Link
+            href="/shop#shop-list"
+            className={clsx(
+              "inline-flex",
+              "text-text-500",
+              "items-center",
+              "text-sm",
+              "font-bold",
+            )}
+          >
+            すべての通販・配信サイトを見る
+            <Icon
+              name="24/Next"
+              className="mr-4"
+              unsafeNonGuidelineScale={20 / 24}
+            />
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
