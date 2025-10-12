@@ -16,7 +16,7 @@ description: |
 variants:
   - slug: paper
     name: 紙版
-    defaultPrice: [300, 330]
+    defaultPrice: 330
     listings:
       - shopKind: Melonbooks
         price: 330
@@ -31,7 +31,7 @@ variants:
     defaultPrice: [150]
     listings:
       - shopKind: Kindle
-        price: 151
+        price: 150
         url: https://www.amazon.co.jp/dp/B0FCRWHY3Q
       - shopKind: ComicCmoa
         price: 150

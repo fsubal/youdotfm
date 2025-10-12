@@ -1,7 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { ProductKind, ProductVariant } from "../../domains/Product/model";
+import {
+  getPriceRangeOfVariant,
+  ProductKind,
+  ProductVariant,
+} from "../../domains/Product/model";
 import { PriceLabel } from "../PriceLabel";
 import { Tab, TabList, TabPanel, Tabs } from "react-aria-components";
 import { ListingLink } from "./ListingLink";
@@ -98,7 +102,7 @@ export function CurrentVariant({
       >
         {variant.listings.length === 1 && <span>定価</span>}
         <PriceLabel className={clsx("text-primary", "font-bold", "text-3xl")}>
-          {variant.defaultPrice}
+          {getPriceRangeOfVariant(variant)}
         </PriceLabel>
         <span>(税込)</span>
       </div>

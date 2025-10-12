@@ -28,6 +28,7 @@ variants:
       - shopKind: BOOTH
         price: 500
         url: https://umbrellahead.booth.pm/items/5741859
+        status: stockout
 
   - slug: digital
     name: 電子書籍
@@ -35,7 +36,7 @@ variants:
     listings:
       - shopKind: Kindle
         price: 300
-        url: https://www.amazon.co.jp/gp/product/B0FCNZZMPJ
+        url: https://www.amazon.co.jp/dp/B0FCNZZMPJ
       - shopKind: ComicCmoa
         price: 300
         url: https://www.cmoa.jp/title/327139/
