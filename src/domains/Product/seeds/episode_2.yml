@@ -7,7 +7,7 @@ episodes:
 images:
   - src: /products/b439c07f-af5b-4b04-b751-8d230abdea5e_base_resized.jpg
     alt: ユードットエフエム 2話『NOW ON AIR』の表紙画像
-defaultPrice: [400]
+defaultPrice: 770
 publishedAt: 2024-11-14
 description: |
   コミティア150で頒布されたポッドキャスト百合漫画『ユードットエフエム』第2話です。本文は全52ページ。
@@ -18,7 +18,7 @@ description: |
 variants:
   - slug: paper
     name: 同人誌
-    defaultPrice: [700]
+    defaultPrice: 770
     listings:
       - shopKind: Melonbooks
         price: 770
@@ -30,7 +30,7 @@ variants:
 
   - slug: digital
     name: 電子書籍
-    defaultPrice: [460]
+    defaultPrice: 460
     listings:
       - shopKind: Kindle
         price: 460
@@ -39,5 +39,5 @@ variants:
         price: 460
         url: https://www.cmoa.jp/title/327139/vol/3/
       - shopKind: LineManga
-        price: 400
+        price: 460
         url: https://manga.line.me/book/detail?id=B00165998427

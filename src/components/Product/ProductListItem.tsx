@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Link from "next/link";
-import { Product } from "../../domains/Product/model";
+import { getMinimumPriceOfProduct, Product } from "../../domains/Product/model";
 import { PriceLabel } from "../PriceLabel";
 import { firstLine } from "../../utils/text";
 
@@ -63,7 +63,7 @@ export function ProductListItem({ thumbnailFit = "cover", product }: Props) {
           {firstLine(product.description)}
         </p>
         <PriceLabel className={clsx("font-bold", "text-primary")}>
-          {product.defaultPrice}
+          {getMinimumPriceOfProduct(product)}
         </PriceLabel>
       </div>
     </Link>

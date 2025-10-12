@@ -109,3 +109,47 @@ export function getKindLabel(kind: ProductKind) {
     }
   }
 }
+
+function getAllListings(product: Product): Listing[] {
+  return product.variants.flatMap(({ listings }) => listings);
+}
+
+function getAllListingPriceValue(product: Product): JPYValue[] {
+  return getAllListings(product)
+    .flatMap(({ price }) => price)
+    .filter((jpy) => jpy != null);
+}
+
+export function getPriceRangeOfProduct(product: Product) {
+  const priceValues = getAllListingPriceValue(product);
+
+  const minPrice = Math.min(...priceValues);
+  const maxPrice = Math.max(...priceValues);
+
+  if (minPrice === maxPrice) {
+    return minPrice as JPYValue;
+  } else {
+    return [minPrice as JPYValue, maxPrice as JPYValue] as JPYRange;
+  }
+}
+
+export function getMinimumPriceOfProduct(product: Product): JPYRange {
+  const priceValues = getAllListingPriceValue(product);
+
+  return [Math.min(...priceValues) as JPYValue];
+}
+
+export function getPriceRangeOfVariant(variant: ProductVariant) {
+  const priceValues = variant.listings
+    .flatMap(({ price }) => price)
+    .filter((jpy) => jpy != null);
+
+  const minPrice = Math.min(...priceValues);
+  const maxPrice = Math.max(...priceValues);
+
+  if (minPrice === maxPrice) {
+    return minPrice as JPYValue;
+  } else {
+    return [minPrice as JPYValue, maxPrice as JPYValue] as JPYRange;
+  }
+}

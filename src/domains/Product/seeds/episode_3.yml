@@ -7,7 +7,7 @@ episodes:
 images:
   - src: /products/8a22fe8d-1d34-47c7-b7ad-68c2d57df864_base_resized.jpg
     alt: ユードットエフエム 3話『コネクティング・ザ・ドッツ』の表紙画像
-defaultPrice: [500]
+defaultPrice: 660
 publishedAt: 2024-09-03
 description: |
   コミティア153（2025/09/07）に出す予定のポッドキャスト百合漫画『ユードットエフエム』第3話です。本文32ページです。
@@ -18,7 +18,7 @@ description: |
 variants:
   - slug: paper
     name: 紙版
-    defaultPrice: [500]
+    defaultPrice: 660
     listings:
       - shopKind: Melonbooks
         price: 660
@@ -30,7 +30,7 @@ variants:
 
   - slug: digital
     name: 電子書籍
-    defaultPrice: [400]
+    defaultPrice: 300
     listings:
       - shopKind: Kindle
         price: 300
