@@ -68,7 +68,6 @@ export function CharacterListItem({ character }: Props) {
             "leading-relaxed",
             "tracking-wider",
             "[&_p+p]:mt-16",
-            "[&_br:last-child]:hidden",
           )}
         >
           {simpleFormat(character.profile)}

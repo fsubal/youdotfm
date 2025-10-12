@@ -7,7 +7,7 @@ episodes:
 images:
   - src: https://booth.pximg.net/cd04c594-71c2-4976-b85b-24de2c763e22/i/5741859/9c06e4cb-e3e1-4432-a3f0-9376b18ab46c_base_resized.jpg
     alt: ユードットエフエム 1話『象とうわばみ』の表紙画像
-defaultPrice: [400]
+defaultPrice: [500]
 publishedAt: 2024-05-26
 description: |
   コミティア148に出したポッドキャスト百合漫画『ユードットエフエム』第1話です。全40ページ。
@@ -19,24 +19,26 @@ description: |
   語って、話して、好きになる。ポッドキャスター女子ふたりが織りなす、大人の青春ストーリー！
 variants:
   - slug: paper
-    name: 紙版
-    defaultPrice: [500]
+    name: 同人誌
+    defaultPrice: 660
     listings:
       - shopKind: Melonbooks
-        price: 500
-        url: /melonbooks/2837742
+        price: 660
+        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2837742
       - shopKind: BOOTH
         price: 500
-        url: /booth/5741859
-        status: stockout
+        url: https://umbrellahead.booth.pm/items/5741859
 
   - slug: digital
     name: 電子書籍
-    defaultPrice: [400]
+    defaultPrice: 300
     listings:
       - shopKind: Kindle
-        price: 400
-        url: https://www.amazon.co.jp/
+        price: 300
+        url: https://www.amazon.co.jp/gp/product/B0FCNZZMPJ
+      - shopKind: ComicCmoa
+        price: 300
+        url: https://www.cmoa.jp/title/327139/
       - shopKind: LineManga
-        price: 400
-        url: https://www.amazon.co.jp/
+        price: 300
+        url: https://manga.line.me/book/detail?id=B00165998425

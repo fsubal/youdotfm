@@ -85,7 +85,7 @@ export function CurrentVariant({
   variant: ProductVariant;
 }) {
   return (
-    <div className="py-16">
+    <div className="my-16">
       <div
         className={clsx(
           "flex",
@@ -100,6 +100,7 @@ export function CurrentVariant({
         <PriceLabel className={clsx("text-primary", "font-bold", "text-3xl")}>
           {variant.defaultPrice}
         </PriceLabel>
+        <span>(税込)</span>
       </div>
 
       {kind === "merch" && (

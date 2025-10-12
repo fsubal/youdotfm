@@ -129,7 +129,6 @@ export function EpisodeListItem({ episode }: Props) {
             "leading-relaxed",
             "tracking-wider",
             "[&_p+p]:mt-16",
-            "[&_br:last-child]:hidden",
           )}
         >
           {simpleFormat(episode.description)}

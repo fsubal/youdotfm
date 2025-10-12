@@ -96,15 +96,18 @@ export default async function ProductPage({
           {episodes.length > 0 && (
             <div className="mt-16">
               <h2 className={h2style}>収録エピソード</h2>
-              {episodes.map((episode) => (
-                <Link
-                  key={episode.slug}
-                  href={`/episodes/${episode.slug}#main`}
-                  className={clsx("inline-block", "underline", "text-primary")}
-                >
-                  {episode.numbering}『{episode.title}』
-                </Link>
-              ))}
+              <ul className={clsx("space-y-4", "list-inside")}>
+                {episodes.map((episode) => (
+                  <li key={episode.slug} className="list-disc">
+                    <Link
+                      href={`/episodes/${episode.slug}#main`}
+                      className={clsx("underline", "text-primary")}
+                    >
+                      {episode.numbering}『{episode.title}』
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
         </div>
@@ -118,7 +121,6 @@ export default async function ProductPage({
             "leading-loose",
             "tracking-wider",
             "[&_p+p]:mt-16",
-            "[&_br:last-child]:hidden",
           )}
         >
           {simpleFormat(product.description)}

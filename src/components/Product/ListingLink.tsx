@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { Listing } from "../../domains/Product/model";
 import { Icon } from "../Icon";
+import { Unreachable } from "../../utils/unreachable";
 
 interface Props {
   listing: Listing;
@@ -60,8 +61,23 @@ export function ListingLink({ listing }: Props) {
       );
     }
 
+    case "ComicCmoa": {
+      return (
+        <ListingLinkBase
+          url={listing.url}
+          className={clsx(
+            "bg-orange-500",
+            "active:bg-orange-600",
+            "text-white",
+          )}
+        >
+          コミックシーモアで読む
+        </ListingLinkBase>
+      );
+    }
+
     default: {
-      return null;
+      return Unreachable.assert(listing as never);
     }
   }
 }
