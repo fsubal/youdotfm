@@ -84,9 +84,18 @@ export default function Home() {
           </h2>
           <div className="space-y-16">
             <ProductList>
-              {products.slice(0, 4).map((product) => (
-                <ProductListItem key={product.slug} product={product} />
-              ))}
+              {
+                // モバイルは最大4つ
+                products.slice(0, 4).map((product) => (
+                  <div
+                    key={product.slug}
+                    // デスクトップは3つにしたい（スペースをとる）ので、乱暴な方法だが4番目以降の要素をdisplay: noneにする
+                    className="[:nth-of-type(n+4)]:screen2:hidden"
+                  >
+                    <ProductListItem product={product} />
+                  </div>
+                ))
+              }
             </ProductList>
             <MoreButton href="/shop#main">すべての商品を見る</MoreButton>
           </div>
