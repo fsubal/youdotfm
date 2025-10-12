@@ -41,6 +41,14 @@
     border-color: var(--color-text-50, currentColor);
   }
 
+  *:focus,
+  *:focus-within,
+  *:focus-visible,
+  *:active {
+    outline-color: var(--color-active);
+    outline-width: 4px;
+  }
+
   /**
    * @see https://charcoal-web.pixiv.design/@charcoal-ui/icons/ssr/
    */

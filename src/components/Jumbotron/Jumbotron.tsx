@@ -38,7 +38,16 @@ export const Jumbotron = withReplay(({ onReplay }: Props) => {
         </hgroup>
 
         <div className={clsx("mt-16", fadeInLater)}>
-          <ScrollTo href="#main" className={clsx("block", "animate-bounce")}>
+          <ScrollTo
+            href="#main"
+            className={clsx(
+              "block",
+              "animate-bounce",
+              "rounded-full",
+              "w-32",
+              "h-32",
+            )}
+          >
             <Icon
               name="24/ArrowDown"
               unsafeNonGuidelineScale={32 / 24}
