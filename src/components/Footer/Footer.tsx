@@ -124,6 +124,8 @@ function AuthorProfile() {
         <dl className={rootStyle}>
           <dt className={titleStyle}>
             <span
+              aria-label="X"
+              role="img"
               className={clsx(
                 "text-xl/[1]",
                 "inline-flex",

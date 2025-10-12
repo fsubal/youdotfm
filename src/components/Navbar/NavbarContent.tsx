@@ -41,6 +41,15 @@ export function NavbarMenu() {
       >
         本&amp;グッズ
       </NavbarItem>
+      <div className={clsx("border-t", "py-12")}>
+        <NavbarItem
+          href="/terms"
+          subheading="Terms"
+          icon={<Icon name="16/Info" unsafeNonGuidelineScale={20 / 16} />}
+        >
+          プライバシーポリシー
+        </NavbarItem>
+      </div>
     </ul>
   );
 }
