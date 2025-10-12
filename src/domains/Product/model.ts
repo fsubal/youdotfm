@@ -3,6 +3,7 @@ import { ImageSource } from "../ImageSource/model";
 import { ShopKind } from "../Shop/model";
 import { JPYRange, JPYValue } from "../../utils/intl";
 import { JapanDate } from "../../utils/datetime";
+import { Unreachable } from "../../utils/unreachable";
 
 export const ProductKind = z.enum(["doujinshi", "merch"]);
 
@@ -86,3 +87,25 @@ export type Product = z.infer<typeof Product>;
 export type ProductKind = z.infer<typeof ProductKind>;
 export type ProductVariant = z.infer<typeof ProductVariant>;
 export type Listing = z.infer<typeof Listing>;
+
+export function getShareUrl(product: Pick<Product, "slug">) {
+  return new URL(`https://youdot.fm/shop/products/${product.slug}#main`);
+}
+
+export function getShareText(product: Product) {
+  return `${product.title} - #ユードットエフエム`;
+}
+
+export function getKindLabel(kind: ProductKind) {
+  switch (kind) {
+    case "doujinshi": {
+      return "同人誌";
+    }
+    case "merch": {
+      return "グッズ";
+    }
+    default: {
+      Unreachable.assert(kind);
+    }
+  }
+}

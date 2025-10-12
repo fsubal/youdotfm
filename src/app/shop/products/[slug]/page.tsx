@@ -21,6 +21,12 @@ import {
   ProductList,
   ProductListItem,
 } from "../../../../components/Product/ProductListItem";
+import { ShareLinkContainer } from "../../../../components/SocialMedia/ShareButton";
+import {
+  getKindLabel,
+  getShareText,
+  getShareUrl,
+} from "../../../../domains/Product/model";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
@@ -116,9 +122,7 @@ export default async function ProductPage({
 
       {relatedProducts.length > 0 && (
         <div className="mt-16">
-          <h2 className={h2style}>
-            {product.kind === "doujinshi" ? "同人誌" : "グッズ"}の商品一覧
-          </h2>
+          <h2 className={h2style}>{getKindLabel(product.kind)}の商品一覧</h2>
           <ProductList>
             {relatedProducts.map((product) => (
               <ProductListItem key={product.slug} product={product} />
@@ -126,6 +130,18 @@ export default async function ProductPage({
           </ProductList>
         </div>
       )}
+
+      <hr className="my-24" />
+
+      <div className="mt-24">
+        <h3 className={clsx("font-serif", "text-xl", "mb-8", "text-text-950")}>
+          この{getKindLabel(product.kind)}を広める
+        </h3>
+        <ShareLinkContainer
+          url={getShareUrl(product)}
+          text={getShareText(product)}
+        />
+      </div>
     </Layout>
   );
 }

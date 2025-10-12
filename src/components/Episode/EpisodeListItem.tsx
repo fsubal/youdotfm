@@ -163,7 +163,7 @@ export function EpisodeListItem({ episode }: Props) {
           <h3
             className={clsx("font-serif", "text-xl", "mb-8", "text-text-950")}
           >
-            この漫画を広める
+            このエピソードを広める
           </h3>
           <ShareLinkContainer
             url={getShareUrl(episode)}
