@@ -142,7 +142,7 @@ function AuthorProfile() {
           <dt className={titleStyle}>circle.ms</dt>
           <dd className={dataStyle}>
             <a
-              href="https://webcatalog-free.circle.ms/Circle/21008852"
+              href="https://portal.circle.ms/Circle/Index/10290632"
               target="_blank"
               rel="noopener"
               className="underline"
