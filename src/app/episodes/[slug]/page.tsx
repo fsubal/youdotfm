@@ -11,6 +11,7 @@ import { RelatedProductList } from "../../../components/Episode/RelatedProductLi
 import { findNewsForEpisode } from "../../../domains/EpisodeNews/seeds";
 import { findProductsForEpisode } from "../../../domains/ProductEpisode/seeds";
 import { simpleFormat } from "../../../utils/text";
+import { MarshmallowLink } from "../../../components/SocialMedia/MarshmallowLink";
 
 export function generateStaticParams(): StaticParams<"/episodes/[slug]"> {
   return episodes.map(({ slug }) => ({ slug }));
@@ -79,11 +80,23 @@ export default async function EpisodePage({
             >
               このエピソードを広める
             </h3>
-
             <ShareLinkContainer
               url={getShareUrl(episode)}
               text={getShareText(episode)}
             />
+            <p className={clsx("text-text-500", "text-sm", "my-8")}>
+              公式ハッシュタグ
+              <code>#ユードットエフエム</code>での投稿もお待ちしています。
+            </p>
+          </div>
+
+          <div className="mt-24">
+            <h3
+              className={clsx("font-serif", "text-xl", "mb-8", "text-text-950")}
+            >
+              読んだ感想はこちら
+            </h3>
+            <MarshmallowLink>マシュマロでメッセージを送る</MarshmallowLink>
           </div>
         </div>
       </div>

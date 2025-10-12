@@ -24,6 +24,7 @@ import {
   getShareUrl,
 } from "../../../../domains/Product/model";
 import { RelatedProductList } from "../../../../components/Product/RelatedProductList";
+import { MarshmallowLink } from "../../../../components/SocialMedia/MarshmallowLink";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
@@ -141,6 +142,17 @@ export default async function ProductPage({
           url={getShareUrl(product)}
           text={getShareText(product)}
         />
+        <p className={clsx("text-text-500", "text-sm", "my-8")}>
+          公式ハッシュタグ
+          <code>#ユードットエフエム</code>での投稿もお待ちしています。
+        </p>
+      </div>
+
+      <div className="mt-24">
+        <h3 className={clsx("font-serif", "text-xl", "mb-8", "text-text-950")}>
+          届いた商品の感想はこちら
+        </h3>
+        <MarshmallowLink>マシュマロでメッセージを送る</MarshmallowLink>
       </div>
     </Layout>
   );
