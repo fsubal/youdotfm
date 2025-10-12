@@ -18,7 +18,7 @@ export function Layout({ children }: React.PropsWithChildren) {
 
 const proseClass = clsx("prose", "prose-slate", "prose-green", "max-w-none");
 
-function Main({ children }: React.PropsWithChildren) {
+export function Main({ children }: React.PropsWithChildren) {
   return (
     <div
       id="main"
