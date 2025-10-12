@@ -8,7 +8,7 @@ episodes:
   - "2"
   - "2_5"
 images:
-  - src: https://booth.pximg.net/cd04c594-71c2-4976-b85b-24de2c763e22/i/6983479/d73bdc75-2286-4d4a-93d6-22ab2d2ad075_base_resized.jpg
+  - src: /products/d73bdc75-2286-4d4a-93d6-22ab2d2ad075_base_resized.jpg
     alt: ユードットエフエム総集編 01の表紙画像
 defaultPrice: [1000]
 publishedAt: 2024-05-26

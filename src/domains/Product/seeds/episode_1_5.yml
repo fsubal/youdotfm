@@ -5,7 +5,7 @@ kind: doujinshi
 episodes:
   - "1_5"
 images:
-  - src: https://booth.pximg.net/cd04c594-71c2-4976-b85b-24de2c763e22/i/5995426/c9edd90d-6735-47c1-adb3-008eb3c51bc7_base_resized.jpg
+  - src: /products/c9edd90d-6735-47c1-adb3-008eb3c51bc7_base_resized.jpg
     alt: ユードットエフエム 1.5話『象とうわばみ』の表紙画像
 defaultPrice: [400]
 publishedAt: 2024-08-18

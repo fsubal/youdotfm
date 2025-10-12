@@ -3,7 +3,7 @@ slug: tshirt_shiori
 title: シヲリTシャツ
 kind: merch
 images:
-  - src: https://booth.pximg.net/cd04c594-71c2-4976-b85b-24de2c763e22/i/5125546/0bf813a9-73ca-4279-89ea-a99643b4bcd2_base_resized.jpg
+  - src: /products/0bf813a9-73ca-4279-89ea-a99643b4bcd2_base_resized.jpg
     alt: 白いTシャツにシヲリのモノクロイラストと青いアクセントが描かれている様子
 defaultPrice: 1900
 publishedAt: 2023-09-27

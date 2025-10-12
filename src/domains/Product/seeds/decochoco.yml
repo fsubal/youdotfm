@@ -3,7 +3,7 @@ slug: decochoco
 title: ユードットエフエム DECOチョコ
 kind: merch
 images:
-  - src: https://booth.pximg.net/cd04c594-71c2-4976-b85b-24de2c763e22/i/6292997/e526ea52-76f4-42fc-b81b-69d0c356d133_base_resized.jpg
+  - src: /products/e526ea52-76f4-42fc-b81b-69d0c356d133_base_resized.jpg
     alt: ユードットエフエムのキャラが描かれたチロルチョコが箱に入った画像
 defaultPrice: [2500, 5000]
 publishedAt: 2024-11-16
