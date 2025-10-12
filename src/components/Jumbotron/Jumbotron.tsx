@@ -5,13 +5,18 @@ import { AnimatedLogo } from "./AnimatedLogo";
 import { ScrollTo } from "../ScrollTo";
 import { Icon } from "../Icon";
 import { useAnimation } from "./useAnimation";
+import { useReducer } from "react";
 
 const fadeInLater = clsx(
   "animate-[1s_linear_1.2s_1_normal_running_forwards_fadein]",
   "opacity-0",
 );
 
-export function Jumbotron() {
+interface Props {
+  onReplay(): void;
+}
+
+export const Jumbotron = withReplay(({ onReplay }: Props) => {
   const { el, visible, playingEnd } = useAnimation(/** frames */ 110);
 
   return (
@@ -42,9 +47,29 @@ export function Jumbotron() {
             />
           </ScrollTo>
         </div>
+
+        {playingEnd && (
+          <button type="button" onClick={onReplay}>
+            リプレイ
+          </button>
+        )}
       </BackgroundColor>
     </section>
   );
+});
+
+/**
+ * Componentを再マウントしてアニメーションを最初から再生されられるようにするHoC
+ */
+function withReplay<T extends {}>(
+  Component: React.ComponentType<{ onReplay(): void }>,
+) {
+  return function WithReplay(props: T) {
+    const [replayCount, replay] = useReducer((count) => count + 1, 0);
+
+    // keyを更新して再マウントさせれば、それはリプレイの挙動になるはず
+    return <Component key={replayCount} {...props} onReplay={replay} />;
+  };
 }
 
 const BackgroundImage = ({ zoomed = false }) => (

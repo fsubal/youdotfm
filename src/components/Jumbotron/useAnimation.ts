@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useReducer } from "react";
 import Vivus from "vivus";
 
 export function useAnimation(duration = 50, onAnimationEnd?: () => void) {

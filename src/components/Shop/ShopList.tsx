@@ -42,8 +42,16 @@ export function ShopList({ defaultShops, hiddenShops }: Props) {
       </h2>
 
       <p className={clsx("text-sm", "text-text-500", "mb-16")}>
-        『ユードットエフエム』は以下のサイトで取扱があります。Kindle
-        unlimited会員の方は無料でも読めます。
+        『ユードットエフエム』は以下のサイトで取扱があります。
+        <a
+          href="https://www.amazon.co.jp/dp/B0FDWQVL5X/"
+          target="_blank"
+          rel="noopener"
+          className="underline"
+        >
+          Kindle unlimited
+        </a>
+        会員の方は無料でも読めます。
       </p>
 
       <div className={shopLinkContainer}>
