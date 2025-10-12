@@ -22,13 +22,14 @@ export function CharacterListItem({ character }: Props) {
         className={clsx(
           "screen2:w-440",
           "bg-text-50/50",
-          "aspect-[5/4]",
+          "aspect-square",
+          "screen2:aspect-[5/4]",
           "screen2:aspect-square",
           "rounded",
         )}
       >
         <img
-          className={clsx("block", "w-full", "h-full", "object-contain")}
+          className={clsx("block", "w-full", "aspect-square", "object-contain")}
           src={character.thumbnail.src}
           alt={character.thumbnail.alt}
         />

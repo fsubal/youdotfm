@@ -31,8 +31,9 @@ export function EpisodeListItem({ episode }: Props) {
         "flex",
         "flex-col",
         "screen2:flex-row",
+        "items-start",
         "gap-24",
-        "py-24",
+        "my-24",
       )}
     >
       <div
@@ -40,32 +41,74 @@ export function EpisodeListItem({ episode }: Props) {
           "screen2:w-272",
           "screen3:w-440",
           "bg-text-50/50",
-          "aspect-[5/4]",
-          "screen2:aspect-square",
           "rounded",
+          "relative",
+          "border",
+          "rounded",
+          "overflow-hidden",
         )}
       >
         {episode.images.map((image) => (
           <img
             key={image.src}
-            className={clsx("block", "w-full", "h-full", "object-contain")}
+            className={clsx(
+              "block",
+              "w-full",
+              "h-full",
+              "aspect-[5/4]",
+              "screen2:aspect-square",
+              "object-cover",
+            )}
             src={image.src}
             alt={image.alt}
           />
         ))}
+
+        {episode.pixivArtwork && (
+          <div
+            className={clsx(
+              "absolute",
+              "inset-x-0",
+              "bottom-0",
+              "py-16",
+              "flex",
+              "justify-center",
+              "bg-gradient-to-t",
+              "from-white",
+              "to-transparent",
+            )}
+          >
+            <a
+              className={clsx(
+                "whitespace-nowrap",
+                ["inline-flex", "justify-center"],
+                "rounded-full",
+                ["py-8", "px-32"],
+                "font-bold",
+                "bg-black",
+                "text-white",
+                "text-sm",
+              )}
+              href={episode.pixivArtwork.url}
+              target="_blank"
+              rel="noopener"
+            >
+              <Icon name="24/Manga" className="mr-4" />
+              pixivでサンプルを読む
+            </a>
+          </div>
+        )}
       </div>
 
       <div className="flex-1">
-        <hgroup
-          className={clsx("flex", "items-center", "mb-16", "screen2:mb-20")}
-        >
-          <span className={clsx("block", "text-xl/tight")}>
+        <hgroup className={clsx("flex", "items-center", "mb-8")}>
+          <span className={clsx("block", "text-lg/tight")}>
             {episode.numbering}
           </span>
           <h2
             className={clsx(
               "font-serif",
-              "text-2xl/tight",
+              "text-xl/tight",
               "screen2:text-3xl/tight",
             )}
           >
@@ -75,10 +118,10 @@ export function EpisodeListItem({ episode }: Props) {
 
         <div
           className={clsx(
-            "my-24",
+            "my-16",
             "text-sm",
             "screen2:text-base",
-            "leading-loose",
+            "leading-relaxed",
             "tracking-wider",
             "[&_p+p]:mt-16",
             "[&_br:last-child]:hidden",
@@ -86,29 +129,6 @@ export function EpisodeListItem({ episode }: Props) {
         >
           {simpleFormat(episode.description)}
         </div>
-
-        {episode.pixivArtwork && (
-          <a
-            className={clsx(
-              "flex",
-              "screen2:inline-flex",
-              "whitespace-nowrap",
-              "justify-center",
-              "rounded-full",
-              "py-12",
-              "px-40",
-              "font-bold",
-              "bg-black",
-              "text-white",
-            )}
-            href={episode.pixivArtwork.url}
-            target="_blank"
-            rel="noopener"
-          >
-            <Icon name="24/Manga" className="mr-4" />
-            pixivでサンプルを読む
-          </a>
-        )}
 
         {products.length > 0 && (
           <div className="mt-24">
