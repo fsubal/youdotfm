@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { eri, shiori } from "../domains/Character/seeds";
 import clsx from "clsx";
 import { Layout } from "../components/Layout";
 import { SectionTitle } from "../components/SectionTitle";
@@ -11,6 +10,7 @@ import {
   ProductListItem,
 } from "../components/Product/ProductListItem";
 import { products } from "../domains/Product/seeds";
+import { DropCap } from "../components/DropCap";
 
 export default function Home() {
   return (
@@ -130,27 +130,5 @@ function MoreButton({ href }: { href: string }) {
     >
       すべて見る
     </Link>
-  );
-}
-
-function DropCap({ children }: React.PropsWithChildren) {
-  return (
-    <div
-      className={clsx(
-        "leading-loose",
-        ["text-sm", "screen2:text-base"],
-        "space-y-8",
-        [
-          "first-letter:text-5xl",
-          "screen2:first-letter:text-6xl",
-          "first-letter:text-primary",
-          "first-letter:font-bold",
-          "first-letter:float-left",
-          "first-letter:align-bottom",
-        ],
-      )}
-    >
-      {children}
-    </div>
   );
 }
