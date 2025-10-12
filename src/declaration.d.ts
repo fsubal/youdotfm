@@ -1,7 +1,7 @@
 declare module "*.yml" {
-  const seeds: unknown;
+  const parsed: unknown;
 
-  export default seeds;
+  export default parsed;
 }
 
 type StaticParams<Path extends string> =
@@ -11,11 +11,4 @@ type StaticParams<Path extends string> =
 interface AnyEvent {
   preventDefault(): void;
   stopPropagation(): void;
-}
-
-interface BooleanConstructor {
-  /**
-   * `filter(Boolean)`をいい感じにするための型定義
-   */
-  <T>(value?: T): value is NonNullable<T>;
 }
