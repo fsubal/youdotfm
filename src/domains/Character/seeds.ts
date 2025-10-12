@@ -14,8 +14,3 @@ export function findCharacterBySlug(slug: string): Character | undefined {
 
 export const eri: Character = findCharacterBySlug("eri_takeuchi")!;
 export const shiori: Character = findCharacterBySlug("shiori_chiba")!;
-
-/**
- * キャラクター一覧のようなものは存在しないので、キャラクターページでは主人公をデフォルトで表示する
- */
-export const defaultCharacter = eri;

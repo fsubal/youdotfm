@@ -13,10 +13,15 @@ export default function Home() {
       <DropCap>
         <p>
           うだつの上がらない新人音楽ライターの
-          <Link href={`/characters/${eri.slug}#main`}>竹内エリ</Link>は、
+          <Link className="underline" href={`/characters/${eri.slug}#main`}>
+            竹内エリ
+          </Link>
+          は、
           <wbr />
           素敵な文章を書くフォロワーの
-          <Link href={`/characters/${shiori.slug}#main`}>千葉シヲリ</Link>
+          <Link className="underline" href={`/characters/${shiori.slug}#main`}>
+            千葉シヲリ
+          </Link>
           に心惹かれていた。
           <br />
           ある日エリはライブ会場でシヲリと対面し、意気投合する。

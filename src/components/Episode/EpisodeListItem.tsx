@@ -15,6 +15,7 @@ export function EpisodeListItem({ episode }: Props) {
 
   return (
     <div
+      data-role="episode-list-item"
       className={clsx(
         "flex",
         "flex-col",

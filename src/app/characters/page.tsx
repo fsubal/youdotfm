@@ -1,7 +1,7 @@
 import { Layout } from "../../components/Layout";
 import { SectionTitle } from "../../components/SectionTitle";
-import { episodes } from "../../domains/Episode/seeds";
-import { EpisodeListItem } from "../../components/Episode/EpisodeListItem";
+import { CharacterListItem } from "../../components/Character/CharacterListItem";
+import { characters } from "../../domains/Character/seeds";
 
 export default function CharactersPage() {
   return (
@@ -9,8 +9,8 @@ export default function CharactersPage() {
       <SectionTitle subheading="Character">キャラクター紹介</SectionTitle>
 
       <div className="divide-y">
-        {episodes.map((episode) => (
-          <EpisodeListItem key={episode.slug} episode={episode} />
+        {characters.map((character) => (
+          <CharacterListItem key={character.slug} character={character} />
         ))}
       </div>
     </Layout>

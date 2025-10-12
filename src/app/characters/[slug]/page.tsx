@@ -5,6 +5,7 @@ import {
   findCharacterBySlug,
 } from "../../../domains/Character/seeds";
 import { SectionTitle } from "../../../components/SectionTitle";
+import { CharacterListItem } from "../../../components/Character/CharacterListItem";
 
 export function generateStaticParams(): StaticParams<"/characters/[slug]"> {
   return characters.map(({ slug }) => ({ slug }));
@@ -21,8 +22,10 @@ export default async function CharacterPage({
 
   return (
     <Layout>
-      <SectionTitle subheading="Characters">キャラクター</SectionTitle>
-      <div>{character.name.japanese}</div>
+      <SectionTitle subheading="Characters" backToHref="/characters">
+        キャラクター
+      </SectionTitle>
+      <CharacterListItem character={character} />
     </Layout>
   );
 }

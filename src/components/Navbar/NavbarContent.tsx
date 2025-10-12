@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { NavbarItem } from "./NavbarItem";
 import { Icon } from "../Icon";
-import { defaultCharacter } from "../../domains/Character/seeds";
 import Link from "next/link";
 
 export function LogoOneline() {
@@ -50,7 +49,7 @@ export function NavbarMenu() {
         お知らせ
       </NavbarItem>
       <NavbarItem
-        href={`/characters/${defaultCharacter.slug}`}
+        href="/characters"
         subheading="Characters"
         icon={<Icon name="24/Person" unsafeNonGuidelineScale={20 / 24} />}
       >
