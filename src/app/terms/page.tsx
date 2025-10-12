@@ -13,8 +13,23 @@ export default async function TermsPage() {
 
         <h2>1. 収集する情報</h2>
         <p>
-          本サイトでは、閲覧状況を把握しサイト運営を改善するために、Cloudflare,
-          Inc. が提供する「Cloudflare Web Analytics」を利用しています。
+          本サイトでは、閲覧状況を把握しサイト運営を改善するために、
+          <a
+            href="https://www.cloudflare.com/ja-jp/"
+            target="_blank"
+            rel="noopener"
+          >
+            Cloudflare, Inc.
+          </a>
+          が提供する「
+          <a
+            href="https://www.cloudflare.com/ja-jp/web-analytics/"
+            target="_blank"
+            rel="noopener"
+          >
+            Cloudflare Web Analytics
+          </a>
+          」を利用しています。
           <br />
           この解析ツールは Cookie
           を使用せず、匿名化された情報（閲覧したページ、参照元、ブラウザ・端末の種類等）を収集します。

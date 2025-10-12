@@ -1,9 +1,5 @@
 import clsx from "clsx";
-import {
-  Episode,
-  getShareText,
-  getShareUrl,
-} from "../../domains/Episode/model";
+import { Episode } from "../../domains/Episode/model";
 import { simpleFormat } from "../../utils/text";
 import { Icon } from "../Icon";
 import { findProductsForEpisode } from "../../domains/ProductEpisode/seeds";
@@ -11,11 +7,6 @@ import Link from "next/link";
 import { ProductKindTagIcon } from "../Product/ProductKindTag";
 import { findNewsForEpisode } from "../../domains/EpisodeNews/seeds";
 import { NewsKindBadge } from "../News/NewsKind";
-import {
-  BlueskyShareButton,
-  ShareLinkContainer,
-  XShareButton,
-} from "../SocialMedia/ShareButton";
 
 interface Props {
   episode: Episode;
@@ -158,18 +149,6 @@ export function EpisodeListItem({ episode }: Props) {
             ))}
           </div>
         )}
-
-        <div className="mt-24">
-          <h3
-            className={clsx("font-serif", "text-xl", "mb-8", "text-text-950")}
-          >
-            このエピソードを広める
-          </h3>
-          <ShareLinkContainer
-            url={getShareUrl(episode)}
-            text={getShareText(episode)}
-          />
-        </div>
       </div>
     </div>
   );
