@@ -12,3 +12,10 @@ interface AnyEvent {
   preventDefault(): void;
   stopPropagation(): void;
 }
+
+interface BooleanConstructor {
+  /**
+   * `filter(Boolean)`をいい感じにするための型定義
+   */
+  <T>(value?: T): value is NonNullable<T>;
+}

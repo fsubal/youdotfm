@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { Icon } from "./Icon";
+import { Fragment } from "react";
 
 interface Props {
   subheading?: React.ReactNode;
@@ -10,7 +11,16 @@ interface Props {
 export function SectionTitle({ subheading, backToHref, children }: Props) {
   return (
     <hgroup className={clsx("mb-24", "screen2:mb-32")}>
-      <Subheading href={backToHref}>{subheading}</Subheading>
+      <Breadcrumbs
+        paths={[
+          { href: "/", label: "Home" },
+          {
+            href: backToHref ? `${backToHref}#main` : undefined,
+            label: subheading,
+          },
+        ]}
+      />
+
       <h2
         className={clsx(
           "font-serif",
@@ -36,35 +46,47 @@ export function SectionTitle({ subheading, backToHref, children }: Props) {
   );
 }
 
-const subheadingStyle = clsx(
-  "font-bold",
-  "uppercase",
-  "mb-4",
-  "text-primary",
-  "inline-flex",
-  "items-center",
-  "gap-4",
-);
+function Breadcrumbs({
+  paths,
+}: {
+  paths: { href?: string; label: React.ReactNode }[];
+}) {
+  return (
+    <nav
+      className={clsx(
+        "uppercase",
+        "mb-4",
+        "text-text-500",
+        "inline-flex",
+        "items-center",
+        "gap-4",
+      )}
+    >
+      {paths.map(({ href, label }, index) => {
+        const isLast = index === paths.length - 1;
 
-const Subheading = ({
-  href,
-  children,
-}: React.PropsWithChildren<{ href?: string }>) => {
-  if (!children) {
-    return null;
-  }
-
-  if (href) {
-    return (
-      <a
-        href={`${href}#main`}
-        className={clsx(subheadingStyle, "hover:underline")}
-      >
-        <Icon name="16/Back" />
-        {children}
-      </a>
-    );
-  }
-
-  return <p className={subheadingStyle}>{children}</p>;
-};
+        return (
+          <Fragment key={index}>
+            {href ? (
+              <>
+                <a
+                  href={href}
+                  className={clsx(
+                    "hover:underline",
+                    "text-primary",
+                    "font-bold",
+                  )}
+                >
+                  {label}
+                </a>
+                <Icon name="24/Next" unsafeNonGuidelineScale={16 / 24} />
+              </>
+            ) : (
+              <span aria-current="page">{label}</span>
+            )}
+          </Fragment>
+        );
+      })}
+    </nav>
+  );
+}
