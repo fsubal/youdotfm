@@ -8,8 +8,6 @@ type StaticParams<Path extends string> =
   | PageProps<Path>["params"][]
   | Awaited<PageProps<Path>["params"]>[];
 
-type AutoIncrement<T> = T & { id: number };
-
 interface AnyEvent {
   preventDefault(): void;
   stopPropagation(): void;

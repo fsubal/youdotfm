@@ -5,13 +5,24 @@ import { Icon } from "../Icon";
 import { findProductsForEpisode } from "../../domains/ProductEpisode/seeds";
 import Link from "next/link";
 import { ProductKindTagIcon } from "../Product/ProductKindTag";
+import { findNewsForEpisode } from "../../domains/EpisodeNews/seeds";
+import { NewsKindBadge } from "../News/NewsKind";
 
 interface Props {
   episode: Episode;
 }
 
+const relatedLinkStyle = clsx(
+  "inline-flex",
+  "items-center",
+  "underline",
+  "text-primary",
+  "text-sm",
+);
+
 export function EpisodeListItem({ episode }: Props) {
   const products = findProductsForEpisode(episode.slug);
+  const relatedNews = findNewsForEpisode(episode.slug);
 
   return (
     <div
@@ -110,16 +121,30 @@ export function EpisodeListItem({ episode }: Props) {
               <Link
                 key={product.slug}
                 href={`/shop/products/${product.slug}#main`}
-                className={clsx(
-                  "inline-flex",
-                  "items-center",
-                  "underline",
-                  "text-primary",
-                  "text-sm",
-                )}
+                className={relatedLinkStyle}
               >
                 <ProductKindTagIcon kind={product.kind} />
                 {product.title}
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {relatedNews.length > 0 && (
+          <div className="mt-24">
+            <h3
+              className={clsx("font-serif", "text-xl", "mb-8", "text-text-950")}
+            >
+              このエピソードに関するお知らせ
+            </h3>
+            {relatedNews.map((news) => (
+              <Link
+                key={news.id}
+                className={clsx("flex", "gap-8")}
+                href={`/news/${news.id}#main`}
+              >
+                <NewsKindBadge kind={news.kind} />
+                <span className={relatedLinkStyle}>{news.title}</span>
               </Link>
             ))}
           </div>

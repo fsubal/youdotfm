@@ -4,7 +4,7 @@ import { formatDateTime } from "../../utils/datetime";
 import { NewsKindBadge } from "./NewsKind";
 
 interface Props {
-  news: AutoIncrement<News>;
+  news: News;
 }
 
 export function NewsMetadata({ news }: Props) {
@@ -20,8 +20,7 @@ export function NewsMetadata({ news }: Props) {
         "mb-4",
       )}
     >
-      <time
-        dateTime={news.datetime.toPlainDateTime().toString()}
+      <span
         className={clsx(
           "text-text-500",
           "whitespace-nowrap",
@@ -30,8 +29,11 @@ export function NewsMetadata({ news }: Props) {
           "screen2:text-lg",
         )}
       >
-        {datetimeLabel}
-      </time>
+        <time dateTime={news.datetime.toPlainDateTime().toString()}>
+          {datetimeLabel}
+        </time>
+        &nbsp;に公開
+      </span>
       <NewsKindBadge kind={news.kind} />
     </aside>
   );

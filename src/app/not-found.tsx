@@ -1,15 +1,18 @@
 import clsx from "clsx";
 import { Main } from "../components/Layout";
-import { LogoOneline, NavbarMenu } from "../components/Navbar/NavbarContent";
+import { NavbarMenu } from "../components/Navbar/NavbarContent";
 import { NavbarDropdown } from "../components/Navbar/NavbarDropdown";
 import Link from "next/link";
 import { Icon } from "../components/Icon";
+import { LogoOneline } from "../components/LogoOneline";
 
 export default function NotFound() {
   return (
     <>
       <NavbarDropdown>
-        <LogoOneline />
+        <hgroup className={clsx("pt-24", "px-24", "mb-3")}>
+          <LogoOneline />
+        </hgroup>
         <NavbarMenu />
       </NavbarDropdown>
       <Main>

@@ -80,9 +80,3 @@ export function compareBy<K extends string>(
     }
   };
 }
-
-export function autoincrement<T extends {}>(items: T[]): AutoIncrement<T>[] {
-  let id = 1;
-
-  return items.map((item) => ({ ...item, id: id++ }));
-}

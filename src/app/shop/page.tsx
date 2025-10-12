@@ -23,7 +23,7 @@ export default function BuyPage() {
           『ユードットエフエム』に関連する商品を紹介します。各種通販サイトで購入できます。
         </p>
       </div>
-      <div className="not-prose">
+      <div>
         <ProductList>
           {products.map((product) => (
             <ProductListItem key={product.slug} product={product} />

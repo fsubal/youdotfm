@@ -1,22 +1,24 @@
 import clsx from "clsx";
 import { Jumbotron } from "./Jumbotron/Jumbotron";
 import { NavbarDropdown } from "./Navbar/NavbarDropdown";
-import { LogoOneline, NavbarMenu } from "./Navbar/NavbarContent";
+import { NavbarMenu } from "./Navbar/NavbarContent";
+import { LogoOneline } from "./LogoOneline";
+import { Footer } from "./Footer/Footer";
 
 export function Layout({ children }: React.PropsWithChildren) {
   return (
     <>
       <Jumbotron />
       <NavbarDropdown>
-        <LogoOneline />
+        <hgroup className={clsx("pt-24", "px-24", "mb-3")}>
+          <LogoOneline />
+        </hgroup>
         <NavbarMenu />
       </NavbarDropdown>
       <Main>{children}</Main>
     </>
   );
 }
-
-const proseClass = clsx("prose", "prose-slate", "prose-green", "max-w-none");
 
 export function Main({ children }: React.PropsWithChildren) {
   return (
@@ -55,28 +57,5 @@ export function Main({ children }: React.PropsWithChildren) {
       </main>
       <Footer />
     </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer
-      data-role="footer"
-      className={clsx(
-        "flex",
-        "justify-center",
-        "bg-surface",
-        "w-full",
-        ["py-24", "px-24"],
-        [proseClass, "prose-sm"],
-        "max-w-none",
-      )}
-    >
-      <div className={clsx("w-full", "max-w-(--breakpoint-screen5)")}>
-        footer
-        <br />
-        &copy; Subal Fujiaki
-      </div>
-    </footer>
   );
 }

@@ -6,7 +6,7 @@ import { NewsMetadata } from "./NewsMetadata";
 import { NewsSourceLink } from "./NewsKind";
 
 interface Props {
-  news: AutoIncrement<News>;
+  news: News;
 }
 
 export function NewsArticleListItem({ news }: Props) {

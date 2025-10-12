@@ -49,34 +49,42 @@ export default function Home() {
       <hr className={clsx("my-24", "screen2:my-40")} />
 
       <div>
-        <h2 className={clsx("font-serif", "text-2xl", "mb-8", "text-text-950")}>
-          お知らせ
-        </h2>
-        <div className={clsx("divide-y", "divide-text-50")}>
-          {newsFeed.slice(0, 5).map((news) => (
-            <Link
-              key={news.id}
-              className={clsx(
-                "flex",
-                "flex-col",
-                "screen2:flex-row",
-                "py-8",
-                "gap-8",
-                "active:bg-active/50",
-              )}
-              href={`/news/${news.id}#main`}
-            >
-              <span className="text-text-500">
-                {formatDate(news.datetime.toPlainDate())}
-              </span>
-              <div className={clsx("flex-1", "flex")}>
-                <span className="flex-1">{news.title}</span>
-                <div>
-                  <NewsKindBadge kind={news.kind} />
-                </div>
-              </div>
-            </Link>
-          ))}
+        <div>
+          <h2
+            className={clsx("font-serif", "text-2xl", "mb-8", "text-text-950")}
+          >
+            お知らせ
+          </h2>
+
+          <div className="space-y-8">
+            <div className={clsx("divide-y", "divide-text-50")}>
+              {newsFeed.slice(0, 5).map((news) => (
+                <Link
+                  key={news.id}
+                  className={clsx(
+                    "flex",
+                    "flex-col",
+                    "screen2:flex-row",
+                    "py-8",
+                    "gap-8",
+                    "active:bg-active/50",
+                  )}
+                  href={`/news/${news.id}#main`}
+                >
+                  <span className="text-text-500">
+                    {formatDate(news.datetime.toPlainDate())}
+                  </span>
+                  <div className={clsx("flex-1", "flex")}>
+                    <span className="flex-1">{news.title}</span>
+                    <div>
+                      <NewsKindBadge kind={news.kind} />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <MoreButton href="/news#main" />
+          </div>
         </div>
 
         <hr className={clsx("my-24", "screen2:my-40")} />
@@ -85,7 +93,7 @@ export default function Home() {
           <h2
             className={clsx("font-serif", "text-2xl", "mb-8", "text-text-950")}
           >
-            本＆グッズ
+            本&amp;グッズ
           </h2>
           <div className="space-y-16">
             <ProductList>
@@ -93,29 +101,35 @@ export default function Home() {
                 <ProductListItem key={product.slug} product={product} />
               ))}
             </ProductList>
-            <Link
-              href="/shop#main"
-              className={clsx(
-                "cursor-pointer",
-                "bg-surface",
-                "active:bg-active",
-                "text-text-500",
-                "font-bold",
-                "w-full",
-                "py-12",
-                "rounded-full",
-                "text-sm",
-                "flex",
-                "justify-center",
-                "items-center",
-              )}
-            >
-              すべて見る
-            </Link>
+            <MoreButton href="/shop#main" />
           </div>
         </div>
       </div>
     </Layout>
+  );
+}
+
+function MoreButton({ href }: { href: string }) {
+  return (
+    <Link
+      href={href}
+      className={clsx(
+        "cursor-pointer",
+        "bg-surface",
+        "active:bg-active",
+        "text-text-500",
+        "font-bold",
+        "w-full",
+        "py-12",
+        "rounded-full",
+        "text-sm",
+        "flex",
+        "justify-center",
+        "items-center",
+      )}
+    >
+      すべて見る
+    </Link>
   );
 }
 
