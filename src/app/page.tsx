@@ -21,13 +21,13 @@ export default function Home() {
       <DropCap>
         <p>
           うだつの上がらない新人音楽ライターの
-          <Link className="underline" href={`/characters/${eri.slug}#main`}>
+          <Link className="underline" href={`/characters#eri_takeuchi`}>
             竹内エリ
           </Link>
           は、
           <wbr />
           素敵な文章を書くフォロワーの
-          <Link className="underline" href={`/characters/${shiori.slug}#main`}>
+          <Link className="underline" href={`/characters#shiori_chiba`}>
             千葉シヲリ
           </Link>
           に心惹かれていた。

@@ -9,6 +9,7 @@ interface Props {
 export function CharacterListItem({ character }: Props) {
   return (
     <div
+      id={character.slug}
       data-role="character-list-item"
       className={clsx(
         "flex",

@@ -101,19 +101,24 @@ export function EpisodeListItem({ episode }: Props) {
       </div>
 
       <div className="flex-1">
-        <hgroup className={clsx("flex", "items-center", "mb-8")}>
-          <span className={clsx("block", "text-lg/tight")}>
-            {episode.numbering}
-          </span>
-          <h2
-            className={clsx(
-              "font-serif",
-              "text-xl/tight",
-              "screen2:text-3xl/tight",
-            )}
+        <hgroup>
+          <a
+            href={`/episodes/${episode.slug}#main`}
+            className={clsx("flex", "items-center", "mb-8")}
           >
-            「{episode.title}」
-          </h2>
+            <span className={clsx("block", "text-lg/tight")}>
+              {episode.numbering}
+            </span>
+            <h2
+              className={clsx(
+                "font-serif",
+                "text-xl/tight",
+                "screen2:text-3xl/tight",
+              )}
+            >
+              「{episode.title}」
+            </h2>
+          </a>
         </hgroup>
 
         <div
