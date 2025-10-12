@@ -42,12 +42,6 @@ export const ProductVariant = z.object({
   name: z.string(),
 
   /**
-   * 一覧で表示するときに使う価格。
-   * 電子版と紙で値段が違うこともあるが、標準的とみなす価格を表示する
-   */
-  defaultPrice: z.union([JPYValue, JPYRange]),
-
-  /**
    * どのショップで売っているか
    * ショップの数が多いので、全部を載せる必要はない
    */
@@ -63,12 +57,6 @@ export const Product = z.object({
    */
   slug: z.string().brand<"Product">(),
   title: z.string(),
-
-  /**
-   * 一覧で表示するときに使う価格。
-   * 電子版と紙で値段が違うこともあるが、標準的とみなす価格を表示する
-   */
-  defaultPrice: z.union([JPYValue, JPYRange]),
 
   /**
    * @enum {string} 同人誌・グッズの種別

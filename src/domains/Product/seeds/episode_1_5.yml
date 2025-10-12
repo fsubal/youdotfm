@@ -7,7 +7,6 @@ episodes:
 images:
   - src: /products/c9edd90d-6735-47c1-adb3-008eb3c51bc7_base_resized.jpg
     alt: ユードットエフエム 1.5話『象とうわばみ』の表紙画像
-defaultPrice: 330
 publishedAt: 2024-08-18
 description: |
   コミティア149に出す予定のポッドキャスト百合漫画『ユードットエフエム』第1.5話です。
@@ -16,7 +15,6 @@ description: |
 variants:
   - slug: paper
     name: 同人誌
-    defaultPrice: 330
     listings:
       - shopKind: Melonbooks
         price: 330
@@ -28,7 +26,6 @@ variants:
 
   - slug: digital
     name: 電子書籍
-    defaultPrice: 150
     listings:
       - shopKind: Kindle
         price: 150

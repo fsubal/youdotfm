@@ -5,7 +5,6 @@ kind: merch
 images:
   - src: /products/0bf813a9-73ca-4279-89ea-a99643b4bcd2_base_resized.jpg
     alt: 白いTシャツにシヲリのモノクロイラストと青いアクセントが描かれている様子
-defaultPrice: 1900
 publishedAt: 2023-09-27
 description: |
   シヲリのイラストが描かれたシンプルなTシャツ（白）です。
@@ -15,7 +14,6 @@ description: |
 variants:
   - slug: white_tshirt
     name: ホワイト
-    defaultPrice: 1900
     listings:
       - shopKind: BOOTH
         price: 1900

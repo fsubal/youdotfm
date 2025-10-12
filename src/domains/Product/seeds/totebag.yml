@@ -5,7 +5,6 @@ kind: merch
 images:
   - src: /products/2a5c731a-0e69-4f85-a109-6958f930e07e_base_resized.jpg
     alt: ユードットエフエム1話の表紙をプリントしたトートバッグ
-defaultPrice: 1120
 publishedAt: 2024-08-11
 description: |
   ポッドキャスト百合『ユードットエフエム』のトートバッグです！
@@ -14,7 +13,6 @@ description: |
 variants:
   - slug: size_m
     name: Mサイズ
-    defaultPrice: 1120
     listings:
       - shopKind: BOOTH
         price: 1120
