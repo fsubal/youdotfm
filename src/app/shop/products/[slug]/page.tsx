@@ -17,16 +17,13 @@ import {
 import { formatDate } from "../../../../utils/datetime";
 import { ProductBreadCrumb } from "../../../../components/Product/ProductKindTag";
 import { ProductThumbnail } from "../../../../components/Product/ProductThumbnail";
-import {
-  ProductList,
-  ProductListItem,
-} from "../../../../components/Product/ProductListItem";
 import { ShareLinkContainer } from "../../../../components/SocialMedia/ShareButton";
 import {
   getKindLabel,
   getShareText,
   getShareUrl,
 } from "../../../../domains/Product/model";
+import { RelatedProductList } from "../../../../components/Product/RelatedProductList";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
@@ -128,18 +125,10 @@ export default async function ProductPage({
       </div>
 
       {relatedProducts.length > 0 && (
-        <div className="mt-16">
-          <h2 className={h2style}>{getKindLabel(product.kind)}の商品一覧</h2>
-          <ProductList>
-            {relatedProducts.map((product) => (
-              <ProductListItem
-                key={product.slug}
-                product={product}
-                thumbnailFit="contain"
-              />
-            ))}
-          </ProductList>
-        </div>
+        <RelatedProductList
+          kind={product.kind}
+          relatedProducts={relatedProducts}
+        />
       )}
 
       <hr className="my-24" />
