@@ -25,7 +25,7 @@ export function Main({ children }: React.PropsWithChildren) {
     <div
       id="main"
       data-role="main"
-      className={clsx("flex", "flex-col", "min-h-screen", "items-center")}
+      className={clsx("flex", "flex-col", "min-h-lvh", "items-center")}
     >
       <main
         className={clsx(

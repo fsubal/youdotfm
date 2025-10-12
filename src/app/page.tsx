@@ -64,7 +64,7 @@ export default function Home() {
                 <NewsListItem key={news.id} news={news} />
               ))}
             </div>
-            <MoreButton href="/news#main" />
+            <MoreButton href="/news#main">すべてのお知らせを見る</MoreButton>
           </div>
         </div>
 
@@ -82,7 +82,7 @@ export default function Home() {
                 <ProductListItem key={product.slug} product={product} />
               ))}
             </ProductList>
-            <MoreButton href="/shop#main" />
+            <MoreButton href="/shop#main">すべての商品を見る</MoreButton>
           </div>
         </div>
       </div>
@@ -90,7 +90,13 @@ export default function Home() {
   );
 }
 
-function MoreButton({ href }: { href: string }) {
+function MoreButton({
+  href,
+  children = "すべて見る",
+}: {
+  href: string;
+  children?: React.ReactNode;
+}) {
   return (
     <Link
       href={href}
@@ -109,7 +115,7 @@ function MoreButton({ href }: { href: string }) {
         "items-center",
       )}
     >
-      すべて見る
+      {children}
     </Link>
   );
 }

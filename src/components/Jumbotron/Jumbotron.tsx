@@ -100,7 +100,7 @@ const BackgroundImage = ({ zoomed = false }) => (
   <div
     className={clsx(
       "w-full",
-      "h-screen",
+      "h-lvh",
       "duration-800",
       zoomed ? "scale-105" : "scale-100",
       "bg-[url('/jumbotron_bg.jpg')]",
