@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { News } from "../../domains/News/model";
+import { getShareText, getShareUrl, News } from "../../domains/News/model";
 import { simpleFormat, nl2br } from "../../utils/text";
 import clsx from "clsx";
 import { NewsMetadata } from "./NewsMetadata";
 import { NewsSourceLink } from "./NewsKind";
+import { ShareLinkContainer } from "../SocialMedia/ShareButton";
 
 interface Props {
   news: News;
@@ -69,6 +70,30 @@ export function NewsArticle({ news }: Props) {
           <NewsSourceLink kind={news.kind} url={news.url} />
         </div>
       )}
+
+      <hr className="my-24" />
+
+      <SocialShare news={news} />
     </article>
+  );
+}
+
+function SocialShare({ news }: { news: News }) {
+  return (
+    <div>
+      <h2
+        className={clsx(
+          "font-serif",
+          "text-2xl",
+          "screen2:text-3xl",
+          "mt-16",
+          "mb-16",
+          "screen2:mb-20",
+        )}
+      >
+        このお知らせを広める
+      </h2>
+      <ShareLinkContainer url={getShareUrl(news)} text={getShareText(news)} />
+    </div>
   );
 }

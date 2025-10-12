@@ -21,3 +21,15 @@ export const Episode = z.object({
 });
 
 export type Episode = z.infer<typeof Episode>;
+
+export function formatTitle(episode: Episode) {
+  return `${episode.numbering}「${episode.title}」`;
+}
+
+export function getShareUrl(episode: Pick<Episode, "slug">) {
+  return new URL(`https://youdot.fm/episodes/${episode.slug}#main`);
+}
+
+export function getShareText(episode: Episode) {
+  return `${formatTitle(episode)} - #ユードットエフエム`;
+}

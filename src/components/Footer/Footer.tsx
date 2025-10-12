@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { LogoOneline } from "../LogoOneline";
 import { Icon } from "../Icon";
+import { XLogo } from "../SocialMedia/XLogo";
 
 export function Footer() {
   return (
@@ -123,20 +124,7 @@ function AuthorProfile() {
         </dl>
         <dl className={rootStyle}>
           <dt className={titleStyle}>
-            <span
-              aria-label="X"
-              role="img"
-              className={clsx(
-                "text-xl/[1]",
-                "inline-flex",
-                "justify-center",
-                "items-center",
-                "w-20",
-                "h-20",
-              )}
-            >
-              𝕏
-            </span>
+            <XLogo size="xl" />
             (Twitter) アカウント
           </dt>
           <dd className={dataStyle}>

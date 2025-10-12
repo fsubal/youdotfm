@@ -35,3 +35,11 @@ export const News = z.object({
 });
 
 export type News = z.infer<typeof News>;
+
+export function getShareUrl(news: Pick<News, "id">) {
+  return new URL(`https://youdot.fm/news/${news.id}#main`);
+}
+
+export function getShareText(news: News) {
+  return `${news.title} - #ユードットエフエム`;
+}
