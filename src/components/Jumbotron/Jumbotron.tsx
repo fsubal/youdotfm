@@ -47,13 +47,28 @@ export const Jumbotron = withReplay(({ onReplay }: Props) => {
             />
           </ScrollTo>
         </div>
-
-        {playingEnd && (
-          <button type="button" onClick={onReplay}>
-            リプレイ
-          </button>
-        )}
       </BackgroundColor>
+
+      {playingEnd && (
+        <button
+          type="button"
+          className={clsx(
+            "absolute",
+            "right-16",
+            "bottom-16",
+            "inline-flex",
+            "items-center",
+            "text-sm",
+            "font-bold",
+            "text-primary/80",
+            "cursor-pointer",
+          )}
+          onClick={onReplay}
+        >
+          <Icon name="24/Play" unsafeNonGuidelineScale={16 / 24} />
+          はじめから再生
+        </button>
+      )}
     </section>
   );
 });
