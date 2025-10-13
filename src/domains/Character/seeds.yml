@@ -5,10 +5,10 @@
     screen: kei
   thumbnail:
     src: /eri.png
-    alt: "url"
+    alt: エリが横を向いて立っている画像
   portrait:
-    src: "/eri.png"
-    alt: "url"
+    src: /eri.png
+    alt: エリが横を向いて立っている画像
   profile: |
     音楽雑誌の新人ライター。ポッドキャスト「ペンときどき音楽」のパーソナリティ。
 
@@ -21,10 +21,10 @@
     roman: "Shiori Chiba"
   thumbnail:
     src: /shiori.png
-    alt: "url"
+    alt: シヲリが正面を向いている画像
   portrait:
     src: /shiori.png
-    alt: "url"
+    alt: シヲリが正面を向いている画像
   profile: |
     Webメディアでライターと編集の仕事をしている。
     ブログでは映画の感想やエッセイ記事を書いている。
