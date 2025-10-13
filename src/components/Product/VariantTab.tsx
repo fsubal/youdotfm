@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import {
   getPriceRangeOfVariant,
@@ -7,7 +8,7 @@ import {
   ProductVariant,
 } from "../../domains/Product/model";
 import { PriceLabel } from "../PriceLabel";
-import { Tab, TabList, TabPanel, Tabs } from "react-aria-components";
+import { Key, Tab, TabList, TabPanel, Tabs } from "react-aria-components";
 import { ListingLink } from "./ListingLink";
 import Link from "next/link";
 import { Icon } from "../Icon";
@@ -18,8 +19,10 @@ interface Props {
 }
 
 export function VariantTab({ kind, variants }: Props) {
+  const [variantTab, onSelectionChange] = useRememberTab(variants[0].slug);
+
   return (
-    <Tabs>
+    <Tabs selectedKey={variantTab} onSelectionChange={onSelectionChange}>
       <TabList
         className={clsx("flex", "screen2:inline-flex")}
         aria-label="商品バリエーションを選択"
@@ -70,6 +73,32 @@ export function VariantTab({ kind, variants }: Props) {
       ))}
     </Tabs>
   );
+}
+
+function useRememberTab(
+  defaultSelected: Key,
+): [Key, (selectedTab: Key) => void] {
+  const [currentTab, setSelectedTab] = useState<Key>(defaultSelected);
+
+  function onSelectionChange(selectedTab: Key) {
+    setSelectedTab(selectedTab);
+
+    // ブラウザバックで戻ってきたとき、前に選んでいたタブを覚えていたらそっちをデフォルト選択したい
+    history.replaceState({ selectedTab }, "");
+  }
+
+  useEffect(() => {
+    const selectedTab = history.state?.selectedTab;
+
+    // REVIEW: ビルド時にwindowがない状態でuseStateの初期値を設定することはできない（hydration warning）ので、
+    // やむなくuseEffectで値を変更している
+    // @see https://ja.react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content
+    if (selectedTab) {
+      setSelectedTab(selectedTab);
+    }
+  }, []);
+
+  return [currentTab, onSelectionChange];
 }
 
 const sidenoteStyle = clsx(
