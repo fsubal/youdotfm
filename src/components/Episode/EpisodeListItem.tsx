@@ -66,16 +66,21 @@ function EpisodeTitle({ episode }: { episode: Episode }) {
     <hgroup>
       <a
         href={`/episodes/${episode.slug}#main`}
-        className={clsx("flex", "items-center", "mb-8")}
+        className={clsx(
+          "block",
+          "align-middle",
+          "mb-8",
+          "leading-[24px]",
+          "screen2:leading-[36px]",
+        )}
       >
-        <span className={clsx("block", "text-lg/tight")}>
-          {episode.numbering}
-        </span>
+        <span className="text-lg/[inherit]">{episode.numbering}</span>
         <h2
           className={clsx(
+            "inline-block",
             "font-serif",
-            "text-xl/tight",
-            "screen2:text-3xl/tight",
+            "text-xl/[inherit]",
+            "screen2:text-3xl/[inherit]",
           )}
         >
           『{episode.title}』
