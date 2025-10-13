@@ -17,18 +17,22 @@ test("OGPのタイトルが話数になっている", async ({ page }) => {
   );
 });
 
-test("メロンブックスに飛べる", async ({ page }) => {
+test("メロンブックスに飛べる", async ({ page, context }) => {
   await page.goto("/shop/products/episode_1_5");
 
+  const pageLoadEvent = context.waitForEvent("page");
   await page.getByRole("link", { name: /メロンブックスで購入/ }).click();
+  const newTab = await pageLoadEvent;
 
-  await expect(page).toHaveURL(/www\.melonbooks\.co\.jp/);
+  await expect(newTab).toHaveURL(/www\.melonbooks\.co\.jp/);
 });
 
-test("BOOTHに飛べる", async ({ page }) => {
+test("BOOTHに飛べる", async ({ page, context }) => {
   await page.goto("/shop/products/episode_1_5");
 
+  const pageLoadEvent = context.waitForEvent("page");
   await page.getByRole("link", { name: /BOOTHで購入/ }).click();
+  const newTab = await pageLoadEvent;
 
-  await expect(page).toHaveURL(/booth\.pm/);
+  await expect(newTab).toHaveURL(/booth\.pm/);
 });

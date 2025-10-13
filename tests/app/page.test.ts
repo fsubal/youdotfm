@@ -31,7 +31,7 @@ test("OGPとTwitterカードが出そう", async ({ page }) => {
     "https://youdot.fm/og_image.png",
   );
 
-  await expect(page.locator('meta[property="twitter:card"]')).toHaveAttribute(
+  await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
     "content",
     "summary_large_image",
   );
