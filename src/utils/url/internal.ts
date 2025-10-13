@@ -10,10 +10,6 @@ type RelativeURLInterface = Omit<
 export class RelativeURL implements RelativeURLInterface {
   #url: URL;
 
-  static canParse(href: string) {
-    return URL.canParse(href, BASE_URL);
-  }
-
   static withDefaultHash(href: string) {
     return new this(`${href}#${DEFAULT_HASH}`);
   }
