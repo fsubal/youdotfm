@@ -14,10 +14,10 @@ publishedAt: 2024-05-26
 description: |
   コミティア152に頒布された『ユードットエフエム』1話〜2.5話の総集編です。
 
-  全116ページ。単話版からの描き下ろし要素は特にありません。
+  全116ページ。単話版からの描き下ろし要素は特にありませんが、初めての方におすすめです。
 variants:
   - slug: paper
-    name: 紙版
+    name: 同人誌
     listings:
       - shopKind: BOOTH
         price: 1000

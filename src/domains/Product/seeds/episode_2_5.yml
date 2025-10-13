@@ -14,7 +14,7 @@ description: |
   本文8ページのステッチ本です。
 variants:
   - slug: paper
-    name: 紙版
+    name: 同人誌
     listings:
       - shopKind: Melonbooks
         price: 330

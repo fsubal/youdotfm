@@ -16,7 +16,7 @@ description: |
   シヲリといっしょにリスナーの反応を読みながら、自分たちが本当にやりたい番組が何なのかを考え始めたエリは！？
 variants:
   - slug: paper
-    name: 紙版
+    name: 同人誌
     listings:
       - shopKind: Melonbooks
         price: 660
