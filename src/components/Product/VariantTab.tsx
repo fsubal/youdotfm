@@ -84,18 +84,18 @@ function useRememberTab(
     setSelectedTab(selectedTab);
 
     // ブラウザバックで戻ってきたとき、前に選んでいたタブを覚えていたらそっちをデフォルト選択したい
-    globalThis?.history.replaceState({ selectedTab }, "");
+    history.replaceState({ selectedTab }, "");
   }
 
   useEffect(() => {
-    const selectedTab = globalThis.history?.state?.selectedTab;
+    const selectedTab = history.state?.selectedTab;
 
     // REVIEW: ビルド時にwindowがない状態でuseStateの初期値を設定することはできない（hydration warning）ので、
     // やむなくuseEffectで値を変更している
     // @see https://ja.react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content
     if (selectedTab) {
       setSelectedTab(selectedTab);
-      globalThis?.history.replaceState({ selectedTab: null }, "");
+      history.replaceState({ selectedTab: null }, "");
     }
   }, []);
 
