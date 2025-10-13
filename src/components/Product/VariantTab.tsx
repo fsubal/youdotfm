@@ -95,7 +95,6 @@ function useRememberTab(
     // @see https://ja.react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content
     if (selectedTab) {
       setSelectedTab(selectedTab);
-      history.replaceState({ selectedTab: null }, "");
     }
   }, []);
 
