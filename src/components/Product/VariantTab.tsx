@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import clsx from "clsx";
 import {
   getPriceRangeOfVariant,
@@ -7,7 +8,7 @@ import {
   ProductVariant,
 } from "../../domains/Product/model";
 import { PriceLabel } from "../PriceLabel";
-import { Tab, TabList, TabPanel, Tabs } from "react-aria-components";
+import { Key, Tab, TabList, TabPanel, Tabs } from "react-aria-components";
 import { ListingLink } from "./ListingLink";
 import Link from "next/link";
 import { Icon } from "../Icon";
@@ -18,8 +19,18 @@ interface Props {
 }
 
 export function VariantTab({ kind, variants }: Props) {
+  const [vatiantTab, setVariantTab] = useState<Key>(
+    // ブラウザバックで戻ってきたとき、前に選んでいたタブを覚えていたらそっちをデフォルト選択
+    () => history.state?.selectedTab ?? variants[0].slug,
+  );
+
+  function onSelectionChange(selectedTab: Key) {
+    setVariantTab(selectedTab);
+    window.history.replaceState({ selectedTab }, "");
+  }
+
   return (
-    <Tabs>
+    <Tabs selectedKey={vatiantTab} onSelectionChange={onSelectionChange}>
       <TabList
         className={clsx("flex", "screen2:inline-flex")}
         aria-label="商品バリエーションを選択"
