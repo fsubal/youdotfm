@@ -18,6 +18,8 @@
   --color-text-500: oklch(from var(--color-primary) 50% 5% h);
   --color-text-50: oklch(from var(--color-primary) 95% 5% h);
 
+  --color-ground: rgb(from var(--color-gray-50) r g b / 0.5);
+
   @keyframes fadein {
     0% {
       opacity: 0;
