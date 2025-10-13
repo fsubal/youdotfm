@@ -22,7 +22,7 @@ export const ListingStatus = z.enum([
 export const Listing = z.object({
   shopKind: ShopKind,
   price: z.union([JPYValue, JPYRange]),
-  url: z.string(),
+  url: z.url(),
 
   /**
    * @enum {string} 販売状況

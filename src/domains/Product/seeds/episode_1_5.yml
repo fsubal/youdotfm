@@ -18,10 +18,10 @@ variants:
     listings:
       - shopKind: Melonbooks
         price: 330
-        url: /melonbooks/2837742
+        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2837741
       - shopKind: BOOTH
         price: 300
-        url: /booth/5741859
+        url: https://umbrellahead.booth.pm/items/5995426
         status: stockout
 
   - slug: digital
