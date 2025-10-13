@@ -42,7 +42,13 @@ export function NavbarDropdown({ children }: React.PropsWithChildren) {
         <nav
           id={controlId}
           role="menu"
-          className={clsx("bg-white", "flex-1", "max-w-400", "h-lvh")}
+          className={clsx(
+            "bg-white",
+            "flex-1",
+            "max-w-400",
+            "h-lvh",
+            "overflow-auto",
+          )}
         >
           {children}
         </nav>

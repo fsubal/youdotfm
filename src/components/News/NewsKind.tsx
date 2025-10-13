@@ -42,7 +42,13 @@ export function NewsKindBadge({ kind }: { kind: NewsKind }) {
   }
 }
 
-export function NewsSourceLink({ kind, url }: { kind: NewsKind; url: string }) {
+export function NewsSourceLink({
+  kind,
+  url,
+}: {
+  kind: NewsKind;
+  url?: string;
+}) {
   switch (kind) {
     case "DojinEvent":
       return (
@@ -93,28 +99,33 @@ export function NewsSourceLink({ kind, url }: { kind: NewsKind; url: string }) {
   }
 }
 
+const sourceButtonStyle = clsx(
+  "cursor-pointer",
+  "font-bold",
+  "w-full",
+  "py-12",
+  "rounded-full",
+  "text-base",
+  ["flex", "w-full", "screen2:inline-flex", "screen2:w-auto"],
+  "justify-center",
+  "items-center",
+  "px-40",
+);
+
 function SourceLink({
   url,
   className,
   children,
-}: React.PropsWithChildren<{ className?: string; url: string }>) {
+}: React.PropsWithChildren<{ className?: string; url?: string }>) {
+  if (url == null) {
+    return <div className={clsx(sourceButtonStyle, className)}>{children}</div>;
+  }
+
   const isFullUrl = URL.canParse(url);
 
   return (
     <a
-      className={clsx(
-        "cursor-pointer",
-        "font-bold",
-        "w-full",
-        "py-12",
-        "rounded-full",
-        "text-base",
-        ["flex", "w-full", "screen2:inline-flex", "screen2:w-auto"],
-        "justify-center",
-        "items-center",
-        "px-40",
-        className,
-      )}
+      className={clsx(sourceButtonStyle, className)}
       href={url}
       target={isFullUrl ? "_blank" : undefined}
       rel={isFullUrl ? "noreferrer" : undefined}

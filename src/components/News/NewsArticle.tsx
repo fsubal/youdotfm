@@ -41,6 +41,14 @@ export function NewsArticleListItem({ news }: Props) {
         >
           {nl2br(news.description)}
         </div>
+
+        {news.url && (
+          // NOTICE: カード全体がリンクなので、ボタンにはリンクを貼らない
+          // ボタンを出すべきかどうかの判断だけにurlを使う
+          <div className={clsx("mt-16", "screen2:mt-24")}>
+            <NewsSourceLink kind={news.kind} />
+          </div>
+        )}
       </article>
     </Link>
   );
