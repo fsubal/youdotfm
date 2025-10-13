@@ -20,7 +20,6 @@ export function ProductListItem({ thumbnailFit = "cover", product }: Props) {
         "group",
         "flex",
         "flex-col",
-        "text-gr",
         "transition-colors",
         ["bg-white", "active:bg-surface"],
         "border",
