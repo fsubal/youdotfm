@@ -1,6 +1,7 @@
 import z from "zod";
 import { ImageSource } from "../ImageSource/model";
 import { News } from "../News/model";
+import { RelativeURL } from "../../utils/url/internal";
 
 export const Episode = z.object({
   /**
@@ -27,7 +28,7 @@ export function formatTitle(episode: Episode) {
 }
 
 export function getShareUrl(episode: Pick<Episode, "slug">) {
-  return new URL(`https://youdot.fm/episodes/${episode.slug}#main`);
+  return RelativeURL.withDefaultHash(`/episodes/${episode.slug}`).toURL();
 }
 
 export function getShareText(episode: Episode) {

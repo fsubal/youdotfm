@@ -1,5 +1,6 @@
 import z from "zod";
 import { JapanDateTime } from "../../utils/datetime";
+import { RelativeURL } from "../../utils/url/internal";
 
 export const NewsKind = z.enum([
   /**
@@ -37,7 +38,7 @@ export const News = z.object({
 export type News = z.infer<typeof News>;
 
 export function getShareUrl(news: Pick<News, "id">) {
-  return new URL(`https://youdot.fm/news/${news.id}#main`);
+  return RelativeURL.withDefaultHash(`/news/${news.id}`).toURL();
 }
 
 export function getShareText(news: News) {

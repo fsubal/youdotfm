@@ -1,4 +1,5 @@
 import { ThemeColor } from "../utils/theme";
+import { RelativeURL } from "../utils/url/internal";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
@@ -11,7 +12,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     siteName: "ポッドキャスト百合『ユードットエフエム』公式サイト",
-    images: { url: "https://youdot.fm/og_image.png" },
+    images: { url: new RelativeURL("/og_image.png").toURL() },
   },
 } satisfies Metadata;
 

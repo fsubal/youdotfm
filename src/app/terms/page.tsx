@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Layout } from "../../components/Layout";
 import { SectionTitle } from "../../components/SectionTitle";
 import { ResolvingMetadata } from "next";
+import { BASE_URL } from "../../utils/url/internal";
 
 export async function generateMetadata(_: unknown, parent: ResolvingMetadata) {
   const { title } = await parent;
@@ -20,7 +21,8 @@ export default async function TermsPage() {
       <SectionTitle>プライバシーポリシー</SectionTitle>
       <div className={clsx("prose", "max-w-none")}>
         <p>
-          本サイト（youdot.fm）は、利用者の皆さまのプライバシーを尊重し、個人情報の適切な取り扱いに努めます。
+          本サイト（{BASE_URL.toString()}
+          ）は、利用者の皆さまのプライバシーを尊重し、個人情報の適切な取り扱いに努めます。
         </p>
 
         <h2>1. 収集する情報</h2>

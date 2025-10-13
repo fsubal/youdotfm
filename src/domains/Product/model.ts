@@ -4,6 +4,7 @@ import { ShopKind } from "../Shop/model";
 import { JPYRange, JPYValue } from "../../utils/intl";
 import { JapanDate } from "../../utils/datetime";
 import { Unreachable } from "../../utils/unreachable";
+import { RelativeURL } from "../../utils/url/internal";
 
 export const ProductKind = z.enum(["doujinshi", "merch"]);
 
@@ -77,7 +78,7 @@ export type ProductVariant = z.infer<typeof ProductVariant>;
 export type Listing = z.infer<typeof Listing>;
 
 export function getShareUrl(product: Pick<Product, "slug">) {
-  return new URL(`https://youdot.fm/shop/products/${product.slug}#main`);
+  return RelativeURL.withDefaultHash(`/shop/products/${product.slug}`).toURL();
 }
 
 export function getShareText(product: Product) {

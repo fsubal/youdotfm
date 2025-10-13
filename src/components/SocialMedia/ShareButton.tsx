@@ -1,5 +1,9 @@
 import clsx from "clsx";
-import { BlueskyIntentUrl, SocialUrl, XIntentUrl } from "../../utils/social";
+import {
+  BlueskyIntentUrl,
+  SocialUrl,
+  XIntentUrl,
+} from "../../utils/url/social";
 import { XLogo } from "./XLogo";
 
 export function ShareButton({
