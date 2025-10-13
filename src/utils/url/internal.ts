@@ -49,11 +49,11 @@ export class RelativeURL implements RelativeURLInterface {
   get href() {
     let output = this.pathname;
     if (this.search) {
-      output += "?" + this.search;
+      output += this.search;
     }
 
     if (this.hash) {
-      output += "#" + this.hash;
+      output += this.hash;
     }
 
     return output;
