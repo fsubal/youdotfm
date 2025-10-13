@@ -21,12 +21,13 @@ interface Props {
 export function VariantTab({ kind, variants }: Props) {
   const [vatiantTab, setVariantTab] = useState<Key>(
     // ブラウザバックで戻ってきたとき、前に選んでいたタブを覚えていたらそっちをデフォルト選択
-    () => history.state?.selectedTab ?? variants[0].slug,
+    // REVIEW: ビルド時にはwindowがない状態でuseStateの初期値を得ないといけないので、historyがないケースも想定する
+    () => globalThis.history?.state?.selectedTab ?? variants[0].slug,
   );
 
   function onSelectionChange(selectedTab: Key) {
     setVariantTab(selectedTab);
-    window.history.replaceState({ selectedTab }, "");
+    globalThis?.history.replaceState({ selectedTab }, "");
   }
 
   return (
