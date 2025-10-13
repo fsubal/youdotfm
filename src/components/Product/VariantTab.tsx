@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import {
   getPriceRangeOfVariant,
@@ -19,19 +19,10 @@ interface Props {
 }
 
 export function VariantTab({ kind, variants }: Props) {
-  const [vatiantTab, setVariantTab] = useState<Key>(
-    // ブラウザバックで戻ってきたとき、前に選んでいたタブを覚えていたらそっちをデフォルト選択
-    // REVIEW: ビルド時にはwindowがない状態でuseStateの初期値を得ないといけないので、historyがないケースも想定する
-    () => globalThis.history?.state?.selectedTab ?? variants[0].slug,
-  );
-
-  function onSelectionChange(selectedTab: Key) {
-    setVariantTab(selectedTab);
-    globalThis?.history.replaceState({ selectedTab }, "");
-  }
+  const [variantTab, onSelectionChange] = useRememberTab(variants[0].slug);
 
   return (
-    <Tabs selectedKey={vatiantTab} onSelectionChange={onSelectionChange}>
+    <Tabs selectedKey={variantTab} onSelectionChange={onSelectionChange}>
       <TabList
         className={clsx("flex", "screen2:inline-flex")}
         aria-label="商品バリエーションを選択"
@@ -82,6 +73,33 @@ export function VariantTab({ kind, variants }: Props) {
       ))}
     </Tabs>
   );
+}
+
+function useRememberTab(
+  defaultSelected: Key,
+): [Key, (selectedTab: Key) => void] {
+  const [currentTab, setSelectedTab] = useState<Key>(defaultSelected);
+
+  function onSelectionChange(selectedTab: Key) {
+    setSelectedTab(selectedTab);
+
+    // ブラウザバックで戻ってきたとき、前に選んでいたタブを覚えていたらそっちをデフォルト選択したい
+    globalThis?.history.replaceState({ selectedTab }, "");
+  }
+
+  useEffect(() => {
+    const selectedTab = globalThis.history?.state?.selectedTab;
+
+    // REVIEW: ビルド時にwindowがない状態でuseStateの初期値を設定することはできない（hydration warning）ので、
+    // やむなくuseEffectで値を変更している
+    // @see https://ja.react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content
+    if (selectedTab) {
+      setSelectedTab(selectedTab);
+      globalThis?.history.replaceState({ selectedTab: null }, "");
+    }
+  }, []);
+
+  return [currentTab, onSelectionChange];
 }
 
 const sidenoteStyle = clsx(
