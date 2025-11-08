@@ -13,7 +13,7 @@ import { NewsListItem } from "../components/News/NewsListItem";
 
 export const metadata = {
   title: {
-    absolute: "ポッドキャスト百合『ユードットエフエム』公式サイト",
+    absolute: "ポッドキャスト百合漫画『ユードットエフエム』公式サイト",
   },
 };
 
