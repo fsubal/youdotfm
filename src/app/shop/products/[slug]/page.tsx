@@ -19,8 +19,6 @@ import { ProductBreadCrumb } from "../../../../components/Product/ProductKindTag
 import { ProductThumbnail } from "../../../../components/Product/ProductThumbnail";
 import { ShareLinkContainer } from "../../../../components/SocialMedia/ShareButton";
 import {
-  ListingStatus,
-  Product,
   getKindLabel,
   getShareText,
   getShareUrl,
@@ -28,7 +26,7 @@ import {
 import { RelatedProductList } from "../../../../components/Product/RelatedProductList";
 import { MarshmallowLink } from "../../../../components/SocialMedia/MarshmallowLink";
 import { ResolvingMetadata } from "next";
-import { findShopByKind } from "../../../../domains/Shop/seeds";
+import { ProductJsonLd } from "../../../../components/JsonLd";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
@@ -69,17 +67,9 @@ export default async function ProductPage({
     )
     .slice(0, 3);
 
-  const structuredData = createProductStructuredData(product);
-
   return (
     <Layout>
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
-        }}
-      />
+      <ProductJsonLd product={product} />
       <SectionTitle subheading="Shop" backToHref="/shop">
         {product.title}
       </SectionTitle>
@@ -185,124 +175,4 @@ export default async function ProductPage({
       </div>
     </Layout>
   );
-}
-
-const SITE_URL = "https://youdot.fm";
-
-type JsonLdOffer = {
-  "@type": "Offer";
-  url: string;
-  priceCurrency: "JPY";
-  price: number;
-  availability: string;
-  itemCondition: "https://schema.org/NewCondition";
-  seller?: {
-    "@type": "Organization";
-    name: string;
-    url: string;
-  };
-};
-
-type JsonLdProduct = {
-  "@context": "https://schema.org";
-  "@type": "Product";
-  name: string;
-  description: string;
-  image: string[];
-  sku: string;
-  url: string;
-  brand: {
-    "@type": "Brand";
-    name: string;
-  };
-  category: string;
-  releaseDate: string;
-  offers?: {
-    "@type": "AggregateOffer";
-    priceCurrency: "JPY";
-    offerCount: number;
-    lowPrice: string;
-    highPrice?: string;
-    offers: JsonLdOffer[];
-  };
-};
-
-function createProductStructuredData(product: Product): JsonLdProduct {
-  const offers = product.variants.flatMap<JsonLdOffer>((variant) =>
-    variant.listings.map((listing) => {
-      const price = Array.isArray(listing.price)
-        ? listing.price[0] ?? 0
-        : listing.price;
-      const shop = findShopByKind(listing.shopKind);
-
-      const offer: JsonLdOffer = {
-        "@type": "Offer",
-        url: listing.url,
-        priceCurrency: "JPY",
-        price,
-        availability: mapAvailability(listing.status),
-        itemCondition: "https://schema.org/NewCondition",
-      };
-
-      if (shop) {
-        offer.seller = {
-          "@type": "Organization",
-          name: shop.name,
-          url: shop.url,
-        };
-      }
-
-      return offer;
-    }),
-  );
-
-  const priceValues = offers
-    .map(({ price }) => price)
-    .filter((price): price is number => Number.isFinite(price));
-  const aggregateOffer =
-    offers.length > 0 && priceValues.length > 0
-      ? {
-          "@type": "AggregateOffer" as const,
-          priceCurrency: "JPY" as const,
-          offerCount: offers.length,
-          lowPrice: Math.min(...priceValues).toString(),
-          highPrice:
-            Math.max(...priceValues) !== Math.min(...priceValues)
-              ? Math.max(...priceValues).toString()
-              : undefined,
-          offers,
-        }
-      : undefined;
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.title,
-    description: product.description,
-    image: product.images.map((image) => new URL(image.src, SITE_URL).href),
-    sku: product.slug,
-    url: `${SITE_URL}/shop/products/${product.slug}`,
-    brand: {
-      "@type": "Brand",
-      name: "ユードットエフエム",
-    },
-    category: getKindLabel(product.kind),
-    releaseDate: product.publishedAt,
-    offers: aggregateOffer,
-  };
-}
-
-function mapAvailability(status: ListingStatus | undefined) {
-  switch (status ?? ListingStatus.enum.available) {
-    case "available":
-      return "https://schema.org/InStock";
-    case "stockout":
-      return "https://schema.org/OutOfStock";
-    case "prerelease":
-      return "https://schema.org/PreOrder";
-    case "discontinued":
-      return "https://schema.org/Discontinued";
-    default:
-      return "https://schema.org/Discontinued";
-  }
 }

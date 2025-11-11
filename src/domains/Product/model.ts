@@ -14,6 +14,8 @@ export const ListingStatus = z.enum([
   "discontinued",
 ]);
 
+export type ListingStatus = z.infer<typeof ListingStatus>;
+
 /**
  * 販売サイトに対する出品
  * たとえば「メロンブックスにはこのProductの紙版というVariantが500円で売っており、このURLで買えます」などを表す
@@ -98,7 +100,7 @@ export function getKindLabel(kind: ProductKind) {
   }
 }
 
-function getAllListings(product: Product): Listing[] {
+export function getAllListings(product: Product): Listing[] {
   return product.variants.flatMap(({ listings }) => listings);
 }
 
@@ -125,6 +127,12 @@ export function getMinimumPriceOfProduct(product: Product): JPYRange {
   const priceValues = getAllListingPriceValue(product);
 
   return [Math.min(...priceValues) as JPYValue];
+}
+
+export function getMaximumPriceOfProduct(product: Product): JPYRange {
+  const priceValues = getAllListingPriceValue(product);
+
+  return [Math.max(...priceValues) as JPYValue];
 }
 
 export function getPriceRangeOfVariant(variant: ProductVariant) {
