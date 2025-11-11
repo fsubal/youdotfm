@@ -1,7 +1,9 @@
 import { test, expect } from "@playwright/test";
 
+const path = "/shop/products/episode_1_5";
+
 test("<title>が話数になっている", async ({ page }) => {
-  await page.goto("/shop/products/episode_1_5");
+  await page.goto(path);
 
   await expect(page).toHaveTitle(
     "ユードットエフエム 1.5話『見る前に飛べ！』 - ポッドキャスト百合『ユードットエフエム』公式サイト",
@@ -9,7 +11,7 @@ test("<title>が話数になっている", async ({ page }) => {
 });
 
 test("OGPのタイトルが話数になっている", async ({ page }) => {
-  await page.goto("/shop/products/episode_1_5");
+  await page.goto(path);
 
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
     "content",
@@ -18,7 +20,7 @@ test("OGPのタイトルが話数になっている", async ({ page }) => {
 });
 
 test("メロンブックスに飛べる", async ({ page, context }) => {
-  await page.goto("/shop/products/episode_1_5");
+  await page.goto(path);
 
   const pageLoadEvent = context.waitForEvent("page");
   await page.getByRole("link", { name: /メロンブックスで購入/ }).click();
@@ -28,7 +30,7 @@ test("メロンブックスに飛べる", async ({ page, context }) => {
 });
 
 test("BOOTHに飛べる", async ({ page, context }) => {
-  await page.goto("/shop/products/episode_1_5");
+  await page.goto(path);
 
   const pageLoadEvent = context.waitForEvent("page");
   await page.getByRole("link", { name: /BOOTHで購入/ }).click();

@@ -1,7 +1,9 @@
 import { test, expect } from "@playwright/test";
 
+const path = "/";
+
 test("<title> がある", async ({ page }) => {
-  await page.goto("/");
+  await page.goto(path);
 
   await expect(page).toHaveTitle(
     "ポッドキャスト百合『ユードットエフエム』公式サイト",
@@ -9,7 +11,7 @@ test("<title> がある", async ({ page }) => {
 });
 
 test("OGPとTwitterカードが出そう", async ({ page }) => {
-  await page.goto("/");
+  await page.goto(path);
 
   await expect(page.locator('meta[property="og:type"]')).toHaveAttribute(
     "content",
