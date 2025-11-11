@@ -10,3 +10,11 @@ export type JPYValue = z.infer<typeof JPYValue>;
 
 export const JPYRange = z.tuple([JPYValue, JPYValue.optional()]);
 export type JPYRange = z.infer<typeof JPYRange>;
+
+export function getMinimumPrice(range: JPYValue | JPYRange): JPYValue {
+  if (Array.isArray(range)) {
+    return range[0];
+  } else {
+    return range;
+  }
+}

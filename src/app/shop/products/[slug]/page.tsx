@@ -26,6 +26,7 @@ import {
 import { RelatedProductList } from "../../../../components/Product/RelatedProductList";
 import { MarshmallowLink } from "../../../../components/SocialMedia/MarshmallowLink";
 import { ResolvingMetadata } from "next";
+import { ProductJsonLd } from "../../../../components/JsonLd";
 
 export function generateStaticParams(): StaticParams<"/shop/products/[slug]"> {
   return products.map(({ slug }) => ({ slug }));
@@ -68,6 +69,7 @@ export default async function ProductPage({
 
   return (
     <Layout>
+      <ProductJsonLd product={product} />
       <SectionTitle subheading="Shop" backToHref="/shop">
         {product.title}
       </SectionTitle>
