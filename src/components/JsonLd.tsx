@@ -13,6 +13,7 @@ import {
   formatTitle,
   getShareUrl as getEpisodeShareUrl,
 } from "../domains/Episode/model";
+import { characters as characterSeeds } from "../domains/Character/seeds";
 import { findShopByKind } from "../domains/Shop/seeds";
 import { Unreachable } from "../utils/unreachable";
 import { getMinimumPrice } from "../utils/intl";
@@ -30,6 +31,94 @@ export function JsonLd<T extends JsonLdDocument>({
         __html: JSON.stringify(children),
       }}
     />
+  );
+}
+
+export function ComicSeriesJsonLd() {
+  const seriesUrl = new RelativeURL("/").toURL().toString();
+  const episodesUrl = RelativeURL.withDefaultHash("/episodes")
+    .toURL()
+    .toString();
+  const productsUrl = RelativeURL.withDefaultHash("/shop")
+    .toURL()
+    .toString();
+  const newsUrl = RelativeURL.withDefaultHash("/news")
+    .toURL()
+    .toString();
+  const shareImage = new RelativeURL("/og_image.png").toURL().toString();
+  const discussionUrl = "https://marshmallow-qa.com/youdotfm";
+  const description =
+    "「語って、話して、好きになる。」ポッドキャスト百合漫画『ユードットエフエム』の公式サイト。作品情報や登場人物、最新ニュースを掲載。";
+  const characters = characterSeeds.map((character) => {
+    const alternateName = [
+      character.name.roman,
+      character.name.screen,
+    ].filter((name): name is string => Boolean(name));
+    const url = new RelativeURL(`/characters/${character.slug}`)
+      .toURL()
+      .toString();
+    const image = new RelativeURL(character.portrait.src).toURL().toString();
+    const profile = character.profile.replace(/\s*\n+\s*/g, " ").trim();
+
+    return {
+      "@type": "Character",
+      name: character.name.japanese,
+      alternateName: alternateName.length ? alternateName : undefined,
+      url,
+      image,
+      description: profile,
+    };
+  });
+
+  return (
+    <JsonLd>
+      {{
+        "@context": "https://schema.org",
+        "@type": "ComicSeries",
+        name: "ユードットエフエム",
+        description,
+        url: seriesUrl,
+        mainEntityOfPage: seriesUrl,
+        image: [shareImage],
+        inLanguage: "ja",
+        genre: ["百合", "漫画", "ポッドキャスト"],
+        isAccessibleForFree: true,
+        discussionUrl,
+        creator: {
+          "@type": "Person",
+          name: "藤秋すばる",
+          alternateName: "Subal Fujiaki",
+          sameAs: "https://x.com/f_subal",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Umbrellahead",
+        },
+        character: characters,
+        sameAs: [
+          "https://www.pixiv.net/user/7126141/series/240402",
+          "https://umbrellahead.booth.pm/item_lists/8bNT3aa3",
+          "https://youdotfm.fanbox.cc/",
+        ],
+        hasPart: [
+          {
+            "@type": "CreativeWorkSeason",
+            name: "Episodes",
+            url: episodesUrl,
+          },
+          {
+            "@type": "ProductCollection",
+            name: "Shop",
+            url: productsUrl,
+          },
+          {
+            "@type": "CreativeWork",
+            name: "News",
+            url: newsUrl,
+          },
+        ],
+      }}
+    </JsonLd>
   );
 }
 
