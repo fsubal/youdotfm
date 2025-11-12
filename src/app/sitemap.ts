@@ -1,13 +1,13 @@
 import { MetadataRoute } from "next";
 
-import { BASE_URL } from "../utils/url/internal";
+import { RelativeURL } from "../utils/url/internal";
 import { episodes } from "../domains/Episode/seeds";
 import { characters } from "../domains/Character/seeds";
 import { newsFeed } from "../domains/News/seeds";
 import { products } from "../domains/Product/seeds";
 
 function toAbsolutePath(pathname: string) {
-  return new URL(pathname, BASE_URL).toString();
+  return new RelativeURL(pathname).toURL().toString();
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
