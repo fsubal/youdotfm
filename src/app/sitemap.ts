@@ -6,6 +6,8 @@ import { characters } from "../domains/Character/seeds";
 import { newsFeed } from "../domains/News/seeds";
 import { products } from "../domains/Product/seeds";
 
+export const dynamic = "force-static";
+
 function toAbsolutePath(pathname: string) {
   return new RelativeURL(pathname).toURL().toString();
 }
