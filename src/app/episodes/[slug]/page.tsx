@@ -14,7 +14,6 @@ import { findProductsForEpisode } from "../../../domains/ProductEpisode/seeds";
 import { simpleFormat } from "../../../utils/text";
 import { MarshmallowLink } from "../../../components/SocialMedia/MarshmallowLink";
 import { ResolvingMetadata } from "next";
-import { BASE_URL } from "../../../utils/url/internal";
 
 export function generateStaticParams(): StaticParams<"/episodes/[slug]"> {
   return episodes.map(({ slug }) => ({ slug }));
