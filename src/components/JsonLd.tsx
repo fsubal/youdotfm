@@ -81,7 +81,7 @@ export function ComicSeriesJsonLd() {
         mainEntityOfPage: seriesUrl,
         image: [shareImage],
         inLanguage: "ja",
-        genre: ["百合", "漫画", "ポッドキャスト", "ラジオ", "ネットラジオ", "社会人百合"],
+        genre: ["百合", "漫画", "ポッドキャスト", "ラジオ", "インターネットラジオ", "社会人百合"],
         isAccessibleForFree: true,
         discussionUrl,
         creator: {
