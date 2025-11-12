@@ -1,3 +1,4 @@
+import { Temporal } from "@js-temporal/polyfill";
 import { MetadataRoute } from "next";
 
 import { RelativeURL } from "../utils/url/internal";
@@ -10,6 +11,16 @@ export const dynamic = "force-static";
 
 function toAbsolutePath(pathname: string) {
   return new RelativeURL(pathname).toURL().toString();
+}
+
+function formatLastModified(
+  date: Temporal.PlainDate | Temporal.ZonedDateTime,
+) {
+  if (date instanceof Temporal.ZonedDateTime) {
+    return date.toPlainDate().toString();
+  }
+
+  return date.toString();
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -34,12 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const newsRoutes: MetadataRoute.Sitemap = newsFeed.map((news) => ({
     url: toAbsolutePath(`/news/${news.id}`),
-    lastModified: news.datetime.toString(),
+    lastModified: formatLastModified(news.datetime),
   }));
 
   const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
     url: toAbsolutePath(`/shop/products/${product.slug}`),
-    lastModified: product.publishedAt.toString(),
+    lastModified: formatLastModified(product.publishedAt),
   }));
 
   return [
