@@ -100,6 +100,10 @@ export function ComicSeriesJsonLd() {
           "https://umbrellahead.booth.pm/item_lists/8bNT3aa3",
           "https://youdotfm.fanbox.cc/",
         ],
+        potentialAction: {
+          "@type": "DonateAction",
+          "target": "https://youdotfm.fanbox.cc/"
+        },
         hasPart: [
           {
             "@type": "CreativeWorkSeason",
