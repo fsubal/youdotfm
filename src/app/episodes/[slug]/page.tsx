@@ -1,18 +1,11 @@
 import { notFound } from "next/navigation";
 import { Layout } from "../../../components/Layout";
-import { JsonLd } from "../../../components/JsonLd";
-import {
-  episodes,
-  findEpisodeBySlug,
-} from "../../../domains/Episode/seeds";
+import { EpisodeJsonLd, JsonLd } from "../../../components/JsonLd";
+import { episodes, findEpisodeBySlug } from "../../../domains/Episode/seeds";
 import { SectionTitle } from "../../../components/SectionTitle";
 import clsx from "clsx";
 import { ShareLinkContainer } from "../../../components/SocialMedia/ShareButton";
-import {
-  formatTitle,
-  getShareText,
-  getShareUrl,
-} from "../../../domains/Episode/model";
+import { getShareText, getShareUrl } from "../../../domains/Episode/model";
 import { EpisodeNewsList } from "../../../components/Episode/EpisodeNewsList";
 import { EpisodeThumbnail } from "../../../components/Episode/EpisodeThumbnail";
 import { RelatedProductList } from "../../../components/Episode/RelatedProductList";
@@ -29,7 +22,7 @@ export function generateStaticParams(): StaticParams<"/episodes/[slug]"> {
 
 export async function generateMetadata(
   { params }: PageProps<"/episodes/[slug]">,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ) {
   const { slug } = await params;
   const { title } = await parent;
@@ -55,32 +48,10 @@ export default async function EpisodePage({
   const products = findProductsForEpisode(episode.slug);
   const relatedNews = findNewsForEpisode(episode.slug);
   const shareUrl = getShareUrl(episode);
-  const imageUrls = episode.images.map(({ src }) =>
-    new URL(src, BASE_URL).toString(),
-  );
 
   return (
     <Layout>
-      <JsonLd>
-        {{
-          "@context": "https://schema.org",
-          "@type": "ComicStory",
-          name: formatTitle(episode),
-          description: episode.description,
-          url: shareUrl.toString(),
-          mainEntityOfPage: shareUrl.toString(),
-          image: imageUrls,
-          inLanguage: "ja",
-          isPartOf: {
-            "@type": "CreativeWorkSeries",
-            name: "ユードットエフエム",
-            url: new URL("/episodes", BASE_URL).toString(),
-          },
-          sameAs: episode.pixivArtwork
-            ? [episode.pixivArtwork.url]
-            : undefined,
-        }}
-      </JsonLd>
+      <EpisodeJsonLd episode={episode} />
       <SectionTitle subheading="Episode" backToHref="/episodes">
         {episode.numbering}『{episode.title}』
       </SectionTitle>
@@ -93,7 +64,7 @@ export default async function EpisodePage({
           "screen2:flex-row",
           "items-start",
           "gap-24",
-          "my-24",
+          "my-24"
         )}
       >
         <EpisodeThumbnail episode={episode} />
@@ -106,7 +77,7 @@ export default async function EpisodePage({
               "screen2:text-base",
               "leading-relaxed",
               "tracking-wider",
-              "[&_p+p]:mt-16",
+              "[&_p+p]:mt-16"
             )}
           >
             {simpleFormat(episode.description)}
@@ -130,10 +101,7 @@ export default async function EpisodePage({
             >
               このエピソードを広める
             </h3>
-            <ShareLinkContainer
-              url={shareUrl}
-              text={getShareText(episode)}
-            />
+            <ShareLinkContainer url={shareUrl} text={getShareText(episode)} />
             <p className={clsx("text-text-500", "text-sm", "my-8")}>
               公式ハッシュタグ
               <code>#ユードットエフエム</code>での投稿もお待ちしています。

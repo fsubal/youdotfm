@@ -4,13 +4,19 @@ import {
   getKindLabel,
   getMaximumPriceOfProduct,
   getMinimumPriceOfProduct,
-  getShareUrl,
+  getShareUrl as getProductShareUrl,
   ListingStatus,
   type Product,
 } from "../domains/Product/model";
+import {
+  Episode,
+  formatTitle,
+  getShareUrl as getEpisodeShareUrl,
+} from "../domains/Episode/model";
 import { findShopByKind } from "../domains/Shop/seeds";
 import { Unreachable } from "../utils/unreachable";
 import { getMinimumPrice } from "../utils/intl";
+import { RelativeURL } from "../utils/url/internal";
 
 export function JsonLd<T extends JsonLdDocument>({
   children,
@@ -39,7 +45,7 @@ export function ProductJsonLd({ product }: { product: Product }) {
         description: product.description,
         image: product.images.map(({ src }) => src),
         sku: product.slug,
-        url: getShareUrl(product).href,
+        url: getProductShareUrl(product).href,
         brand: {
           "@type": "Brand",
           name: "ユードットエフエム",
@@ -88,4 +94,32 @@ function mapAvailability(status: ListingStatus) {
     default:
       Unreachable.assert(status);
   }
+}
+
+export function EpisodeJsonLd({ episode }: { episode: Episode }) {
+  const url = getEpisodeShareUrl(episode);
+  const imageUrls = episode.images.map(({ src }) =>
+    new RelativeURL(src).toURL()
+  );
+
+  return (
+    <JsonLd>
+      {{
+        "@context": "https://schema.org",
+        "@type": "ComicStory",
+        name: formatTitle(episode),
+        description: episode.description,
+        url: url.toString(),
+        mainEntityOfPage: url.toString(),
+        image: imageUrls,
+        inLanguage: "ja",
+        isPartOf: {
+          "@type": "CreativeWorkSeries",
+          name: "ユードットエフエム",
+          url: RelativeURL.withDefaultHash("/episodes").toURL(),
+        },
+        sameAs: episode.pixivArtwork ? [episode.pixivArtwork.url] : undefined,
+      }}
+    </JsonLd>
+  );
 }
