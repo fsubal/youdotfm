@@ -10,6 +10,7 @@ import {
 import { products } from "../domains/Product/seeds";
 import { DropCap } from "../components/DropCap";
 import { NewsListItem } from "../components/News/NewsListItem";
+import { ComicSeriesJsonLd } from "../components/JsonLd";
 
 export const metadata = {
   title: {
@@ -20,6 +21,7 @@ export const metadata = {
 export default function Home() {
   return (
     <Layout>
+      <ComicSeriesJsonLd />
       <SectionTitle subheading="Introduction">
         『語って、話して、好きになる』
       </SectionTitle>
