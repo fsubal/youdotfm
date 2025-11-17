@@ -2,7 +2,7 @@ import z from "zod";
 import { ImageSource } from "../ImageSource/model";
 import { ShopKind } from "../Shop/model";
 import { JPYRange, JPYValue } from "../../utils/intl";
-import { JapanDate } from "../../utils/datetime";
+import { PlainDate } from "../../utils/datetime";
 import { Unreachable } from "../../utils/unreachable";
 import { RelativeURL } from "../../utils/url/internal";
 
@@ -71,7 +71,7 @@ export const Product = z.object({
   images: z.array(ImageSource).min(1),
   description: z.string(),
   episodes: z.array(z.string()).default([]),
-  publishedAt: JapanDate,
+  publishedAt: PlainDate,
 });
 
 export type Product = z.infer<typeof Product>;
