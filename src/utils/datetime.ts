@@ -32,7 +32,7 @@ export function formatDateTime(datetime: Temporal.ZonedDateTime) {
 }
 
 /**
- * RFC 9557に準拠した日本時間の日付文字列
+ * RFC 9557に準拠した日付文字列
  * 例: `2024-06-01`
  */
 export const PlainDate = z.codec(z.string(), z.instanceof(Temporal.PlainDate), {
