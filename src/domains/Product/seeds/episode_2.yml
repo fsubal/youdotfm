@@ -15,17 +15,6 @@ description: |
   家で一緒に収録することになったエリはドキドキしながらシヲリ宅を訪ねる。
   自分にどんなトークが求められているのか、どんな番組になるのかを手探りながら、二人は第一回の収録に臨む――。
 variants:
-  - slug: paper
-    name: 同人誌
-    listings:
-      - shopKind: Melonbooks
-        price: 770
-        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2837740
-      - shopKind: BOOTH
-        price: 700
-        url: https://umbrellahead.booth.pm/items/6287042
-        status: stockout
-
   - slug: digital
     name: 電子書籍
     listings:
@@ -38,3 +27,13 @@ variants:
       - shopKind: LineManga
         price: 460
         url: https://manga.line.me/book/detail?id=B00165998427
+  - slug: paper
+    name: 同人誌
+    listings:
+      - shopKind: Melonbooks
+        price: 770
+        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2837740
+      - shopKind: BOOTH
+        price: 700
+        url: https://umbrellahead.booth.pm/items/6287042
+        status: stockout

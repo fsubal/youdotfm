@@ -13,17 +13,6 @@ description: |
 
   本文8ページのステッチ本です。
 variants:
-  - slug: paper
-    name: 同人誌
-    listings:
-      - shopKind: Melonbooks
-        price: 330
-        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2837741
-      - shopKind: BOOTH
-        price: 300
-        url: https://umbrellahead.booth.pm/items/5995426
-        status: stockout
-
   - slug: digital
     name: 電子書籍
     listings:
@@ -36,3 +25,13 @@ variants:
       - shopKind: LineManga
         price: 150
         url: https://manga.line.me/book/detail?id=B00165998426
+  - slug: paper
+    name: 同人誌
+    listings:
+      - shopKind: Melonbooks
+        price: 330
+        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2837741
+      - shopKind: BOOTH
+        price: 300
+        url: https://umbrellahead.booth.pm/items/5995426
+        status: stockout
