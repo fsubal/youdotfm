@@ -44,16 +44,6 @@ export const enum Ordering {
   Greater = 1,
 }
 
-function toOrdering(difference: number): Ordering {
-  if (difference < 0) {
-    return Ordering.Less;
-  } else if (difference > 0) {
-    return Ordering.Greater;
-  } else {
-    return Ordering.Equal;
-  }
-}
-
 type CompareBy<K extends string> = (
   a: Record<K, number>,
   b: Record<K, number>,
@@ -71,12 +61,12 @@ export function compareBy<K extends string>(
   key: K,
   order: "asc" | "desc",
 ): CompareBy<K> {
-  return function compare(a, b) {
+  return function compare(a, b): Ordering {
     switch (order) {
       case "asc":
-        return toOrdering(a[key] - b[key]);
+        return Math.sign(a[key] - b[key]);
       case "desc":
-        return toOrdering(b[key] - a[key]);
+        return Math.sign(b[key] - a[key]);
     }
   };
 }
