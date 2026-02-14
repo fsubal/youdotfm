@@ -1,0 +1,19 @@
+---
+slug: episode_3_5
+title: ユードットエフエム 3.5話
+kind: doujinshi
+episodes:
+  - "3_5"
+images:
+  - src: /products/episode_3_5.jpg
+    alt: ユードットエフエム 3.5話の表紙画像
+publishedAt: 2026-02-14
+description: |
+  ポッドキャスト百合漫画『ユードットエフエム』第3.5話です。
+variants:
+  - slug: paper
+    name: 同人誌
+    listings:
+      - shopKind: BOOTH
+        price: 300
+        url: https://umbrellahead.booth.pm/items/7985495

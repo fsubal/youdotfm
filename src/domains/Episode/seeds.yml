@@ -66,3 +66,14 @@
       alt: 漫画ユードットエフエム3話の1ページ目の画像
   pixivArtwork:
     url: https://www.pixiv.net/artworks/134674526#1
+
+- slug: "3_5"
+  numbering: 3.5話
+  title: ユードットエフエム 3.5話
+  description: |
+    ユードットエフエムの3.5話です。
+  images:
+    - src: /episodes/3_5.jpg
+      alt: 漫画ユードットエフエム3.5話の1ページ目の画像
+  pixivArtwork:
+    url: https://www.pixiv.net/artworks/14115433
