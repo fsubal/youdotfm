@@ -66,3 +66,15 @@
       alt: 漫画ユードットエフエム3話の1ページ目の画像
   pixivArtwork:
     url: https://www.pixiv.net/artworks/134674526#1
+
+- slug: "3_5"
+  numbering: 3.5話
+  title: 壊れたボートにひとり？
+  description: |
+    ポッドキャストの収録日、エリの電車が遅れてしまい別々にお昼を食べることに。
+    シヲリは知り合いのお店でランチをとりながら、自分たちのポッドキャストの感想を友だちから聞かされて…？
+  images:
+    - src: /episodes/3_5.jpg
+      alt: 漫画ユードットエフエム3.5話の1ページ目の画像
+  pixivArtwork:
+    url: https://www.pixiv.net/artworks/141154336
