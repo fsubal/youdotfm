@@ -5,11 +5,14 @@ kind: doujinshi
 episodes:
   - "3_5"
 images:
-  - src: /products/episode_3_5.jpg
+  - src: /products/6b38b233-a2fe-44c1-8961-74a9826fa7bb_base_resized.jpg
     alt: ユードットエフエム 3.5話の表紙画像
-publishedAt: 2026-02-14
+publishedAt: 2026-02-22
 description: |
-  ポッドキャスト百合漫画『ユードットエフエム』第3.5話です。
+  コミティア155（2026/02/22）で頒布されるポッドキャスト百合漫画『ユードットエフエム』第3.5話です。本文8ページのステッチ本です。
+
+  ポッドキャストの収録日、エリの電車が遅れてしまい別々にお昼を食べることに。
+  シヲリは知り合いのお店でランチをとりながら、自分たちのポッドキャストの感想を友だちから聞かされて…？
 variants:
   - slug: paper
     name: 同人誌
