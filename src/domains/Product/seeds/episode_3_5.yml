@@ -17,6 +17,9 @@ variants:
   - slug: paper
     name: 同人誌
     listings:
+      - shopKind: Melonbooks
+        price: 330
+        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=3516391
       - shopKind: BOOTH
         price: 300
         url: https://umbrellahead.booth.pm/items/7985495
