@@ -14,6 +14,17 @@ description: |
   ポッドキャストの収録日、エリの電車が遅れてしまい別々にお昼を食べることに。
   シヲリは知り合いのお店でランチをとりながら、自分たちのポッドキャストの感想を友だちから聞かされて…？
 variants:
+  - slug: digital
+    name: 電子書籍
+    listings:
+      - shopKind: Kindle
+        price: 300
+        url: https://www.amazon.co.jp/gp/product/B0FKHJPHS3
+        status: prerelease
+      - shopKind: ComicCmoa
+        price: 300
+        url: https://www.cmoa.jp/title/327139/vol/6/
+        status: prerelease
   - slug: paper
     name: 同人誌
     listings:
