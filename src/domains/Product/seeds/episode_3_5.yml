@@ -20,11 +20,9 @@ variants:
       - shopKind: Kindle
         price: 151
         url: https://www.amazon.co.jp/gp/product/B0FKHJPHS3
-        status: prerelease
       - shopKind: ComicCmoa
         price: 150
         url: https://www.cmoa.jp/title/327139/vol/6/
-        status: prerelease
   - slug: paper
     name: 同人誌
     listings:

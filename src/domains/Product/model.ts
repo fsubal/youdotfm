@@ -105,9 +105,23 @@ export function getAllListings(product: Product): Listing[] {
   return product.variants.flatMap(({ listings }) => listings);
 }
 
+function getListingPriceValues(listing: Listing): JPYRange | null {
+  if (listing.status === "discontinued") {
+    return null;
+  }
+
+  if (typeof listing.price === "number") {
+    return [listing.price];
+  } else if (Array.isArray(listing.price)) {
+    return listing.price;
+  } else {
+    Unreachable.assert(listing.price);
+  }
+}
+
 function getAllListingPriceValue(product: Product): JPYValue[] {
   return getAllListings(product)
-    .flatMap(({ price, status }) => (status === "available" ? price : []))
+    .flatMap((listing) => getListingPriceValues(listing) ?? [])
     .filter((jpy) => jpy != null) as JPYValue[];
 }
 
@@ -138,7 +152,7 @@ export function getMaximumPriceOfProduct(product: Product): JPYRange {
 
 export function getPriceRangeOfVariant(variant: ProductVariant) {
   const priceValues = variant.listings
-    .flatMap(({ price, status }) => (status === "available" ? price : []))
+    .flatMap((listing) => getListingPriceValues(listing) ?? [])
     .filter((jpy) => jpy != null) as JPYValue[];
 
   const minPrice = Math.min(...priceValues);
