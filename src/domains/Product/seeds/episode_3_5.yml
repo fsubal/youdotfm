@@ -23,6 +23,9 @@ variants:
       - shopKind: ComicCmoa
         price: 150
         url: https://www.cmoa.jp/title/327139/vol/6/
+      - shopKind: LineManga
+        price: 150
+        url: https://manga.line.me/book/detail?id=B00166689976
   - slug: paper
     name: 同人誌
     listings:
