@@ -1,4 +1,4 @@
-import { Temporal } from "@js-temporal/polyfill";
+import { Temporal } from "temporal-polyfill-lite";
 import { MetadataRoute } from "next";
 
 import { RelativeURL } from "../utils/url/internal";

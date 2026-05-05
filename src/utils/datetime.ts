@@ -1,8 +1,6 @@
 import z from "zod";
-import { Temporal, toTemporalInstant } from "@js-temporal/polyfill";
+import { Temporal } from "temporal-polyfill-lite";
 
-// @ts-expect-error https://github.com/js-temporal/temporal-polyfill
-Date.prototype.toTemporalInstant = toTemporalInstant;
 
 const TIMEZONE = "Asia/Tokyo";
 
