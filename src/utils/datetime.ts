@@ -15,7 +15,6 @@ import z from "zod";
  */
 import { Temporal } from "temporal-polyfill-lite";
 
-
 const TIMEZONE = "Asia/Tokyo";
 
 /**
