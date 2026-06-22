@@ -19,7 +19,7 @@ interface Props {
 }
 
 export function VariantTab({ kind, variants }: Props) {
-  const [variantTab, onSelectionChange] = useRememberTab();
+  const [variantTab, onSelectionChange] = useRememberTab(variants[0].slug);
 
   return (
     <Tabs defaultSelectedKey={variantTab} onSelectionChange={onSelectionChange}>
@@ -75,7 +75,7 @@ export function VariantTab({ kind, variants }: Props) {
   );
 }
 
-function useRememberTab(): [Key | undefined, (selectedTab: Key) => void] {
+function useRememberTab(defaultSelected: Key): [Key | undefined, (selectedTab: Key) => void] {
   const [currentTab, setSelectedTab] = useState<Key | undefined>(undefined);
 
   function onSelectionChange(selectedTab: Key) {
