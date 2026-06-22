@@ -78,7 +78,7 @@ export function VariantTab({ kind, variants }: Props) {
 function useRememberTab(
   defaultSelected: Key,
 ): [Key, (selectedTab: Key) => void] {
-  const [currentTab, setSelectedTab] = useState<Key>(defaultSelected);
+  const [currentTab, setSelectedTab] = useState<Key | null>(null);
 
   function onSelectionChange(selectedTab: Key) {
     setSelectedTab(selectedTab);
@@ -95,8 +95,10 @@ function useRememberTab(
     // @see https://ja.react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content
     if (selectedTab) {
       setSelectedTab(selectedTab);
+    } else {
+      setSelectedTab(defaultSelected)
     }
-  }, []);
+  }, [defaultSelected]);
 
   return [currentTab, onSelectionChange];
 }
