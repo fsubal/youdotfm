@@ -22,7 +22,7 @@ export function VariantTab({ kind, variants }: Props) {
   const [variantTab, onSelectionChange] = useRememberTab();
 
   return (
-    <Tabs defaultSelectedKey={variants[0].slug} onSelectionChange={onSelectionChange}>
+    <Tabs defaultSelectedKey={variantTab} onSelectionChange={onSelectionChange}>
       <TabList
         className={clsx("flex", "screen2:inline-flex")}
         aria-label="商品バリエーションを選択"
