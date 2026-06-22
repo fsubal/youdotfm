@@ -75,8 +75,8 @@ export function VariantTab({ kind, variants }: Props) {
   );
 }
 
-function useRememberTab(): [Key | null, (selectedTab: Key) => void] {
-  const [currentTab, setSelectedTab] = useState<Key | null>(null);
+function useRememberTab(): [Key | undefined, (selectedTab: Key) => void] {
+  const [currentTab, setSelectedTab] = useState<Key | undefined>(undefined);
 
   function onSelectionChange(selectedTab: Key) {
     setSelectedTab(selectedTab);
