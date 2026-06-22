@@ -19,10 +19,10 @@ interface Props {
 }
 
 export function VariantTab({ kind, variants }: Props) {
-  const [variantTab, onSelectionChange] = useRememberTab(variants[0].slug);
+  const [variantTab, onSelectionChange] = useRememberTab();
 
   return (
-    <Tabs selectedKey={variantTab} onSelectionChange={onSelectionChange}>
+    <Tabs defaultSelectedKey={variants[0].slug} onSelectionChange={onSelectionChange}>
       <TabList
         className={clsx("flex", "screen2:inline-flex")}
         aria-label="商品バリエーションを選択"
@@ -75,9 +75,7 @@ export function VariantTab({ kind, variants }: Props) {
   );
 }
 
-function useRememberTab(
-  defaultSelected: Key,
-): [Key, (selectedTab: Key) => void] {
+function useRememberTab(): [Key | null, (selectedTab: Key) => void] {
   const [currentTab, setSelectedTab] = useState<Key | null>(null);
 
   function onSelectionChange(selectedTab: Key) {
