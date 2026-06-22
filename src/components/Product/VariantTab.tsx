@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import clsx from "clsx";
 import {
   getPriceRangeOfVariant,
@@ -87,11 +87,11 @@ function useRememberTab(
     history.replaceState({ selectedTab }, "");
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const selectedTab = history.state?.selectedTab;
 
     // REVIEW: ビルド時にwindowがない状態でuseStateの初期値を設定することはできない（hydration warning）ので、
-    // やむなくuseEffectで値を変更している
+    // やむなくuseLayoutEffectで値を変更している
     // @see https://ja.react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content
     if (selectedTab) {
       setSelectedTab(selectedTab);
