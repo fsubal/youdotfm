@@ -1,6 +1,6 @@
 import "server-only";
 
-import { Shop } from "./model";
+import { Shop, ShopKind } from "./model";
 import { seed } from "../../utils/seed";
 import yaml from "./seeds.yml";
 import { Ordering } from "../../utils/iterable";
@@ -12,3 +12,7 @@ export const shops: Shop[] = seed(Shop, yaml).sort((a, b) =>
       ? Ordering.Less
       : Ordering.Greater,
 );
+
+export function findShopByKind(kind: ShopKind): Shop | undefined {
+  return shops.find((shop) => shop.kind === kind);
+}

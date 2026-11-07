@@ -17,17 +17,6 @@ description: |
 
   語って、話して、好きになる。ポッドキャスター女子ふたりが織りなす、大人の青春ストーリー！
 variants:
-  - slug: paper
-    name: 同人誌
-    listings:
-      - shopKind: Melonbooks
-        price: 660
-        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2837742
-      - shopKind: BOOTH
-        price: 500
-        url: https://umbrellahead.booth.pm/items/5741859
-        status: stockout
-
   - slug: digital
     name: 電子書籍
     listings:
@@ -40,3 +29,13 @@ variants:
       - shopKind: LineManga
         price: 300
         url: https://manga.line.me/book/detail?id=B00165998425
+  - slug: paper
+    name: 同人誌
+    listings:
+      - shopKind: Melonbooks
+        price: 660
+        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2837742
+      - shopKind: BOOTH
+        price: 500
+        url: https://umbrellahead.booth.pm/items/5741859
+        status: stockout

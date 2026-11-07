@@ -2,7 +2,7 @@ import z from "zod";
 import { ImageSource } from "../ImageSource/model";
 import { ShopKind } from "../Shop/model";
 import { JPYRange, JPYValue } from "../../utils/intl";
-import { JapanDate } from "../../utils/datetime";
+import { PlainDate } from "../../utils/datetime";
 import { Unreachable } from "../../utils/unreachable";
 import { RelativeURL } from "../../utils/url/internal";
 
@@ -14,6 +14,8 @@ export const ListingStatus = z.enum([
   "stockout",
   "discontinued",
 ]);
+
+export type ListingStatus = z.infer<typeof ListingStatus>;
 
 /**
  * 販売サイトに対する出品
@@ -69,7 +71,7 @@ export const Product = z.object({
   images: z.array(ImageSource).min(1),
   description: z.string(),
   episodes: z.array(z.string()).default([]),
-  publishedAt: JapanDate,
+  publishedAt: PlainDate,
 });
 
 export type Product = z.infer<typeof Product>;
@@ -99,13 +101,27 @@ export function getKindLabel(kind: ProductKind) {
   }
 }
 
-function getAllListings(product: Product): Listing[] {
+export function getAllListings(product: Product): Listing[] {
   return product.variants.flatMap(({ listings }) => listings);
+}
+
+function getListingPriceValues(listing: Listing): JPYRange | null {
+  if (listing.status === "discontinued") {
+    return null;
+  }
+
+  if (typeof listing.price === "number") {
+    return [listing.price];
+  } else if (Array.isArray(listing.price)) {
+    return listing.price;
+  } else {
+    Unreachable.assert(listing.price);
+  }
 }
 
 function getAllListingPriceValue(product: Product): JPYValue[] {
   return getAllListings(product)
-    .flatMap(({ price, status }) => (status === "available" ? price : []))
+    .flatMap((listing) => getListingPriceValues(listing) ?? [])
     .filter((jpy) => jpy != null) as JPYValue[];
 }
 
@@ -128,9 +144,15 @@ export function getMinimumPriceOfProduct(product: Product): JPYRange {
   return [Math.min(...priceValues) as JPYValue];
 }
 
+export function getMaximumPriceOfProduct(product: Product): JPYRange {
+  const priceValues = getAllListingPriceValue(product);
+
+  return [Math.max(...priceValues) as JPYValue];
+}
+
 export function getPriceRangeOfVariant(variant: ProductVariant) {
   const priceValues = variant.listings
-    .flatMap(({ price, status }) => (status === "available" ? price : []))
+    .flatMap((listing) => getListingPriceValues(listing) ?? [])
     .filter((jpy) => jpy != null) as JPYValue[];
 
   const minPrice = Math.min(...priceValues);

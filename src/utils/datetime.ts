@@ -1,8 +1,19 @@
 import z from "zod";
-import { Temporal, toTemporalInstant } from "@js-temporal/polyfill";
 
-// @ts-expect-error https://github.com/js-temporal/temporal-polyfill
-Date.prototype.toTemporalInstant = toTemporalInstant;
+/**
+ * NOTE:
+ * 本プロジェクトでは `Date` から `Temporal` へ変換する用途がなく、
+ * 文字列 or Temporal 型を直接扱うため現状 Date.prototype の拡張をしていません。
+ *
+ * `temporal-polyfill-lite` では `install(false)` を呼ぶことで
+ * `Date.prototype.toTemporalInstant` を含む拡張を有効化できます。
+ *
+ * 将来もし `Date` -> `Temporal.Instant` 変換が必要になった場合は、
+ * 用途に応じて `install(false)` の採用を検討するか、
+ * `Temporal.Instant.fromEpochMilliseconds(date.getTime())` のような
+ * 明示的変換を利用してください。
+ */
+import { Temporal } from "temporal-polyfill-lite";
 
 const TIMEZONE = "Asia/Tokyo";
 
@@ -32,10 +43,10 @@ export function formatDateTime(datetime: Temporal.ZonedDateTime) {
 }
 
 /**
- * RFC 9557に準拠した日本時間の日付文字列
+ * RFC 9557に準拠した日付文字列
  * 例: `2024-06-01`
  */
-export const JapanDate = z.codec(z.string(), z.instanceof(Temporal.PlainDate), {
+export const PlainDate = z.codec(z.string(), z.instanceof(Temporal.PlainDate), {
   decode: (str) => Temporal.PlainDate.from(str),
   encode: (date) => date.toString(),
 });

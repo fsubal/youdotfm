@@ -10,16 +10,18 @@ import {
 import { products } from "../domains/Product/seeds";
 import { DropCap } from "../components/DropCap";
 import { NewsListItem } from "../components/News/NewsListItem";
+import { ComicSeriesJsonLd } from "../components/JsonLd";
 
 export const metadata = {
   title: {
-    absolute: "ポッドキャスト百合『ユードットエフエム』公式サイト",
+    absolute: "ポッドキャスト百合漫画『ユードットエフエム』公式サイト",
   },
 };
 
 export default function Home() {
   return (
     <Layout>
+      <ComicSeriesJsonLd />
       <SectionTitle subheading="Introduction">
         『語って、話して、好きになる』
       </SectionTitle>

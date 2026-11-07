@@ -34,3 +34,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## End-to-end tests
+
+Build the static export, install the test browsers, and run Playwright:
+
+```bash
+npm ci
+npx playwright install --with-deps
+npm run build
+npm test
+```
+
+Playwright starts a static server for `out/` automatically and tests Chromium,
+Firefox, and WebKit. Rebuild after changing the app. Store and share links are
+checked without navigating to third-party services. Open the HTML report with
+`npm run test:report`.
+
+To test an existing Cloudflare preview instead of starting the local server:
+
+```bash
+PLAYWRIGHT_BASE_URL=https://<deployment-id>.youdotfm.pages.dev npm test
+```
+
+Use the preview URL for the commit you want to verify. CI tests its own static
+export so it does not depend on the timing of a Cloudflare deployment.

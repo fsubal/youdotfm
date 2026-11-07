@@ -15,17 +15,6 @@ description: |
   収録では楽しく話せたと振り返りつつも、エリは自分のやりたいトークを掴みきれずにいた。
   シヲリといっしょにリスナーの反応を読みながら、自分たちが本当にやりたい番組が何なのかを考え始めたエリは！？
 variants:
-  - slug: paper
-    name: 同人誌
-    listings:
-      - shopKind: Melonbooks
-        price: 660
-        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=3243689
-      - shopKind: BOOTH
-        price: 500
-        url: https://umbrellahead.booth.pm/items/7381944
-        status: stockout
-
   - slug: digital
     name: 電子書籍
     listings:
@@ -38,3 +27,13 @@ variants:
       - shopKind: LineManga
         price: 300
         url: https://manga.line.me/book/detail?id=B00166257807
+  - slug: paper
+    name: 同人誌
+    listings:
+      - shopKind: Melonbooks
+        price: 660
+        url: https://www.melonbooks.co.jp/detail/detail.php?product_id=3243689
+      - shopKind: BOOTH
+        price: 500
+        url: https://umbrellahead.booth.pm/items/7381944
+        status: stockout
