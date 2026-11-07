@@ -2,15 +2,14 @@ This is a [Next.js](https://nextjs.org/) site deployed as a static export to Clo
 
 ## Getting started
 
-Use Node.js 22.19.0 and pnpm 10.11.0. `.node-version` selects the Node.js version
+Use Node.js 26.13.0 and pnpm 10.11.0. `.node-version` selects the Node.js version
 for CI and Cloudflare Pages; `.npmrc` makes pnpm use that same version for
 project commands. Keep both pins and `engines.node` in `package.json` in sync.
 
-Enable the pinned pnpm version with Corepack (included with Node.js 22):
+Install the pinned pnpm version after installing Node.js:
 
 ```bash
-corepack enable
-corepack prepare pnpm@10.11.0 --activate
+npm install --global pnpm@10.11.0
 pnpm install --frozen-lockfile
 pnpm dev
 ```
