@@ -1,6 +1,7 @@
 "use client";
 
 import "@charcoal-ui/icons";
+import type { JSX } from "react";
 
 interface Props
   extends Omit<
