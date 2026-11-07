@@ -42,6 +42,13 @@
   logo:
     src: ""
     alt: ""
+- kind: Renta
+  name: Renta!
+  url: https://renta.papy.co.jp/renta/sc/frm/item/427030/title/2987635/
+  featured: true
+  logo:
+    src: ""
+    alt: ""
 - kind: ComicCmoa
   name: コミックシーモア
   url: https://www.cmoa.jp/search/series/73204/

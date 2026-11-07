@@ -10,7 +10,9 @@
 # セットアップ
 
 - Node.jsのバージョンは`.node-version`を参照してください
-- パッケージマネージャーは`npm`を使用します
+- パッケージマネージャーは`package.json`で固定された`pnpm`を使用します
+- 依存関係のインストールは`pnpm install --frozen-lockfile`、検証は`pnpm lint`、`pnpm build`、`pnpm test`です
+- `.npmrc`の`use-node-version`と`package.json`の`engines.node`は`.node-version`と揃えてください
 - Next.jsのビルドはTurbopackを使用します
   - マスターデータを`import`するために`yaml-loader`を使用しています（`next.config.ts`を参照）
 

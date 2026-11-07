@@ -11,36 +11,45 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "playwright test",
+    "test:report": "playwright show-report"
   },
   "dependencies": {
-    "@charcoal-ui/icons": "^3.21.0",
-    "@js-temporal/polyfill": "^0.5.1",
-    "clsx": "^2.0.0",
+    "@charcoal-ui/icons": "^6.3.0",
+    "clsx": "^2.1.1",
     "next": "^15.5.2",
     "react": "^19.1.1",
     "react-aria": "^3.44.0",
     "react-aria-components": "^1.13.0",
-    "react-dom": "^19.1.1",
+    "react-dom": "^19.3.1",
+    "temporal-polyfill-lite": "^0.3.5",
     "vivus": "^0.4.6",
     "zod": "^4.1.8"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.13",
+    "@playwright/test": "^1.56.0",
+    "@tailwindcss/postcss": "^4.3.4",
     "@tailwindcss/typography": "^0.5.19",
     "@types/jsonld": "^1.5.15",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/node": "^26",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "@types/vivus": "^0.4.6",
     "autoprefixer": "^10.4.21",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.1",
-    "eslint-plugin-classnames": "^0.3.1",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "15.5.2",
+    "eslint-plugin-classnames": "^0.4.0",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
+    "serve": "^14.2.4",
     "tailwindcss": "^4.1.13",
     "typescript": "^5",
     "yaml-loader": "^0.8.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   }
 }
