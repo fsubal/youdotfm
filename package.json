@@ -44,7 +44,7 @@
     "prettier": "^3.6.2",
     "serve": "^14.2.4",
     "tailwindcss": "^4.1.13",
-    "typescript": "^5",
+    "typescript": "^6",
     "yaml-loader": "^0.8.1"
   },
   "pnpm": {
